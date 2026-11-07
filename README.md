@@ -3,7 +3,7 @@
 Landing page da mentoria do Prof. Marlon Pevidor.
 
 - `index.html` — a página (HTML e CSS em um único arquivo, sem build)
-- `assets/marlon.jpg` — foto de perfil
+- `assets/marlon.webp` — foto de perfil
 
 ## Publicar com GitHub Pages
 
