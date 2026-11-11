@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mentoria Educador Cristão Clássico</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mentoria de 12 meses com o professor Marlon Pevidor, Grau I do Instituto Cassiciacum, para professores e gestores que querem integrar fé cristã e educação clássica na prática.">
+<meta property="og:title" content="Mentoria Educador Cristão Clássico · Professor Marlon Pevidor">
+<meta property="og:description" content="Da mera carreira a um chamado que transforma vidas. Grau I do Instituto Cassiciacum.">
+<meta property="og:image" content="assets/marlon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+/* Layout: uma coluna de leitura em tipografia de livro, pilares e graus em numerais romanos, uma faixa cobalto com as seis disciplinas do PGMAFT. */
+/* Paleta tirada da foto: azulejo cobalto e creme, reflexo azul-claro, camisa cinza-azulada. */
+:root {
+  --paper: #F3EEE4;      /* azulejo creme, mais claro */
+  --paper-2: #E7DECB;    /* azulejo creme */
+  --ink: #0E1A44;        /* azul-marinho profundo */
+  --ink-soft: #4A4F6B;   /* cinza-azulado da camisa */
+  --cobalt: #0B2A7A;     /* azulejo cobalto */
+  --azure: #2F62B8;      /* reflexo no azulejo, versão legível */
+  --rule: #D8CFBC;
+  --on-cobalt: #F3EEE4;
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-body: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --measure: 62ch;
+  --wide: 74rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B1432; --paper-2: #122047; --ink: #EFE8DA; --ink-soft: #B4BAD0;
+    --cobalt: #7FB6EC; --azure: #79B5EC; --rule: #243160; --on-cobalt: #0B1432;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0B1432; --paper-2: #122047; --ink: #EFE8DA; --ink-soft: #B4BAD0;
+  --cobalt: #7FB6EC; --azure: #79B5EC; --rule: #243160; --on-cobalt: #0B1432;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--cobalt); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: var(--wide);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+section + section { border-top: 1px solid var(--rule); }
+
+/* escala tipográfica */
+.caps {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--azure);
+  margin: 0;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.9rem, 6.8vw, 5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); }
+h3 { font-size: clamp(1.6rem, 2.4vw, 1.85rem); }
+h1 em, h2 em { font-style: italic; color: var(--cobalt); }
+p { margin: 0; max-width: var(--measure); }
+.lede { font-size: clamp(1.25rem, 1.8vw, 1.4rem); color: var(--ink-soft); }
+.stack { display: grid; gap: 1.2rem; }
+.head { display: grid; gap: 1rem; margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 50rem; }
+i[lang="la"] { font-style: italic; }
+
+/* botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 1.0625rem;
+  padding: 1rem 1.6rem;
+  border-radius: 2px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
+.btn-primary { background: var(--cobalt); color: var(--on-cobalt); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost { color: var(--ink); border: 1px solid var(--ink-soft); }
+.btn-ghost:hover { background: var(--paper-2); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+/* barra superior */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.75rem; }
+.brand { font-family: var(--font-body); font-weight: 600; letter-spacing: 0.14em; font-size: 0.85rem; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+.topbar .btn { padding: 0.6rem 1.05rem; font-size: 0.95rem; white-space: nowrap; }
+
+/* abertura */
+.hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero-copy { display: grid; gap: 1.6rem; min-width: 0; }
+.portrait { margin: 0; isolation: isolate; padding: 12px; max-width: 27rem; justify-self: center; width: 100%; }
+.ring { display: block; position: relative; }
+.ring::before { content: ""; position: absolute; inset: -12px; border: 1px solid var(--azure); border-radius: 50%; opacity: .7; }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.portrait figcaption { margin-top: 1.2rem; display: grid; gap: .15rem; text-align: center; }
+.portrait figcaption strong { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; }
+.portrait figcaption span { font-size: 1rem; color: var(--ink-soft); }
+
+/* faixa PGMAFT */
+.band { background: var(--cobalt); color: var(--on-cobalt); padding-block: clamp(2.2rem, 4vw, 3rem); }
+.band .wrap { display: grid; gap: 1.4rem; }
+.band .label { font-size: .85rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
+.band ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.4rem 1rem; }
+.band li { display: grid; gap: .1rem; border-top: 1px solid color-mix(in srgb, var(--on-cobalt) 35%, transparent); padding-top: .8rem; }
+.band .letter { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1; }
+.band .word { font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 2vw, 1.55rem); line-height: 1.2; }
+section.band + section { border-top: 0; }
+
+/* história */
+.story .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+blockquote { margin: 0; padding-left: 1.4rem; border-left: 2px solid var(--azure); display: grid; gap: .8rem; }
+blockquote p { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.25; font-style: italic; }
+blockquote cite { font-style: normal; font-size: .85rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--azure); }
+
+/* problema: dois quadros */
+.ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); }
+.ledger > div { padding: clamp(1.5rem, 3vw, 2.4rem); display: grid; gap: 1rem; align-content: start; }
+.ledger > div + div { border-left: 1px solid var(--rule); background: var(--paper-2); }
+.ledger ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .8rem; }
+.ledger li { padding-left: 1.4rem; position: relative; }
+.ledger .have li::before { content: "—"; position: absolute; left: 0; color: var(--ink-soft); }
+.ledger .missing li::before { content: "✦"; position: absolute; left: 0; color: var(--azure); font-size: .85rem; top: .25rem; }
+.ledger .verdict { font-family: var(--font-display); font-size: 1.55rem; font-style: italic; color: var(--cobalt); }
+
+/* público */
+.paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+.path { border-top: 2px solid var(--cobalt); padding-top: 1.2rem; display: grid; gap: .6rem; align-content: start; }
+.fit { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); }
+.fit ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .9rem; }
+.fit li { padding-left: 1.6rem; position: relative; }
+.fit .yes li::before { content: "✓"; position: absolute; left: 0; color: var(--cobalt); font-weight: 600; }
+.fit .no { background: var(--paper-2); padding: 1.6rem; display: grid; gap: .8rem; align-content: start; }
+
+/* base: Grau I */
+.foundation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; padding: clamp(1.5rem, 3vw, 2.4rem); background: var(--paper-2); margin-bottom: 1.5rem; }
+.foundation > div { display: grid; gap: .6rem; align-content: start; min-width: 0; }
+.foundation .caps { grid-column: 1 / -1; }
+.method { margin: .2rem 0 0; padding: 0; list-style: none; display: grid; gap: .55rem; }
+.method li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: .8rem; }
+.method i { font-family: var(--font-display); font-size: 1.3rem; color: var(--cobalt); }
+
+/* percurso: quatro graus */
+.degrees { border-top: 1px solid var(--rule); }
+.degree { display: grid; grid-template-columns: 4.5rem 8rem minmax(0, 1fr) 13rem; gap: 1.5rem; padding-block: 1.5rem; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.degree.current { background: var(--paper-2); padding-inline: 1rem; margin-inline: -1rem; }
+.degree .num { font-family: var(--font-display); font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--azure); }
+.degree .dur { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; font-variant-numeric: lining-nums; }
+.degree .what { display: grid; gap: .3rem; min-width: 0; }
+.degree .what b { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; }
+.degree .role { font-size: 1rem; color: var(--ink-soft); }
+.degree .role i { font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); }
+.degree .tag { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--cobalt); }
+.degrees-note { margin-top: 1.8rem; color: var(--ink-soft); }
+
+/* pilares */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.pillar { border: 1px solid var(--rule); padding: clamp(1.4rem, 2.5vw, 2rem); display: grid; gap: 1rem; align-content: start; }
+.numeral { font-family: var(--font-display); font-weight: 700; font-size: 3rem; line-height: 1; color: var(--azure); }
+.pillar ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+.pillar li { display: grid; gap: .2rem; font-size: 1.05rem; color: var(--ink-soft); }
+.pillar li b { color: var(--ink); font-weight: 600; }
+
+/* três tempos */
+.times { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 2.5rem; }
+.times > div { padding: 1.4rem 1.4rem 0 0; display: grid; gap: .5rem; align-content: start; border-top: 2px solid var(--cobalt); position: relative; }
+.times > div::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--cobalt); }
+
+/* carreira e destino */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); }
+.career { margin: 0; padding: 0; list-style: none; display: grid; }
+.career li { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--rule); }
+.career li:first-child { border-top: 1px solid var(--rule); }
+.career b { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; line-height: 1.3; }
+.career span { color: var(--ink-soft); }
+.destiny { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.1rem; counter-reset: d; }
+.destiny li { padding-left: 2.8rem; position: relative; counter-increment: d; }
+.destiny li::before { content: counter(d, upper-roman); position: absolute; left: 0; top: -.1rem; font-family: var(--font-display); color: var(--azure); font-size: 1.4rem; font-weight: 700; }
+
+/* sobre */
+.about .wrap { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.about img { width: 100%; height: auto; max-width: 22rem; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem 2rem; margin: 1rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.facts dt { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--azure); }
+.facts dd { margin: .25rem 0 0; font-size: 1.05rem; }
+.facts div { min-width: 0; }
+
+/* perguntas */
+.faq { display: grid; max-width: 54rem; }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq details:first-child { border-top: 1px solid var(--rule); }
+.faq summary { cursor: pointer; list-style: none; padding-block: 1.3rem; font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; line-height: 1.25; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-body); font-weight: 400; color: var(--azure); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding-bottom: 1.4rem; color: var(--ink-soft); }
+
+/* chamada final */
+.final { background: var(--paper-2); text-align: center; }
+.final .wrap { display: grid; justify-items: center; gap: 1.5rem; }
+.final p { margin-inline: auto; }
+.final .actions { justify-content: center; }
+.contact-line { font-size: 1.05rem; color: var(--ink-soft); }
+.contact-line span { user-select: all; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+footer { padding-block: 2.5rem; border-top: 1px solid var(--rule); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: 1rem; color: var(--ink-soft); }
+footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); }
+
+/* entrada */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * { animation: rise .7s ease both; }
+  .hero-copy > *:nth-child(2) { animation-delay: .08s; }
+  .hero-copy > *:nth-child(3) { animation-delay: .16s; }
+  .hero-copy > *:nth-child(4) { animation-delay: .24s; }
+  .portrait img { animation: fade 1s ease both .1s; }
+  @keyframes rise { from { transform: translateY(10px); opacity: .01; } to { transform: none; opacity: 1; } }
+  @keyframes fade { from { opacity: .01; } to { opacity: 1; } }
+}
+
+/* responsivo */
+@media (max-width: 960px) {
+  .pillars { grid-template-columns: minmax(0, 1fr); }
+  .story .wrap, .split, .about .wrap, .fit { grid-template-columns: minmax(0, 1fr); }
+  .degree { grid-template-columns: 3.5rem minmax(0, 1fr); gap: .4rem 1.2rem; }
+  .degree .num { grid-row: span 3; }
+}
+@media (max-width: 760px) {
+  body { font-size: 1.125rem; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .portrait { order: -1; max-width: 18rem; }
+  .band ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ledger, .paths, .foundation { grid-template-columns: minmax(0, 1fr); }
+  .ledger > div + div { border-left: 0; border-top: 1px solid var(--rule); }
+  .times { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; border-left: 2px solid var(--cobalt); padding-left: 1.4rem; }
+  .times > div { border-top: 0; padding: 0; }
+  .times > div::before { left: calc(-1.4rem - 7px); top: .45rem; }
+  .career li, .method li { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .final .actions, .hero .actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .topbar .brand { font-size: .72rem; letter-spacing: .1em; }
+}
+@media (max-width: 400px) {
+  .band ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Educador Cristão Clássico</a>
+    <a class="btn btn-primary" href="#vagas">Quero uma vaga</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <!-- TODO(Marlon): o selo antes dizia "Mentoria individual". O desenho do Cassiciacum prevê mesa de grupo. Definir como as duas coisas convivem na entrega on-line antes de voltar a usar "individual". -->
+        <p class="caps">Mentoria · Grau I do Instituto Cassiciacum · 12 meses</p>
+        <h1>Da mera carreira a um chamado que <em>transforma vidas.</em></h1>
+        <p class="lede">Acompanhamento pessoal para professores e gestores educacionais que querem viver a fé cristã dentro da prática pedagógica, com direção, ferramentas e retorno real sobre o que você aplica em sala de aula e no dia a dia da escola. A mentoria é a porta de entrada para uma formação maior no Instituto Cassiciacum.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#vagas">Quero conversar sobre uma vaga</a>
+          <a class="btn btn-ghost" href="#como-funciona">Como funciona</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <span class="ring"><img src="assets/marlon.webp" alt="Professor Marlon Pevidor sorrindo, de óculos e braços cruzados, diante de uma parede de azulejos azuis e creme" width="840" height="840"></span>
+        <figcaption>
+          <strong>Professor Marlon Pevidor</strong>
+          <span>Especialista em educação cristã clássica</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" aria-label="O paradigma PGMAFT">
+    <div class="wrap">
+      <span class="label">O paradigma que forma o professor inteiro</span>
+      <ol>
+        <li><span class="letter" aria-hidden="true">P</span><span class="word">Piedade</span></li>
+        <li><span class="letter" aria-hidden="true">G</span><span class="word">Ginástica</span></li>
+        <li><span class="letter" aria-hidden="true">M</span><span class="word">Música</span></li>
+        <li><span class="letter" aria-hidden="true">A</span><span class="word">Artes liberais</span></li>
+        <li><span class="letter" aria-hidden="true">F</span><span class="word">Filosofia</span></li>
+        <li><span class="letter" aria-hidden="true">T</span><span class="word">Teologia</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="stack">
+        <p class="caps">Por que esta mentoria existe</p>
+        <h2>Eu fui o professor a quem esta mentoria serve.</h2>
+        <!-- TODO(Marlon): conferir o número "17 anos" desta frase. -->
+        <p>Durante 17 anos, fui um professor cristão que não sabia como integrar fé e pedagogia. Quando encontrei os princípios da educação cristã clássica, tudo mudou: minha maneira de ensinar e meu propósito.</p>
+        <p>Esta mentoria é o caminho que eu gostaria de ter tido. Ela não é mais um conteúdo na prateleira. É o acompanhamento que me faltou.</p>
+      </div>
+      <blockquote>
+        <p>“O que o professor ensina em sala de aula é apenas expressão daquilo que ele acredita por dentro. Mude o interior e o restante todo muda.”</p>
+        <cite>Professor Marlon Pevidor</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">O problema real</p>
+        <h2>Não falta conhecimento. <em>Falta acompanhamento.</em></h2>
+      </div>
+      <div class="ledger">
+        <div class="have">
+          <h3>O que já existe</h3>
+          <ul>
+            <li>Pós-graduações em educação clássica;</li>
+            <li>Livros e autores de referência;</li>
+            <li>Cursos gravados para assistir sozinho;</li>
+            <li>Teoria de sobra e nenhuma mão estendida na hora de aplicar.</li>
+          </ul>
+        </div>
+        <div class="missing">
+          <h3>O que nunca existiu</h3>
+          <ul>
+            <li>Alguém que ensaie com você antes da aula difícil;</li>
+            <li>Alguém ao seu lado durante a reunião ou a palestra;</li>
+            <li>Alguém que analise a aula depois e mostre o que melhorar.</li>
+          </ul>
+          <p class="verdict">É isso que esta mentoria entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="para-quem">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">Para quem é</p>
+        <h2>Dois caminhos, a mesma formação.</h2>
+      </div>
+      <div class="paths">
+        <div class="path">
+          <h3>Professor regente</h3>
+          <p>Para quem deseja ensinar a partir de uma filosofia sólida, com autonomia e propósito, em qualquer escola e com qualquer aluno.</p>
+        </div>
+        <div class="path">
+          <h3>Gestor escolar</h3>
+          <p>Para proprietários, diretores e coordenadores que querem conduzir a equipe, consolidar a identidade da escola e decidir com clareza e firmeza.</p>
+        </div>
+      </div>
+      <div class="fit">
+        <div class="yes stack">
+          <h3>Pode ser para você se</h3>
+          <ul>
+            <li>Você sente que dar aula, ou gerir uma escola, é vocação e não só carreira.</li>
+            <li>Você já busca integrar fé cristã e educação clássica, mas tem dificuldade de levar isso ao plano de aula, à conversa com a equipe e ao dia a dia.</li>
+            <li>Você sente falta de uma rede de apoio e hoje enfrenta esse caminho sozinho.</li>
+            <li>Você quer transformar esse conhecimento em autoridade, com palestras, escrita e cursos.</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>Não é para quem busca</h3>
+          <p>Fórmula pronta sem se envolver na implementação, ou apenas um certificado sem acompanhamento real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">Como funciona</p>
+        <h2>Um acelerador de resultados de <em>12 meses.</em></h2>
+        <p class="lede">Um acompanhamento estruturado, do diagnóstico ao legado, organizado em uma base de formação e três pilares de entrega.</p>
+      </div>
+
+      <div class="foundation">
+        <p class="caps">A base · Grau I</p>
+        <div>
+          <h3>Grau I: a tradição das artes liberais</h3>
+          <p>A filosofia da educação cristã clássica, estudada em um único livro: <i>The Liberal Arts Tradition</i>, de Kevin Clark e Ravi Scott Jain, sobre o paradigma PGMAFT. São 42 semanas, com duas aulas de 50 minutos por semana, ministradas por mim. Vai além do <i lang="la">trivium</i> e forma o professor inteiro, não só o método.</p>
+        </div>
+        <div>
+          <h3>O método das primeiras universidades</h3>
+          <p>Cada semana termina com um produto escrito. No Grau I, o trabalho se concentra nos dois primeiros passos.</p>
+          <ul class="method">
+            <li><i lang="la">lectio</i><span>Leitura comentada do texto</span></li>
+            <li><i lang="la">quaestio</i><span>A pergunta que o texto levanta</span></li>
+            <li><i lang="la">disputatio</i><span>O debate entre posições</span></li>
+            <li><i lang="la">determinatio</i><span>A resposta fundamentada</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <span class="numeral" aria-hidden="true">I</span>
+          <p class="caps">Direção</p>
+          <h3>Primeiro, clareza do caminho</h3>
+          <ul>
+            <li><b>Diagnóstico do Chamado Pedagógico</b>Sessão de 2 horas que mapeia sua maturidade em cinco dimensões, define a sua “Roma” de 12 meses e entrega um diagnóstico escrito.</li>
+            <li><b>Plano Pedagógico Anual</b>O seu plano, não o dos alunos. Quatro trimestres com tarefas concretas, do alicerce ao legado.</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="numeral" aria-hidden="true">II</span>
+          <p class="caps">Apoio</p>
+          <h3>Depois, tudo para executar</h3>
+          <ul>
+            <li><b>Oficina Pedagógica</b>Um dia inteiro de execução guiada. Você sai com material pronto.</li>
+            <li><b>Conselho Pedagógico Individual</b>Sessão sob demanda para uma decisão concreta antes da ação.</li>
+            <li><b>Mesa de Casos Pedagógicos</b>Casos reais discutidos entre pares do mesmo papel institucional.</li>
+            <li><b>Acervo do Mentorado</b>Sua pasta com modelos, roteiros e materiais organizados.</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="numeral" aria-hidden="true">III</span>
+          <p class="caps">Prática</p>
+          <h3>Então, o que ninguém mais oferece</h3>
+          <ul>
+            <li><b>Retorno em três tempos</b>Sobre o que você de fato executou: antes, durante e depois. É aqui que está o maior valor da mentoria.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="times" aria-label="Os três tempos do acompanhamento da prática">
+        <div>
+          <p class="caps">Antes</p>
+          <h3>Ensaio Pedagógico</h3>
+          <p>Revisamos juntos a ação de alto risco antes que ela aconteça: a aula, a reunião difícil, a palestra.</p>
+        </div>
+        <div>
+          <p class="caps">Durante</p>
+          <h3>Apoio em tempo real</h3>
+          <p>Fico disponível enquanto você executa o evento agendado, para ajustar no calor do momento.</p>
+        </div>
+        <div>
+          <p class="caps">Depois</p>
+          <h3>Análise da Prática</h3>
+          <p>Você executa e registra. Eu analiso e mostro, ponto a ponto, o que manter e o que melhorar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="percurso">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">O percurso completo</p>
+        <h2>Quatro graus, independentes e cumulativos. <em>Você escolhe até onde ir.</em></h2>
+        <p class="lede">A mentoria é o Grau I do Instituto Cassiciacum (pronuncia-se “kas-si-KI-a-kum”), um <i lang="la">studium</i> (casa de estudos) de formação de <i lang="la">magistri</i> (mestres) cristãos clássicos, nas fontes primárias e no método que produziu a tradição. Ninguém é obrigado a continuar depois dos 12 meses.</p>
+      </div>
+      <div class="degrees">
+        <div class="degree current">
+          <span class="num">I</span>
+          <span class="dur">1 ano</span>
+          <div class="what">
+            <span class="tag">Esta mentoria</span>
+            <b>A tradição das artes liberais</b>
+            <span><i>The Liberal Arts Tradition</i> (Clark e Jain), com <i lang="la">lectio</i> e <i lang="la">quaestio</i>.</span>
+          </div>
+          <span class="role">Forma o <i lang="la">respondens</i> (aquele que responde)</span>
+        </div>
+        <div class="degree">
+          <span class="num">II</span>
+          <span class="dur">3 anos</span>
+          <div class="what">
+            <b>Os clássicos sobre educação</b>
+            <span>No primeiro ano, excertos de <i>The Great Tradition</i> (Gamble), de Platão a Voegelin. No segundo e no terceiro, obras angulares selecionadas, lidas por inteiro.</span>
+          </div>
+          <span class="role">Forma o <i lang="la">opponens</i> (aquele que objeta), com ênfase na <i lang="la">disputatio</i></span>
+        </div>
+        <div class="degree">
+          <span class="num">III</span>
+          <span class="dur">5 anos</span>
+          <div class="what">
+            <b>O <i lang="la">corpus</i> por inteiro</b>
+            <span>A maior parte das obras lidas na íntegra. Confere a <i lang="la">licentia docendi</i> (licença para ensinar).</span>
+          </div>
+          <span class="role">Forma o <i lang="la">determinans</i> (aquele que dá a resposta final)</span>
+        </div>
+        <div class="degree">
+          <span class="num">IV</span>
+          <span class="dur">10 anos</span>
+          <div class="what">
+            <b>O <i lang="la">corpus</i> inteiro e além</b>
+            <span>Todo o <i lang="la">corpus</i>, além de obras modernas e outras fontes primárias.</span>
+          </div>
+          <span class="role">Forma o <i lang="la">magister</i></span>
+        </div>
+      </div>
+      <p class="degrees-note">No horizonte, quem conclui o Grau III recebe a <i lang="la">licentia docendi</i> e pode conduzir os quatro graus e fundar uma nova casa.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="stack">
+        <p class="caps">Carreira e multiplicação</p>
+        <h2>Uma trilha para levar adiante o que você aprende.</h2>
+        <p>Dentro da mentoria, você recebe uma trilha para transformar o que já ensina em autoridade no seu campo. Cada passo é apresentado na conversa individual, de acordo com o seu momento.</p>
+        <ul class="career">
+          <li><b>Afiliados</b><span>Indicação dos livros que você já usa e ensina.</span></li>
+          <li><b>Cursos online</b><span>O seu conhecimento organizado em cursos.</span></li>
+          <li><b>Blog semanal</b><span>Que ao fim do ano pode virar um livro.</span></li>
+          <li><b>Palestras</b><span>Posicionamento e autoridade no seu campo.</span></li>
+          <li><b>Mentoria própria</b><span>Sobre um modelo que já está em funcionamento.</span></li>
+          <li><b>Uma nova casa</b><span>Pelo Grau III, conduzir os quatro graus e fundar uma casa.</span></li>
+        </ul>
+      </div>
+      <div class="stack">
+        <p class="caps">O destino</p>
+        <h2>Ao final de 12 meses, você terá</h2>
+        <ol class="destiny">
+          <li>Uma filosofia de educação que dá propósito ao seu trabalho, em qualquer escola e com qualquer aluno.</li>
+          <li>A capacidade de atuar como professor cristão clássico, sem proselitismo e sem risco ao emprego.</li>
+          <li>Uma trilha de carreira para levar adiante o que você aprendeu.</li>
+          <li>A base para criar a sua própria mentoria e, no horizonte, fundar uma casa.</li>
+        </ol>
+        <p><strong>Bônus:</strong> acesso ao Grupo de Inteligência, um grupo fechado para quem já colheu resultados reais e quer ir mais longe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <img src="assets/marlon.webp" alt="Professor Marlon Pevidor" width="840" height="840" loading="lazy">
+      <div class="stack">
+        <p class="caps">Quem conduz a mentoria</p>
+        <h2>Marlon Pevidor</h2>
+        <!-- TODO(Marlon): conferir o tempo de docência. Esta página diz "mais de 25 anos"; os documentos do Cassiciacum falam em 27. -->
+        <p>Sou professor há mais de 25 anos e fundador do Instituto Cassiciacum. Comecei ensinando inglês e, desde 2011, leciono História, Filosofia e Humanidades em escolas brasileiras e internacionais em Brasília, como o Colégio Ideal, o Centro Educacional Sigma e a American School of Brasília, onde ensinei no programa do Diploma IB.</p>
+        <p>Fui professor de História da Igreja, História do Pensamento Cristão e Educação Cristã Clássica na Faculdade Teológica Batista de Brasília. Hoje ensino Humanidades Integradas no ensino médio da Logos Online School, uma escola cristã clássica, por meio do <i lang="la">trivium</i>, da leitura de fontes primárias e da discussão em sala.</p>
+        <!-- TODO(Marlon): confirmar se a menção à For Life School continua, já que o Grau I agora pertence ao Cassiciacum. -->
+        <p>Sou cofundador da Formação Avançada na Tradição das Artes Liberais, na For Life School. Escrevi <em>Redimindo a educação: transformando o professor para transformar vidas</em>.</p>
+        <dl class="facts">
+          <div><dt>Formação</dt><dd>Licenciatura em História (UniCEUB) e em Geografia (Cruzeiro do Sul)</dd></div>
+          <div><dt>Especialização</dt><dd>Pós-graduação em Educação Cristã Clássica, Faculdade Internacional Cidade Viva</dd></div>
+          <div><dt>Certificação</dt><dd>Professor certificado pelo International Baccalaureate em História e Geografia</dd></div>
+          <div><dt>Idiomas</dt><dd>Português e inglês fluente</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="perguntas">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">Perguntas frequentes</p>
+        <h2>Antes de você decidir</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>É um curso gravado?</summary>
+          <p>Não. É acompanhamento pessoal. O Grau I é a base de estudo, mas o centro da mentoria é o diagnóstico, o plano, o apoio na implementação e o retorno antes, durante e depois do que você executa.</p>
+        </details>
+        <details>
+          <summary>O que é o Instituto Cassiciacum?</summary>
+          <p>Um <i lang="la">studium</i> (casa de estudos) de formação de professores e gestores cristãos clássicos, nas fontes primárias e no método das primeiras universidades, para que o professor não apenas ensine os clássicos, mas os carregue e os transmita. A mentoria é o seu Grau I.</p>
+        </details>
+        <details>
+          <summary>Preciso trabalhar em uma escola cristã clássica?</summary>
+          <p>Não. A mentoria prepara você para atuar como professor cristão clássico em qualquer escola, sem proselitismo e sem colocar o seu emprego em risco.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo dura?</summary>
+          <p>A mentoria, que é o Grau I, dura 12 meses. Depois dela, há um percurso opcional de mais três graus, independentes e cumulativos. Você decide se e quando continuar.</p>
+        </details>
+        <details>
+          <summary>Sou gestor, não professor. Serve para mim?</summary>
+          <p>Sim. Há um caminho específico para proprietários, diretores e coordenadores pedagógicos, com a mesma formação de base e apoio voltado às decisões institucionais.</p>
+        </details>
+        <details>
+          <summary>Como faço para entrar?</summary>
+          <p>Por uma conversa individual comigo. Nela falamos sobre o seu momento, sobre como a mentoria funciona na prática e sobre o investimento. Fale comigo pelo WhatsApp para marcar.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="vagas">
+    <div class="wrap">
+      <p class="caps">Grupo pequeno</p>
+      <h2>Mudar a mentalidade é mudar a atuação em sala de aula.</h2>
+      <p class="lede">As vagas são abertas para um grupo pequeno, para que o acompanhamento seja de fato pessoal. Vamos conversar sobre o seu momento.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5561984366777?text=Ol%C3%A1%2C%20professor%20Marlon!%20Tenho%20interesse%20na%20Mentoria%20Educador%20Crist%C3%A3o%20Cl%C3%A1ssico." target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/marlonpevidor/" target="_blank" rel="noopener">Instagram @marlonpevidor</a>
+      </div>
+      <p class="contact-line">WhatsApp <span>+55 (61) 98436-6777</span><br>E-mail <span>marlonpevidor@gmail.com</span></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <em>“Porque a boca fala do que está cheio o coração.” Mateus 12:34</em>
+    <span><i lang="la">Nisi Dominus, frustra</i> (sem o Senhor, em vão) · Professor Marlon Pevidor</span>
+  </div>
+</footer>
+
+</body>
+</html>
