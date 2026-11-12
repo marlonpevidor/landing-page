@@ -135,7 +135,8 @@ body {
 .passos li { margin-bottom: 6px; }
 .dica { margin: 0; color: var(--suave); font-size: .9rem; }
 .formulario fieldset { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 20px 24px; margin: 0 0 20px; }
-.formulario legend { font-weight: 700; padding: 0 6px; }
+.formulario legend { float: left; width: 100%; padding: 0; margin: 0 0 16px; font-weight: 700; font-size: 1.1rem; }
+.formulario legend + * { clear: both; }
 .formulario label { display: block; font-weight: 500; margin-bottom: 14px; font-size: .95rem; }
 .formulario small { color: var(--suave); font-weight: 400; }
 .formulario input:not([type=checkbox]), .formulario textarea {
@@ -147,3 +148,12 @@ body {
 .formulario .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-bottom: 20px; }
 .formulario .check input { margin-top: 4px; }
 .botao-grande { display: block; width: 100%; border: 0; font: inherit; font-weight: 600; font-size: 1.05rem; padding: 14px; cursor: pointer; }
+
+/* ---------- Exemplos fictícios ---------- */
+.cartao-exemplo { border-style: dashed; }
+.aviso-exemplo {
+  margin: 0 0 12px; padding: 6px 10px; border-radius: 8px;
+  background: #fff4d6; color: #7a5600; border: 1px solid #f0d58a;
+  font-size: .8rem; font-weight: 600; text-align: center;
+}
+.sem-contato { margin: 0; flex: 1; text-align: center; color: var(--suave); font-size: .85rem; padding: 10px; border: 1px dashed var(--borda); border-radius: 10px; }

@@ -14,16 +14,19 @@
      filtros juntem tudo certinho.
    - pastor: nome de quem deu a referência (aparece no site).
    - referenciaEm: mês/ano em que a referência foi confirmada.
+   - exemplo: true marca um negócio FICTÍCIO (aparece o aviso
+     "Exemplo fictício"). Nos cadastros reais, não use esta linha.
+     Quando entrarem os cadastros reais, apague os exemplos.
 
    ATENÇÃO: este arquivo fica público. NÃO coloque aqui o telefone
    do pastor nem a mensagem de referência — guarde isso só com você.
 */
 
 const CONFIG = {
-  titulo: "Guia de Negócios dos Irmãos",
-  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência do seu pastor.",
+  titulo: "Guia de Negócios da Igreja",
+  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência de seu pastor.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
-  whatsappResponsavel: "5511999999999",
+  whatsappResponsavel: "5561984366777",
 };
 
 const NEGOCIOS = [
@@ -33,10 +36,11 @@ const NEGOCIOS = [
     categoria: "Papelaria",
     descricao: "Cadernos, material escolar, impressões, cópias e encadernação.",
     local: "Centro — Rua das Flores, 120",
-    whatsapp: "5511999990001",
-    instagram: "papelariapaodavida",
+    whatsapp: "",
+    instagram: "",
     igreja: "Igreja Batista Esperança",
     pastor: "Pr. Antônio Silva",
+    exemplo: true,
     referenciaEm: "11/2026",
   },
   {
@@ -45,10 +49,11 @@ const NEGOCIOS = [
     categoria: "Montagem de Móveis",
     descricao: "Montagem e desmontagem de guarda-roupas, cozinhas, camas e escritórios. Atendo em domicílio.",
     local: "Atende toda a cidade",
-    whatsapp: "5511999990002",
+    whatsapp: "",
     instagram: "",
     igreja: "Assembleia de Deus Ministério Vida",
     pastor: "Pr. Marcos Almeida",
+    exemplo: true,
     referenciaEm: "11/2026",
   },
   {
@@ -57,10 +62,11 @@ const NEGOCIOS = [
     categoria: "Mercado",
     descricao: "Hortifruti, padaria, frios e mercearia. Fazemos entrega no bairro.",
     local: "Jardim América",
-    whatsapp: "5511999990003",
-    instagram: "mercadinhobompastor",
+    whatsapp: "",
+    instagram: "",
     igreja: "Igreja Batista Esperança",
     pastor: "Pr. Antônio Silva",
+    exemplo: true,
     referenciaEm: "10/2026",
   },
   {
@@ -69,10 +75,11 @@ const NEGOCIOS = [
     categoria: "Alimentação",
     descricao: "Bolos de aniversário, docinhos e salgados para festas. Encomendas com 3 dias de antecedência.",
     local: "Vila Nova",
-    whatsapp: "5511999990004",
-    instagram: "docesdaana",
+    whatsapp: "",
+    instagram: "",
     igreja: "Igreja Presbiteriana Central",
     pastor: "Rev. Paulo Mendes",
+    exemplo: true,
     referenciaEm: "11/2026",
   },
   {
@@ -81,10 +88,11 @@ const NEGOCIOS = [
     categoria: "Reformas e Manutenção",
     descricao: "Instalações elétricas, troca de chuveiro, quadro de luz e pequenos reparos.",
     local: "Atende toda a cidade",
-    whatsapp: "5511999990005",
+    whatsapp: "",
     instagram: "",
     igreja: "Assembleia de Deus Ministério Vida",
     pastor: "Pr. Marcos Almeida",
+    exemplo: true,
     referenciaEm: "09/2026",
   },
   {
@@ -93,10 +101,11 @@ const NEGOCIOS = [
     categoria: "Beleza",
     descricao: "Corte, escova, manicure e design de sobrancelhas.",
     local: "Centro",
-    whatsapp: "5511999990006",
-    instagram: "studiograca",
+    whatsapp: "",
+    instagram: "",
     igreja: "Comunidade Evangélica Renovo",
     pastor: "Pra. Débora Costa",
+    exemplo: true,
     referenciaEm: "11/2026",
   },
 ];

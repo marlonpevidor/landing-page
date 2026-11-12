@@ -22,7 +22,7 @@
       <h2>Como funciona</h2>
       <ol>
         <li>Você preenche o formulário e envia pelo WhatsApp.</li>
-        <li>Nós entramos em contato <strong>diretamente com o seu pastor</strong> para confirmar que você é membro da igreja e tem bom testemunho.</li>
+        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong> para confirmar que você é membro da igreja e tem bom testemunho.</li>
         <li>Confirmada a referência, seu negócio entra no guia.</li>
       </ol>
       <p class="dica">Avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
@@ -44,10 +44,10 @@
         <legend>Referência pastoral</legend>
         <label>Nome da sua igreja *<input name="igreja" required></label>
         <label>Cidade / bairro da igreja *<input name="cidadeIgreja" required></label>
-        <label>Nome do seu pastor ou pastora *<input name="pastor" required></label>
+        <label>Nome do seu pastor *<input name="pastor" required></label>
         <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" required></label>
         <label>Instagram ou site da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
-        <label>Há quanto tempo você é membro? *<input name="tempoMembro" required></label>
+        <label>Há quantos anos você é membro? * <small>(coloque 0 se for menos de 1 ano)</small><input name="tempoMembro" type="number" min="0" max="100" inputmode="numeric" required></label>
       </fieldset>
 
       <label class="check">
@@ -80,7 +80,7 @@
         "*Pastor(a):* " + d.pastor,
         "*Telefone do pastor:* " + d.telefonePastor,
         "*Rede/site da igreja:* " + (d.redeIgreja || "—"),
-        "*Membro há:* " + d.tempoMembro,
+        "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
         "✓ Autorizo a publicação e o contato com meu pastor.",
       ].join("\n");

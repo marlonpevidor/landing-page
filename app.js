@@ -48,7 +48,8 @@
   }
 
   function cartao(n) {
-    const c = el("article", "cartao");
+    const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
+    if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
     c.appendChild(el("span", "etiqueta", n.categoria));
     c.appendChild(el("h2", null, n.nome));
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
@@ -78,6 +79,7 @@
       a.target = "_blank"; a.rel = "noopener";
       acoes.appendChild(a);
     }
+    if (n.exemplo && !acoes.children.length) acoes.appendChild(el("p", "sem-contato", "Sem contato — empresa fictícia"));
     c.appendChild(acoes);
     return c;
   }
