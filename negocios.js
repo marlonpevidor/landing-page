@@ -24,12 +24,26 @@
 
 const CONFIG = {
   titulo: "Guia de Negócios da Igreja",
-  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência de seu pastor.",
+  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
 };
 
 const NEGOCIOS = [
+  {
+    nome: "DECC — Davi Educação Cristã Clássica",
+    responsavel: "Marlon Pevidor",
+    categoria: "Educação",
+    descricao: "Mentoria individual de carreira em Educação Cristã Clássica e consultoria para abertura de escolas ou transição de escolas cristãs para cristãs clássicas.",
+    local: "Taguatinga, DF",
+    whatsapp: "5561984366777",
+    instagram: "marlonpevidor",
+    igreja: "Igreja Batista Central de Taguatinga",
+    pastor: "Pr. Matheus Guimarães Guerra Gama",
+    referenciaEm: "11/2026",
+  },
+
+  /* ----- EXEMPLOS FICTÍCIOS (apagar quando houver mais cadastros reais) ----- */
   {
     nome: "Papelaria Pão da Vida",
     responsavel: "Irmã Maria Souza",

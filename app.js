@@ -89,7 +89,7 @@
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
       .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.igreja, n.pastor].join(" ")).includes(termo))
-      .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
+      .sort((a, b) => (!!a.exemplo - !!b.exemplo) || a.nome.localeCompare(b.nome, "pt-BR"));
 
     const grade = $("grade");
     grade.innerHTML = "";
