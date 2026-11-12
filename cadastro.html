@@ -84,7 +84,11 @@
         "",
         "✓ Autorizo a publicação e o contato com meu pastor.",
       ].join("\n");
-      window.open("https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg), "_blank");
+      const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg);
+      // Guarda o link para a página de confirmação poder reenviar, se preciso
+      try { sessionStorage.setItem("linkCadastro", link); } catch (erro) {}
+      window.open(link, "_blank");
+      window.location.href = "cadastro-enviado.html";
     });
   </script>
 </body>

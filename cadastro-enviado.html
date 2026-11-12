@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro Enviado</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo topo-curto">
+    <div class="container">
+      <a class="voltar" href="index.html">← Voltar ao guia</a>
+      <div class="icone-ok" aria-hidden="true">✓</div>
+      <h1>Cadastro enviado!</h1>
+      <p class="subtitulo">Obrigado por querer fazer parte do guia. Recebemos seus dados pelo WhatsApp.</p>
+    </div>
+  </header>
+
+  <main class="container estreito">
+    <section class="passos">
+      <h2>E agora?</h2>
+      <ol class="etapas">
+        <li class="feito"><strong>Cadastro enviado</strong><br>Seus dados chegaram ao responsável pelo guia.</li>
+        <li><strong>Confirmação com seu pastor</strong><br>Vamos entrar em contato com seu pastor para confirmar a referência.</li>
+        <li><strong>Publicação no guia</strong><br>Confirmada a referência, seu negócio aparece no site.</li>
+      </ol>
+      <p class="prazo">⏳ O prazo costuma ser de <strong>até 72 horas</strong>, dependendo do retorno do pastor.</p>
+      <p class="dica">Dica: avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
+    </section>
+
+    <section class="passos reenviar" id="reenviar" hidden>
+      <h2>O WhatsApp não abriu?</h2>
+      <p>Se a conversa não abriu ou você não apertou <strong>enviar</strong> no WhatsApp, seu cadastro ainda não chegou até nós. Clique abaixo para tentar de novo:</p>
+      <a class="botao botao-whats" id="btnReenviar" target="_blank" rel="noopener">Enviar cadastro pelo WhatsApp</a>
+    </section>
+
+    <a class="botao botao-azul botao-grande" href="index.html">Voltar ao guia</a>
+  </main>
+
+  <script>
+    try {
+      const link = sessionStorage.getItem("linkCadastro");
+      if (link) {
+        document.getElementById("btnReenviar").href = link;
+        document.getElementById("reenviar").hidden = false;
+      }
+    } catch (erro) {}
+  </script>
+</body>
+</html>
