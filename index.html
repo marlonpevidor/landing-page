@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guia de Negócios da Igreja</title>
+  <meta name="description" content="Serviços, comércios e empresas dos membros da nossa igreja.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container">
+      <p class="igreja" id="nomeIgreja"></p>
+      <h1 id="titulo"></h1>
+      <p class="subtitulo" id="subtitulo"></p>
+      <a class="botao botao-claro" id="btnCadastro" target="_blank" rel="noopener">Quero cadastrar meu negócio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="busca">
+      <input type="search" id="campoBusca" placeholder="O que você procura? Ex.: caderno, bolo, eletricista…" aria-label="Buscar">
+    </div>
+    <div class="filtros" id="filtros" role="group" aria-label="Categorias"></div>
+    <p class="contador" id="contador"></p>
+    <section class="grade" id="grade"></section>
+    <p class="vazio" id="vazio" hidden>Nenhum negócio encontrado. Tente outra palavra ou categoria.</p>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Feito com carinho para fortalecer a nossa comunidade.</p>
+    </div>
+  </footer>
+
+  <script src="negocios.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
