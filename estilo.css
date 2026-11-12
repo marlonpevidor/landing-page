@@ -25,7 +25,7 @@ body {
   padding: 56px 0 64px;
   text-align: center;
 }
-.igreja { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; opacity: .8; }
+
 .topo h1 { margin: 0 0 12px; font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.15; }
 .subtitulo { max-width: 620px; margin: 0 auto 24px; opacity: .9; }
 
@@ -97,3 +97,53 @@ body {
 
 .vazio { text-align: center; color: var(--suave); padding: 40px 0; }
 .rodape { border-top: 1px solid var(--borda); color: var(--suave); text-align: center; font-size: .9rem; padding: 24px 0; }
+
+/* ---------- Referência pastoral ---------- */
+.selo-topo { margin: 0 auto 20px; font-size: .9rem; font-weight: 500; background: rgba(255,255,255,.12); display: block; width: fit-content; padding: 6px 14px; border-radius: 999px; }
+.linha-filtros { margin-top: 16px; }
+.filtro-igreja { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--suave); }
+.filtro-igreja select {
+  font: inherit; color: var(--texto);
+  padding: 8px 12px; border-radius: 10px;
+  border: 1px solid var(--borda); background: var(--cartao);
+  max-width: 100%; flex: 1; min-width: 0;
+}
+@media (min-width: 640px) { .filtro-igreja select { flex: none; min-width: 280px; } }
+.referencia {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #f1f7f2; border: 1px solid #d5e8d9;
+  border-radius: 10px; padding: 10px 12px; margin: 0 0 16px;
+  font-size: .85rem;
+}
+.referencia-icone {
+  flex: none; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--whats); color: #fff; font-weight: 700;
+  display: grid; place-items: center; font-size: .8rem;
+}
+.referencia strong { display: block; }
+.referencia span:not(.referencia-icone) { color: var(--suave); }
+.rodape a { color: var(--primaria); font-weight: 600; }
+.rodape p { max-width: 720px; margin: 0 auto 8px; }
+
+/* ---------- Página de cadastro ---------- */
+.topo-curto { padding: 32px 0 40px; }
+.voltar { color: #fff; opacity: .85; text-decoration: none; font-size: .9rem; display: inline-block; margin-bottom: 12px; }
+.estreito { max-width: 680px; padding-top: 24px; padding-bottom: 48px; }
+.passos { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 20px 24px; margin-bottom: 24px; }
+.passos h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.passos ol { margin: 0 0 8px; padding-left: 20px; }
+.passos li { margin-bottom: 6px; }
+.dica { margin: 0; color: var(--suave); font-size: .9rem; }
+.formulario fieldset { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 20px 24px; margin: 0 0 20px; }
+.formulario legend { font-weight: 700; padding: 0 6px; }
+.formulario label { display: block; font-weight: 500; margin-bottom: 14px; font-size: .95rem; }
+.formulario small { color: var(--suave); font-weight: 400; }
+.formulario input:not([type=checkbox]), .formulario textarea {
+  display: block; width: 100%; margin-top: 6px;
+  font: inherit; padding: 10px 12px;
+  border: 1px solid var(--borda); border-radius: 10px; background: #fff;
+}
+.formulario input:focus, .formulario textarea:focus { outline: 2px solid var(--primaria); outline-offset: -1px; }
+.formulario .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-bottom: 20px; }
+.formulario .check input { margin-top: 4px; }
+.botao-grande { display: block; width: 100%; border: 0; font: inherit; font-weight: 600; font-size: 1.05rem; padding: 14px; cursor: pointer; }

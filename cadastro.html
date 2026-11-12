@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastrar Negócio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo topo-curto">
+    <div class="container">
+      <a class="voltar" href="index.html">← Voltar ao guia</a>
+      <h1>Cadastre seu negócio</h1>
+      <p class="subtitulo">Preencha os dados abaixo. Ao enviar, abrirá o WhatsApp com tudo pronto para mandar ao responsável pelo guia.</p>
+    </div>
+  </header>
+
+  <main class="container estreito">
+    <section class="passos">
+      <h2>Como funciona</h2>
+      <ol>
+        <li>Você preenche o formulário e envia pelo WhatsApp.</li>
+        <li>Nós entramos em contato <strong>diretamente com o seu pastor</strong> para confirmar que você é membro da igreja e tem bom testemunho.</li>
+        <li>Confirmada a referência, seu negócio entra no guia.</li>
+      </ol>
+      <p class="dica">Avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
+    </section>
+
+    <form id="formCadastro" class="formulario">
+      <fieldset>
+        <legend>Seu negócio</legend>
+        <label>Nome do negócio *<input name="nome" required></label>
+        <label>Seu nome *<input name="responsavel" required></label>
+        <label>Categoria * <small>(ex.: Papelaria, Mercado, Montagem de Móveis)</small><input name="categoria" required></label>
+        <label>O que você vende ou faz? *<textarea name="descricao" rows="3" required></textarea></label>
+        <label>Bairro / cidade ou região que atende *<input name="local" required></label>
+        <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" required></label>
+        <label>Instagram <small>(opcional)</small><input name="instagram" placeholder="@seuperfil"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Referência pastoral</legend>
+        <label>Nome da sua igreja *<input name="igreja" required></label>
+        <label>Cidade / bairro da igreja *<input name="cidadeIgreja" required></label>
+        <label>Nome do seu pastor ou pastora *<input name="pastor" required></label>
+        <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" required></label>
+        <label>Instagram ou site da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
+        <label>Há quanto tempo você é membro? *<input name="tempoMembro" required></label>
+      </fieldset>
+
+      <label class="check">
+        <input type="checkbox" name="autorizo" required>
+        <span>Autorizo que os dados do meu negócio sejam publicados no guia e que o responsável entre em contato com meu pastor para confirmar a referência.</span>
+      </label>
+
+      <button type="submit" class="botao botao-whats botao-grande">Enviar pelo WhatsApp</button>
+    </form>
+  </main>
+
+  <script src="negocios.js"></script>
+  <script>
+    document.getElementById("formCadastro").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(this));
+      const msg = [
+        "*NOVO CADASTRO — " + CONFIG.titulo + "*",
+        "",
+        "*Negócio:* " + d.nome,
+        "*Responsável:* " + d.responsavel,
+        "*Categoria:* " + d.categoria,
+        "*Descrição:* " + d.descricao,
+        "*Local:* " + d.local,
+        "*WhatsApp:* " + d.whatsapp,
+        "*Instagram:* " + (d.instagram || "—"),
+        "",
+        "*REFERÊNCIA PASTORAL*",
+        "*Igreja:* " + d.igreja + " (" + d.cidadeIgreja + ")",
+        "*Pastor(a):* " + d.pastor,
+        "*Telefone do pastor:* " + d.telefonePastor,
+        "*Rede/site da igreja:* " + (d.redeIgreja || "—"),
+        "*Membro há:* " + d.tempoMembro,
+        "",
+        "✓ Autorizo a publicação e o contato com meu pastor.",
+      ].join("\n");
+      window.open("https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg), "_blank");
+    });
+  </script>
+</body>
+</html>

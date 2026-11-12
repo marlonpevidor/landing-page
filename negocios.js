@@ -2,21 +2,27 @@
    ARQUIVO DE DADOS — É SÓ ESTE ARQUIVO QUE VOCÊ PRECISA EDITAR
    =========================================================
 
-   Para adicionar um novo negócio, copie um bloco { ... } da lista
-   abaixo, cole no final (antes do "]") e troque os dados.
+   Só adicione um negócio DEPOIS de confirmar a referência com o pastor.
+
+   Para adicionar, copie um bloco { ... } da lista abaixo, cole no
+   final (antes do "]") e troque os dados.
 
    - whatsapp: só números, com 55 + DDD + número. Ex.: "5511987654321"
-   - instagram: só o @ da pessoa, sem o "@". Ex.: "papelariadamaria"
+   - instagram: só o nome do perfil, sem o "@". Ex.: "papelariadamaria"
    - Se a pessoa não tiver algum contato, deixe "" (vazio).
-   - categoria: use sempre o MESMO nome para negócios do mesmo tipo
-     (o site cria os botões de filtro automaticamente).
+   - categoria e igreja: escreva sempre do MESMO jeito para que os
+     filtros juntem tudo certinho.
+   - pastor: nome de quem deu a referência (aparece no site).
+   - referenciaEm: mês/ano em que a referência foi confirmada.
+
+   ATENÇÃO: este arquivo fica público. NÃO coloque aqui o telefone
+   do pastor nem a mensagem de referência — guarde isso só com você.
 */
 
 const CONFIG = {
-  nomeIgreja: "Igreja Exemplo",
-  titulo: "Guia de Negócios da Igreja",
-  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Encontre aqui os serviços, comércios e empresas da nossa comunidade.",
-  // WhatsApp de quem organiza o guia (para quem quiser se cadastrar)
+  titulo: "Guia de Negócios dos Irmãos",
+  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência do seu pastor.",
+  // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5511999999999",
 };
 
@@ -29,6 +35,9 @@ const NEGOCIOS = [
     local: "Centro — Rua das Flores, 120",
     whatsapp: "5511999990001",
     instagram: "papelariapaodavida",
+    igreja: "Igreja Batista Esperança",
+    pastor: "Pr. Antônio Silva",
+    referenciaEm: "11/2026",
   },
   {
     nome: "Montagem de Móveis do João",
@@ -38,6 +47,9 @@ const NEGOCIOS = [
     local: "Atende toda a cidade",
     whatsapp: "5511999990002",
     instagram: "",
+    igreja: "Assembleia de Deus Ministério Vida",
+    pastor: "Pr. Marcos Almeida",
+    referenciaEm: "11/2026",
   },
   {
     nome: "Mercadinho Bom Pastor",
@@ -47,6 +59,9 @@ const NEGOCIOS = [
     local: "Jardim América",
     whatsapp: "5511999990003",
     instagram: "mercadinhobompastor",
+    igreja: "Igreja Batista Esperança",
+    pastor: "Pr. Antônio Silva",
+    referenciaEm: "10/2026",
   },
   {
     nome: "Doces da Ana",
@@ -56,6 +71,9 @@ const NEGOCIOS = [
     local: "Vila Nova",
     whatsapp: "5511999990004",
     instagram: "docesdaana",
+    igreja: "Igreja Presbiteriana Central",
+    pastor: "Rev. Paulo Mendes",
+    referenciaEm: "11/2026",
   },
   {
     nome: "Elétrica Luz do Mundo",
@@ -65,6 +83,9 @@ const NEGOCIOS = [
     local: "Atende toda a cidade",
     whatsapp: "5511999990005",
     instagram: "",
+    igreja: "Assembleia de Deus Ministério Vida",
+    pastor: "Pr. Marcos Almeida",
+    referenciaEm: "09/2026",
   },
   {
     nome: "Studio Graça Beleza",
@@ -74,5 +95,8 @@ const NEGOCIOS = [
     local: "Centro",
     whatsapp: "5511999990006",
     instagram: "studiograca",
+    igreja: "Comunidade Evangélica Renovo",
+    pastor: "Pra. Débora Costa",
+    referenciaEm: "11/2026",
   },
 ];

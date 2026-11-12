@@ -1,40 +1,44 @@
 (function () {
   const $ = (id) => document.getElementById(id);
   let categoriaAtual = "Todos";
+  const TODAS = "Todas as igrejas";
 
-  // Textos do topo
-  document.title = CONFIG.titulo + " — " + CONFIG.nomeIgreja;
-  $("nomeIgreja").textContent = CONFIG.nomeIgreja;
+  document.title = CONFIG.titulo;
   $("titulo").textContent = CONFIG.titulo;
   $("subtitulo").textContent = CONFIG.subtitulo;
-  $("btnCadastro").href = linkWhatsApp(
-    CONFIG.whatsappResponsavel,
-    "Olá! Vi o " + CONFIG.titulo + " e quero cadastrar meu negócio."
-  );
 
   function linkWhatsApp(numero, mensagem) {
-    const n = String(numero).replace(/\D/g, "");
-    return "https://wa.me/" + n + "?text=" + encodeURIComponent(mensagem);
+    return "https://wa.me/" + String(numero).replace(/\D/g, "") + "?text=" + encodeURIComponent(mensagem);
   }
-
-  function normalizar(texto) {
-    return (texto || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  function normalizar(t) {
+    return (t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
-
   function el(tag, classe, texto) {
     const e = document.createElement(tag);
     if (classe) e.className = classe;
     if (texto) e.textContent = texto;
     return e;
   }
+  const ordenar = (lista) => [...new Set(lista.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
-  // Categorias (geradas automaticamente a partir dos dados)
-  const categorias = ["Todos", ...new Set(NEGOCIOS.map((n) => n.categoria).sort((a, b) => a.localeCompare(b, "pt-BR")))];
+  // Filtro de igreja (gerado a partir dos dados)
+  const select = $("filtroIgreja");
+  [TODAS, ...ordenar(NEGOCIOS.map((n) => n.igreja))].forEach((ig) => {
+    const o = el("option", null, ig);
+    o.value = ig;
+    select.appendChild(o);
+  });
+  select.addEventListener("change", () => { categoriaAtual = "Todos"; desenharFiltros(); desenharLista(); });
 
+  function negociosDaIgreja() {
+    return select.value === TODAS ? NEGOCIOS : NEGOCIOS.filter((n) => n.igreja === select.value);
+  }
+
+  // Categorias (só as que existem na igreja selecionada)
   function desenharFiltros() {
     const box = $("filtros");
     box.innerHTML = "";
-    categorias.forEach((cat) => {
+    ["Todos", ...ordenar(negociosDaIgreja().map((n) => n.categoria))].forEach((cat) => {
       const b = el("button", "chip" + (cat === categoriaAtual ? " ativo" : ""), cat);
       b.type = "button";
       b.setAttribute("aria-pressed", cat === categoriaAtual);
@@ -50,6 +54,16 @@
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     if (n.local) c.appendChild(el("p", "local", "📍 " + n.local));
+
+    if (n.igreja || n.pastor) {
+      const ref = el("div", "referencia");
+      ref.appendChild(el("span", "referencia-icone", "✓"));
+      const txt = el("div");
+      txt.appendChild(el("strong", null, n.igreja || ""));
+      if (n.pastor) txt.appendChild(el("span", null, "Referência: " + n.pastor + (n.referenciaEm ? " · " + n.referenciaEm : "")));
+      ref.appendChild(txt);
+      c.appendChild(ref);
+    }
 
     const acoes = el("div", "acoes");
     if (n.whatsapp) {
@@ -70,16 +84,18 @@
 
   function desenharLista() {
     const termo = normalizar($("campoBusca").value.trim());
-    const lista = NEGOCIOS
+    const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
-      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local].join(" ")).includes(termo))
+      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.igreja, n.pastor].join(" ")).includes(termo))
       .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
 
     const grade = $("grade");
     grade.innerHTML = "";
     lista.forEach((n) => grade.appendChild(cartao(n)));
     $("vazio").hidden = lista.length > 0;
-    $("contador").textContent = lista.length + (lista.length === 1 ? " negócio encontrado" : " negócios encontrados");
+    const igrejas = new Set(lista.map((n) => n.igreja)).size;
+    $("contador").textContent = lista.length + (lista.length === 1 ? " negócio" : " negócios") +
+      " de " + igrejas + (igrejas === 1 ? " igreja" : " igrejas");
   }
 
   $("campoBusca").addEventListener("input", desenharLista);
