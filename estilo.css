@@ -122,7 +122,7 @@ body {
   border: 1px solid var(--borda); background: var(--cartao);
   max-width: 100%; flex: 1; min-width: 0;
 }
-@media (min-width: 640px) { .filtro-igreja select { flex: none; width: 340px; } }
+
 .referencia {
   display: flex; gap: 10px; align-items: flex-start;
   background: #f1f7f2; border: 1px solid #d5e8d9;
@@ -290,6 +290,7 @@ a.botao-grande { text-align: center; }
 .referencia-grade .ref-pastor { grid-column: 2; }
 
 /* ---------- Igreja e Região lado a lado no computador ---------- */
-@media (min-width: 900px) {
-  .linha-filtros { grid-template-columns: auto auto; justify-content: center; column-gap: 32px; }
+@media (min-width: 640px) {
+  .linha-filtros { grid-template-columns: repeat(2, minmax(0, 406px)); justify-content: center; column-gap: 24px; }
+  .filtro-igreja select { flex: 1; width: auto; min-width: 0; }
 }
