@@ -115,7 +115,7 @@ body {
 .selo-topo { margin: 0 auto 20px; font-size: .9rem; font-weight: 500; background: rgba(255,255,255,.12); display: block; width: fit-content; padding: 6px 14px; border-radius: 999px; }
 .linha-filtros { margin-top: 16px; display: grid; gap: 10px; }
 .filtro-igreja { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--suave); }
-.filtro-igreja span { width: 56px; flex: none; }
+.filtro-igreja span { width: 64px; flex: none; text-align: right; }
 .filtro-igreja select {
   font: inherit; color: var(--texto);
   padding: 8px 12px; border-radius: 10px;
