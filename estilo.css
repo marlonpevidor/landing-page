@@ -354,3 +354,7 @@ a.botao-grande { text-align: center; }
 .texto-legal li { margin-bottom: 6px; }
 .texto-legal a:not(.botao) { color: var(--primaria); font-weight: 600; }
 .formulario .check a { color: var(--primaria); }
+
+/* ---------- Contador de caracteres da descrição ---------- */
+.contador-texto { display: block; text-align: right; font-size: .8rem; font-weight: 400; color: var(--suave); opacity: .8; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.contador-texto.perto { color: #a33; opacity: 1; }

@@ -48,7 +48,9 @@
         <label>Nome do negócio *<input name="nome" required></label>
         <label>Seu nome *<input name="responsavel" required></label>
         <label>Categoria * <small>(ex.: Papelaria, Mercado, Montagem de Móveis)</small><input name="categoria" required></label>
-        <label>O que você vende ou faz? *<textarea name="descricao" rows="3" required></textarea></label>
+        <label>O que você faz ou vende? * <small>(resuma em poucas palavras)</small>
+          <textarea name="descricao" rows="3" maxlength="200" required aria-describedby="contadorDescricao"></textarea>
+          <span class="contador-texto" id="contadorDescricao">0/200</span></label>
         <div class="bloco-endereco">
           <p class="explica-endereco"><strong>Endereço</strong> <small>(opcional)</small><br>
             <small>Preencha apenas se você atende em local fixo, como loja ou escritório. Assim, o cartão ganha um <em>link</em> para o mapa. <strong>Se atende em domicílio, deixe em branco</strong> e não coloque o endereço de sua casa.</small></p>
@@ -90,6 +92,16 @@
 
   <script src="negocios.js"></script>
   <script>
+    // Contador de caracteres da descrição
+    const campoDescricao = document.querySelector('[name="descricao"]');
+    const contadorDescricao = document.getElementById("contadorDescricao");
+    const contar = () => {
+      contadorDescricao.textContent = campoDescricao.value.length + "/200";
+      contadorDescricao.classList.toggle("perto", campoDescricao.value.length >= 180);
+    };
+    campoDescricao.addEventListener("input", contar);
+    contar();
+
     // Busca o endereço pelo CEP (ViaCEP) e preenche rua, bairro, cidade e estado
     const campoCep = document.querySelector('[name="cep"]');
     campoCep.addEventListener("input", async () => {
