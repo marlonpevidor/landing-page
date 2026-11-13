@@ -26,7 +26,7 @@
 
 const CONFIG = {
   titulo: "Guia de Negócios da Igreja",
-  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
+  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão em Cristo. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
   // Canal do WhatsApp (1 aviso por semana com os novos cadastros)
