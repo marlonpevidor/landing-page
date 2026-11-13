@@ -161,8 +161,8 @@
       c.appendChild(el("span", "convite-icone", "+"));
       c.appendChild(el("h2", null, "Seu negócio aqui"));
       c.appendChild(el("p", "descricao", categoriaAtual === "Todos"
-        ? "Você vende algo ou presta algum serviço? Cadastre-se de graça e seja um dos primeiros do guia."
-        : "Você também trabalha com " + categoriaAtual + "? Cadastre-se de graça e apareça aqui."));
+        ? "Você vende algo ou presta algum serviço? Cadastre-se gratuitamente e seja um dos primeiros do guia."
+        : "Você também trabalha com " + categoriaAtual + "? Cadastre-se gratuitamente e apareça aqui."));
       c.appendChild(el("span", "botao botao-azul", "Quero cadastrar meu negócio"));
       grade.appendChild(c);
     }
