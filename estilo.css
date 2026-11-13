@@ -277,3 +277,6 @@ a.botao-grande { text-align: center; }
 .passos .botao-grande, .acompanhar .botao-grande { border: 0; cursor: pointer; text-align: center; }
 .dica-solta { text-align: center; margin: -8px 0 24px; }
 .passos + .passos { margin-top: 0; }
+
+/* ---------- Botão "Voltar ao guia" no topo ---------- */
+.botao-voltar-topo { display: inline-block; margin-bottom: 20px; padding: 10px 20px; font-size: .95rem; }
