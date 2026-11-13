@@ -262,3 +262,5 @@ a.botao-grande { text-align: center; }
 /* ---------- Botão de cadastro no rodapé ---------- */
 .rodape-acao { margin-top: 20px !important; }
 .rodape a.botao-rodape { color: #fff; display: inline-block; flex: none; padding: 12px 22px; }
+
+.canal span b { font-weight: 700; opacity: 1; color: #fff; }
