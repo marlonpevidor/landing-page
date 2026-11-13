@@ -291,5 +291,5 @@ a.botao-grande { text-align: center; }
 
 /* ---------- Igreja e Região lado a lado no computador ---------- */
 @media (min-width: 900px) {
-  .linha-filtros { grid-template-columns: auto auto; justify-content: start; column-gap: 32px; }
+  .linha-filtros { grid-template-columns: auto auto; justify-content: center; column-gap: 32px; }
 }
