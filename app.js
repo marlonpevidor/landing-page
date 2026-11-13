@@ -44,7 +44,7 @@
     grupo.label = uf;
     opcao(grupo, "Todo o " + uf, "UF|" + uf);
     ordenar(NEGOCIOS.filter((n) => n.estado === uf).map((n) => n.cidade))
-      .forEach((cid) => opcao(grupo, cid, "CID|" + uf + "|" + cid));
+      .forEach((cid) => opcao(grupo, cid + " - " + uf, "CID|" + uf + "|" + cid));
     selRegiao.appendChild(grupo);
   });
 
@@ -89,6 +89,14 @@
     });
   }
 
+  // Bairro + cidade/UF, para "Centro" nunca aparecer sem dizer de onde
+  function textoLocal(n) {
+    const cidadeUF = n.cidade ? n.cidade + (n.estado ? "/" + n.estado : "") : "";
+    if (!n.local) return cidadeUF;
+    if (!cidadeUF || normalizar(n.local).includes(normalizar(n.cidade))) return n.local;
+    return n.local + " — " + cidadeUF;
+  }
+
   function cartao(n) {
     const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
     if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
@@ -96,7 +104,8 @@
     c.appendChild(el("h2", null, n.nome));
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
-    if (n.local) c.appendChild(el("p", "local", "📍 " + n.local));
+    const onde = textoLocal(n);
+    if (onde) c.appendChild(el("p", "local", "📍 " + onde));
 
     if (n.igreja || n.pastor) {
       const ref = el("div", "referencia");
