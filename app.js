@@ -137,7 +137,7 @@
       const ref = el("div", "referencia referencia-grade");
       const nomeCompleto = (n.responsavel || "").trim();
       if (nomeCompleto && n.igreja) {
-        const frase = (n.tratamento ? "O " + n.tratamento + " " : "") + nomeCompleto + " congrega " + (n.preposicaoIgreja || "em");
+        const frase = (n.tratamento ? (n.tratamento === "irmã" ? "A " : "O ") + n.tratamento + " " : "") + nomeCompleto + " congrega " + (n.preposicaoIgreja || "em");
         ref.appendChild(el("span", "congrega", frase));
       }
       ref.appendChild(el("span", "referencia-icone", "✓"));
