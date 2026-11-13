@@ -12,6 +12,8 @@
    - Se a pessoa não tiver algum contato, deixe "" (vazio).
    - categoria e igreja: escreva sempre do MESMO jeito para que os
      filtros juntem tudo certinho.
+   - cidade e estado: usados no filtro "Região". Estado sempre com a
+     sigla (DF, GO, SP...). Escreva a cidade sempre do mesmo jeito.
    - pastor: nome de quem deu a referência (aparece no site).
    - referenciaEm: mês/ano em que a referência foi confirmada.
    - exemplo: true marca um negócio FICTÍCIO (aparece o aviso
@@ -51,6 +53,8 @@ const NEGOCIOS = [
     categoria: "Educação",
     descricao: "Mentoria individual de carreira em Educação Cristã Clássica e consultoria para abertura de escolas ou transição de escolas cristãs para cristãs clássicas.",
     local: "Taguatinga, DF",
+    cidade: "Taguatinga",
+    estado: "DF",
     whatsapp: "5561984366777",
     instagram: "marlonpevidor",
     igreja: "Igreja Batista Central de Taguatinga",

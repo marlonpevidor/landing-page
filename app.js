@@ -26,20 +26,53 @@
   }
   const ordenar = (lista) => [...new Set(lista.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
-  // Filtro de igreja (gerado a partir dos dados)
+  // Filtros de igreja e região (montados sozinhos a partir dos dados)
   const select = $("filtroIgreja");
-  [TODAS, ...ordenar(NEGOCIOS.map((n) => n.igreja))].forEach((ig) => {
-    const o = el("option", null, ig);
-    o.value = ig;
-    select.appendChild(o);
-  });
-  select.addEventListener("change", () => { categoriaAtual = "Todos"; desenharFiltros(); desenharLista(); });
+  const selRegiao = $("filtroRegiao");
+  const TODO_BRASIL = "";
 
-  function negociosDaIgreja() {
-    return select.value === TODAS ? NEGOCIOS : NEGOCIOS.filter((n) => n.igreja === select.value);
+  function opcao(pai, texto, valor) {
+    const o = el("option", null, texto);
+    o.value = valor;
+    pai.appendChild(o);
   }
 
-  // Categorias (só as que existem na igreja selecionada)
+  // Região: "Todo o Brasil", depois cada estado com suas cidades
+  opcao(selRegiao, "Todo o Brasil", TODO_BRASIL);
+  ordenar(NEGOCIOS.map((n) => n.estado)).forEach((uf) => {
+    const grupo = document.createElement("optgroup");
+    grupo.label = uf;
+    opcao(grupo, "Todo o " + uf, "UF|" + uf);
+    ordenar(NEGOCIOS.filter((n) => n.estado === uf).map((n) => n.cidade))
+      .forEach((cid) => opcao(grupo, cid, "CID|" + uf + "|" + cid));
+    selRegiao.appendChild(grupo);
+  });
+
+  function naRegiao(n) {
+    const [tipo, uf, cid] = selRegiao.value.split("|");
+    if (!selRegiao.value) return true;
+    if (tipo === "UF") return n.estado === uf;
+    return n.estado === uf && n.cidade === cid;
+  }
+
+  // Igreja: só as igrejas que têm negócios na região escolhida
+  function montarIgrejas() {
+    const atual = select.value;
+    select.innerHTML = "";
+    const igrejas = ordenar(NEGOCIOS.filter(naRegiao).map((n) => n.igreja));
+    [TODAS, ...igrejas].forEach((ig) => opcao(select, ig, ig));
+    select.value = igrejas.includes(atual) ? atual : TODAS;
+  }
+  montarIgrejas();
+
+  select.addEventListener("change", () => { categoriaAtual = "Todos"; desenharFiltros(); desenharLista(); });
+  selRegiao.addEventListener("change", () => { categoriaAtual = "Todos"; montarIgrejas(); desenharFiltros(); desenharLista(); });
+
+  function negociosDaIgreja() {
+    return NEGOCIOS.filter(naRegiao).filter((n) => select.value === TODAS || n.igreja === select.value);
+  }
+
+  // Categorias (só as que existem na região e igreja selecionadas)
   function desenharFiltros() {
     const box = $("filtros");
     box.innerHTML = "";
@@ -100,7 +133,7 @@
     $("limparBusca").hidden = !$("campoBusca").value;
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
-      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.igreja, n.pastor].join(" ")).includes(termo))
+      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, n.igreja, n.pastor].join(" ")).includes(termo))
       .sort((a, b) => (!!a.exemplo - !!b.exemplo) || a.nome.localeCompare(b.nome, "pt-BR"));
 
     const grade = $("grade");
@@ -132,7 +165,8 @@
   busca.addEventListener("keydown", (e) => { if (e.key === "Enter") busca.blur(); });
   $("limparBusca").addEventListener("click", () => { busca.value = ""; desenharLista(); });
   $("verTodos").addEventListener("click", () => {
-    busca.value = ""; categoriaAtual = "Todos"; $("filtroIgreja").value = TODAS;
+    busca.value = ""; categoriaAtual = "Todos"; selRegiao.value = TODO_BRASIL;
+    montarIgrejas(); select.value = TODAS;
     desenharFiltros(); desenharLista();
   });
   desenharFiltros();
