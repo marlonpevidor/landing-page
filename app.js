@@ -101,6 +101,17 @@
     const grade = $("grade");
     grade.innerHTML = "";
     lista.forEach((n) => grade.appendChild(cartao(n)));
+
+    // Cartão-convite no fim da lista completa: incentiva novos cadastros
+    if (!termo && categoriaAtual === "Todos" && select.value === TODAS) {
+      const c = el("a", "cartao cartao-convite");
+      c.href = "cadastro.html";
+      c.appendChild(el("span", "convite-icone", "+"));
+      c.appendChild(el("h2", null, "Seu negócio aqui"));
+      c.appendChild(el("p", "descricao", "Você vende algo ou presta algum serviço? Cadastre-se de graça e seja um dos primeiros do guia."));
+      c.appendChild(el("span", "botao botao-azul", "Quero cadastrar meu negócio"));
+      grade.appendChild(c);
+    }
     $("vazio").hidden = lista.length > 0;
     const igrejas = new Set(lista.map((n) => n.igreja)).size;
     $("contador").textContent = lista.length + (lista.length === 1 ? " negócio" : " negócios") +

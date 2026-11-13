@@ -216,3 +216,19 @@ a.botao-grande { text-align: center; }
   padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; resize: none;
   margin-bottom: 12px; word-break: break-all;
 }
+
+/* ---------- Cartão-convite ---------- */
+.cartao-convite {
+  border: 2px dashed var(--primaria); background: #f3f6fb;
+  text-decoration: none; color: var(--texto);
+  align-items: center; justify-content: center; text-align: center;
+}
+.cartao-convite:hover { background: #e8eef8; }
+.convite-icone {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--primaria); color: #fff;
+  font-size: 1.8rem; font-weight: 600; line-height: 1;
+  display: grid; place-items: center;
+}
+.cartao-convite .descricao { color: var(--suave); margin-bottom: 16px; }
+.cartao-convite .botao { flex: none; }
