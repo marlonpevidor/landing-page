@@ -7,7 +7,7 @@
    Para adicionar, copie um bloco { ... } da lista abaixo, cole no
    final (antes do "]") e troque os dados.
 
-   - whatsapp: só números, com 55 + DDD + número. Ex.: "5511987654321"
+   - whatsapp: só números, com 55 + DDD + número. Ex.: "5561999999999"
    - instagram: só o nome do perfil, sem o "@". Ex.: "papelariadamaria"
    - Se a pessoa não tiver algum contato, deixe "" (vazio).
    - categoria e igreja: escreva sempre do MESMO jeito para que os
