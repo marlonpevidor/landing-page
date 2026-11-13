@@ -21,6 +21,9 @@
      montam a frase "O irmão Marlon congrega na" acima da igreja.
      Sem eles, aparece "Marlon congrega em".
    - pastor: nome de quem deu a referência (aparece no site).
+   - fixado: true deixa o negócio sempre em primeiro, com o ícone de alfinete.
+   - Ordem no site: fixados primeiro; depois, do cadastro mais recente
+     (o último desta lista) para o mais antigo. Sempre acrescente no fim.
    - referenciaEm: mês/ano em que a referência foi confirmada.
    - exemplo: true marca um negócio FICTÍCIO (aparece o aviso
      "Exemplo fictício"). Nos cadastros reais, não use esta linha.
@@ -62,6 +65,7 @@ function registrarClique(nome) {
 
 const NEGOCIOS = [
   {
+    fixado: true,
     nome: "DECC — Davi Educação Cristã Clássica",
     responsavel: "Marlon Pevidor",
     categoria: "Educação",

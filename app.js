@@ -111,7 +111,16 @@
   function cartao(n) {
     const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
     if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
-    c.appendChild(el("span", "etiqueta", n.categoria));
+    const topoCartao = el("div", "topo-cartao");
+    topoCartao.appendChild(el("span", "etiqueta", n.categoria));
+    if (n.fixado) {
+      const pino = el("span", "fixado");
+      pino.title = "Fixado";
+      pino.setAttribute("aria-label", "Fixado");
+      pino.innerHTML = '<svg viewBox="0 -960 960 960" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="m648.7-462.7 86 77v79.79H519.61v239.3L480-27l-39.61-39.61v-239.3H225.87v-79.79l80-77v-322.26h-50v-79.22H698.7v79.22h-50v322.26Z"/></svg>';
+      topoCartao.appendChild(pino);
+    }
+    c.appendChild(topoCartao);
     c.appendChild(el("h2", null, n.nome));
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
@@ -172,7 +181,8 @@
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
       .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, n.igreja, n.pastor].join(" ")).includes(termo))
-      .sort((a, b) => (!!a.exemplo - !!b.exemplo) || a.nome.localeCompare(b.nome, "pt-BR"));
+      // Ordem: fixados primeiro; depois o cadastro mais recente (fim da lista em negocios.js) primeiro
+      .sort((a, b) => (!!b.fixado - !!a.fixado) || (NEGOCIOS.indexOf(b) - NEGOCIOS.indexOf(a)));
 
     const grade = $("grade");
     grade.innerHTML = "";

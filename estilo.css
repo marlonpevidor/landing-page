@@ -303,3 +303,8 @@ a.botao-grande { text-align: center; }
 .explica-endereco { margin: 0 0 12px; line-height: 1.45; }
 .aviso-cep { margin: -8px 0 12px; color: #a33; font-size: .85rem; }
 .link-mapa { color: var(--primaria); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Linha da categoria e ícone de fixado ---------- */
+.topo-cartao { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.topo-cartao .etiqueta { align-self: auto; }
+.fixado { display: inline-flex; color: var(--primaria); transform: rotate(35deg); }
