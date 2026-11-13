@@ -6,6 +6,9 @@
   document.title = CONFIG.titulo;
   $("titulo").textContent = CONFIG.titulo;
   $("subtitulo").textContent = CONFIG.subtitulo;
+  $("linkRemover").href = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" +
+    encodeURIComponent("Olá! Gostaria de corrigir ou remover meu cadastro no " + CONFIG.titulo + ".");
+
   if (CONFIG.canalWhatsApp) {
     $("linkCanal").href = CONFIG.canalWhatsApp;
     $("linkCanal").hidden = false;

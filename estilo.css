@@ -342,3 +342,15 @@ a.botao-grande { text-align: center; }
 .pontos button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--borda); cursor: pointer; }
 .pontos button.ativo { background: var(--primaria); }
 .pontos:empty { display: none; }
+
+/* ---------- Rodapé: links ---------- */
+.rodape .rodape-links { font-size: .85rem; margin-top: 16px !important; }
+.rodape .rodape-links a { font-weight: 500; }
+/* ---------- Página de privacidade ---------- */
+.texto-legal .passos h2 { font-size: 1.05rem; }
+.texto-legal .passos p { margin: 0 0 10px; }
+.texto-legal .passos p:last-child { margin-bottom: 0; }
+.texto-legal ul { margin: 0 0 10px; padding-left: 20px; }
+.texto-legal li { margin-bottom: 6px; }
+.texto-legal a:not(.botao) { color: var(--primaria); font-weight: 600; }
+.formulario .check a { color: var(--primaria); }

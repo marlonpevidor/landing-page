@@ -4,6 +4,8 @@ Site estático (HTML + CSS + JavaScript, sem instalar nada) que lista os serviç
 comércios e empresas de irmãos de várias igrejas. Todo cadastro tem referência
 confirmada com o pastor da pessoa.
 
+Veja também o **MANUAL.md** (rotina de cadastro, publicação, planilha, canal e LGPD).
+
 ## Arquivos
 - `negocios.js`: **os dados**. É o único arquivo que precisa ser editado no dia a dia.
 - `index.html`: o guia (busca, filtro por igreja e por categoria, botões de WhatsApp e Instagram).
