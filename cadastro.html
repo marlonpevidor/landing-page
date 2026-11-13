@@ -52,7 +52,7 @@
           <label>Estado *<select name="estado" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
         </div>
         <label>Bairro ou região que atende * <small>(ex.: Centro, Asa Norte, atende toda a cidade)</small><input name="local" required></label>
-        <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 98765-4321" required></label>
+        <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram <small>(opcional)</small><input name="instagram" placeholder="@seuperfil"></label>
       </fieldset>
 
@@ -61,7 +61,7 @@
         <label>Nome da sua igreja *<input name="igreja" required></label>
         <label>Cidade / bairro da igreja *<input name="cidadeIgreja" required></label>
         <label>Nome do seu pastor *<input name="pastor" required></label>
-        <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 98765-4321" required></label>
+        <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram ou site da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
         <label>Há quantos anos você é membro? * <small>(coloque 0 se for menos de 1 ano)</small><input name="tempoMembro" type="number" min="0" max="100" inputmode="numeric" required></label>
       </fieldset>
@@ -87,7 +87,7 @@
         const campo = this.elements[nome];
         const digitos = campo.value.replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, "");
         if (digitos.length < 10 || digitos.length > 11) {
-          campo.setCustomValidity("Digite o número com DDD, por exemplo (61) 98765-4321.");
+          campo.setCustomValidity("Digite o número com DDD, por exemplo (61) 99999-9999.");
           campo.reportValidity();
           return;
         }

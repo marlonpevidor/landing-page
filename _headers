@@ -1,0 +1,4 @@
+# Configuração do Netlify: faz o navegador sempre conferir se há versão nova
+# das páginas e arquivos do site (evita mostrar uma cópia antiga guardada).
+/*
+  Cache-Control: no-cache
