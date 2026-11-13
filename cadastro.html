@@ -159,8 +159,29 @@
         "",
         "*Código de acompanhamento:* " + codigo,
         linkAcompanhar,
-      ].join("\n");
-      const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg);
+      ];
+
+      // Link pronto para enviar o formulário ao pastor (abre a conversa com ele, com a mensagem escrita)
+      if (CONFIG.formularioPastor) {
+        const preencher = (txt) => encodeURIComponent(txt.trim()).replace(/%20/g, "+");
+        const linkForm = CONFIG.formularioPastor
+          .replace("=IRMAO", "=" + preencher(d.responsavel))
+          .replace("=PASTOR", "=" + preencher(d.pastor))
+          .replace("=IGREJA", "=" + preencher(d.igreja));
+        const pastor = d.pastor.trim().replace(/^(pr|pra|pastor|pastora|rev)\.?\s+/i, "");
+        const fone = d.telefonePastor.replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, "");
+        const msgPastor = "A paz, pastor " + pastor + "! Sou " + CONFIG.nomeResponsavel + ", do " + CONFIG.titulo + ". " +
+          d.responsavel.trim() + " pediu para cadastrar seu negócio no guia e indicou o senhor como referência (com autorização para este contato). " +
+          "Pode responder 6 perguntinhas de clicar? Leva menos de 1 minuto: " + linkForm +
+          "\n\nAs respostas ficam só comigo e não aparecem no site. Deus abençoe!";
+        msg.push(
+          "",
+          "*ENVIAR AO PASTOR* (confira antes se o número é mesmo dele):",
+          "https://wa.me/55" + fone + "?text=" + encodeURIComponent(msgPastor)
+        );
+      }
+      const textoFinal = msg.join("\n");
+      const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(textoFinal);
       // Guarda o link para a página de confirmação poder reenviar, se preciso
       try {
         sessionStorage.setItem("linkCadastro", link);

@@ -46,6 +46,12 @@ const CONFIG = {
   // Enquanto estiver vazio, a página de acompanhamento mostra só a etapa 1.
   planilhaAndamento: "https://docs.google.com/spreadsheets/d/1RkOVeutxmQbFa44LY12k7AkYhmQuHSsPblbh0YZJDU0/gviz/tq?tqx=out:csv",
 
+  // Quem assina a mensagem enviada ao pastor
+  nomeResponsavel: "Marlon",
+  // Formulário de referência do pastor (link pré-preenchido do Google Forms;
+  // IRMAO, PASTOR e IGREJA são trocados pelos dados de cada cadastro)
+  formularioPastor: "https://docs.google.com/forms/d/e/1FAIpQLSfNbKPUKw_ReS4m2MAaRpkyXAHCq-mOUdq3tEPMZjaYVvWWjg/viewform?usp=pp_url&entry.911691460=IRMAO&entry.1140995583=PASTOR&entry.1955880514=IGREJA",
+
   // Canal do WhatsApp (1 aviso por semana com os novos cadastros)
   canalWhatsApp: "https://whatsapp.com/channel/0029Vb9X1p384OmL2EIjET2W",
 
