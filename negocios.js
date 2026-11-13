@@ -55,6 +55,7 @@ const CONFIG = {
     nome: "Marlon Pevidor Meira", // nome do recebedor (até 25 letras)
     cidade: "Brasília",          // cidade do recebedor (até 15 letras)
     valores: [10, 20, 50],       // valores dos botões, em reais
+    maisEscolhido: null,         // ex.: 20 → botão azul com "valor mais escolhido" (null = sem destaque)
   },
 };
 

@@ -37,6 +37,12 @@
       "6304";
     return corpo + crc16(corpo);
   }
+  function el(tag, classe, texto) {
+    const e = document.createElement(tag);
+    if (classe) e.className = classe;
+    if (texto) e.textContent = texto;
+    return e;
+  }
   const reais = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   function mostrar(valor, botaoAtivo) {
@@ -59,6 +65,10 @@
   CONFIG.pix.valores.forEach((v) => {
     const b = document.createElement("button");
     b.type = "button"; b.className = "valor"; b.textContent = "R$ " + v;
+    if (v === CONFIG.pix.maisEscolhido) {
+      b.classList.add("destaque");
+      b.appendChild(el("small", null, "valor mais escolhido"));
+    }
     b.onclick = () => { $("caixaOutro").hidden = true; mostrar(v, b); };
     box.appendChild(b);
   });
