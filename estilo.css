@@ -313,3 +313,15 @@ a.botao-grande { text-align: center; }
 .valor.destaque { background: var(--primaria); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.15; }
 .valor.destaque small { font-size: .7rem; font-weight: 500; opacity: .9; margin-top: 2px; }
 .valor.destaque.ativo, .valor.destaque:hover { background: var(--primaria-escura); }
+
+/* ---------- Testemunhos ---------- */
+.testemunhos { padding: 8px 0 40px; }
+.testemunhos h2 { text-align: center; font-size: 1.25rem; margin: 0 0 20px; }
+.lista-testemunhos { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.testemunho {
+  margin: 0; flex: 1 1 280px; max-width: 420px;
+  background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px;
+  padding: 24px 24px 20px; text-align: center;
+}
+.testemunho blockquote { margin: 0 0 12px; font-size: 1.1rem; font-style: italic; line-height: 1.5; color: var(--texto); }
+.testemunho figcaption { color: var(--suave); font-size: .9rem; font-weight: 500; }

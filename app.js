@@ -217,6 +217,18 @@
     montarIgrejas(); select.value = TODAS;
     desenharFiltros(); desenharLista();
   });
+  // Testemunhos (some sozinho se a lista estiver vazia)
+  if (typeof TESTEMUNHOS !== "undefined" && TESTEMUNHOS.length) {
+    const lista = $("listaTestemunhos");
+    TESTEMUNHOS.forEach((t) => {
+      const f = el("figure", "testemunho");
+      f.appendChild(el("blockquote", null, "“" + t.texto + "”"));
+      f.appendChild(el("figcaption", null, "— " + t.nome + (t.detalhe ? ", " + t.detalhe : "")));
+      lista.appendChild(f);
+    });
+    $("testemunhos").hidden = false;
+  }
+
   desenharFiltros();
   desenharLista();
 })();

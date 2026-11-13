@@ -99,3 +99,14 @@ const NEGOCIOS = [
     referenciaEm: "11/2026",
   },
 ];
+
+/* =========================================================
+   TESTEMUNHOS — só publique com a autorização da pessoa
+   (guarde a autorização no WhatsApp).
+   ========================================================= */
+const TESTEMUNHOS = [
+  {
+    texto: "Que excelente iniciativa! De muito valor!",
+    nome: "Luísa Jesus",
+  },
+];
