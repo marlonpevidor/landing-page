@@ -38,7 +38,7 @@ const CONFIG = {
   // Planilha do andamento dos cadastros (Google Planilhas publicada como CSV).
   // Colunas: codigo | etapa (2 = pedido ao pastor, 3 = pastor respondeu, 4 = publicado).
   // Enquanto estiver vazio, a página de acompanhamento mostra só a etapa 1.
-  planilhaAndamento: "",
+  planilhaAndamento: "https://docs.google.com/spreadsheets/d/1RkOVeutxmQbFa44LY12k7AkYhmQuHSsPblbh0YZJDU0/gviz/tq?tqx=out:csv",
 
   // Canal do WhatsApp (1 aviso por semana com os novos cadastros)
   canalWhatsApp: "https://whatsapp.com/channel/0029Vb9X1p384OmL2EIjET2W",
