@@ -12,6 +12,9 @@
    - Se a pessoa não tiver algum contato, deixe "" (vazio).
    - categoria e igreja: escreva sempre do MESMO jeito para que os
      filtros juntem tudo certinho.
+   - endereco (opcional): só para quem atende em local fixo, ex.:
+     "Rua das Flores, 120, Loja 2 - Centro". Com ele, a cidade no cartão
+     vira link para o mapa. Nunca coloque endereço residencial.
    - cidade e estado: usados no filtro "Região". Estado sempre com a
      sigla (DF, GO, SP...). Escreva a cidade sempre do mesmo jeito.
    - tratamento ("irmão" ou "irmã") e preposicaoIgreja ("na" ou "no"):

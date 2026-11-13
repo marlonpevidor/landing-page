@@ -49,6 +49,17 @@
         <label>Seu nome *<input name="responsavel" required></label>
         <label>Categoria * <small>(ex.: Papelaria, Mercado, Montagem de Móveis)</small><input name="categoria" required></label>
         <label>O que você vende ou faz? *<textarea name="descricao" rows="3" required></textarea></label>
+        <div class="bloco-endereco">
+          <p class="explica-endereco"><strong>Endereço</strong> <small>(opcional)</small><br>
+            <small>Preencha só se você atende num local fixo, como loja ou escritório. Assim o cartão ganha um link para o mapa. <strong>Se atende em domicílio, deixe em branco</strong> e não coloque o endereço da sua casa.</small></p>
+          <label>CEP <small>(o endereço é preenchido sozinho)</small><input name="cep" inputmode="numeric" placeholder="00000-000" maxlength="9"></label>
+          <p class="aviso-cep" id="avisoCep" hidden></p>
+          <div class="linha-campos">
+            <label>Rua / avenida<input name="rua"></label>
+            <label>Número<input name="numero" inputmode="numeric"></label>
+          </div>
+          <label>Complemento <small>(ex.: Loja 2, Sala 305)</small><input name="complemento"></label>
+        </div>
         <div class="linha-campos">
           <label>Cidade *<input name="cidade" required></label>
           <label>Estado *<select name="estado" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
@@ -79,6 +90,29 @@
 
   <script src="negocios.js"></script>
   <script>
+    // Busca o endereço pelo CEP (ViaCEP) e preenche rua, bairro, cidade e estado
+    const campoCep = document.querySelector('[name="cep"]');
+    campoCep.addEventListener("input", async () => {
+      const cep = campoCep.value.replace(/\D/g, "");
+      if (cep.length > 5) campoCep.value = cep.slice(0, 5) + "-" + cep.slice(5, 8);
+      const aviso = document.getElementById("avisoCep");
+      aviso.hidden = true;
+      if (cep.length !== 8) return;
+      try {
+        const r = await (await fetch("https://viacep.com.br/ws/" + cep + "/json/")).json();
+        if (r.erro) { aviso.textContent = "CEP não encontrado. Confira o número ou preencha o endereço à mão."; aviso.hidden = false; return; }
+        const f = (n) => document.querySelector('[name="' + n + '"]');
+        if (r.logradouro) f("rua").value = r.logradouro;
+        if (r.bairro && !f("local").value) f("local").value = r.bairro;
+        if (r.localidade) f("cidade").value = r.localidade;
+        if (r.uf) f("estado").value = r.uf;
+        f("numero").focus();
+      } catch (e) {
+        aviso.textContent = "Não foi possível buscar o CEP agora. Preencha o endereço à mão.";
+        aviso.hidden = false;
+      }
+    });
+
     for (const nome of ["whatsapp", "telefonePastor"]) {
       document.querySelector('[name="' + nome + '"]').addEventListener("input", (ev) => ev.target.setCustomValidity(""));
     }
@@ -110,6 +144,7 @@
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
         "*Bairro/região:* " + d.local,
+        "*Endereço:* " + (d.rua ? d.rua + (d.numero ? ", " + d.numero : "") + (d.complemento ? " - " + d.complemento : "") + (d.cep ? " (CEP " + d.cep + ")" : "") : "—"),
         "*WhatsApp:* " + d.whatsapp,
         "*Instagram:* " + (d.instagram || "—"),
         "",

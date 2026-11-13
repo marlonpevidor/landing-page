@@ -297,3 +297,9 @@ a.botao-grande { text-align: center; }
 
 .rodape .credito { font-size: .75rem; margin-top: 12px !important; }
 .rodape .credito a { font-weight: 400; color: var(--suave); }
+
+/* ---------- Endereço no cadastro e link para o mapa ---------- */
+.bloco-endereco { border-top: 1px dashed var(--borda); border-bottom: 1px dashed var(--borda); padding: 14px 0 2px; margin: 4px 0 14px; }
+.explica-endereco { margin: 0 0 12px; line-height: 1.45; }
+.aviso-cep { margin: -8px 0 12px; color: #a33; font-size: .85rem; }
+.link-mapa { color: var(--primaria); text-decoration: underline; text-underline-offset: 2px; }

@@ -37,12 +37,23 @@
     pai.appendChild(o);
   }
 
+  // Como escrever "todo o estado" com o português correto
+  const TODO_ESTADO = {
+    AC: "Todo o Acre", AL: "Todo o estado de Alagoas", AP: "Todo o Amapá", AM: "Todo o Amazonas",
+    BA: "Toda a Bahia", CE: "Todo o Ceará", DF: "Todo o DF", ES: "Todo o Espírito Santo",
+    GO: "Todo Goiás", MA: "Todo o Maranhão", MT: "Todo o Mato Grosso", MS: "Todo o Mato Grosso do Sul",
+    MG: "Toda Minas Gerais", PA: "Todo o Pará", PB: "Toda a Paraíba", PR: "Todo o Paraná",
+    PE: "Todo Pernambuco", PI: "Todo o Piauí", RJ: "Todo o estado do Rio de Janeiro", RN: "Todo o Rio Grande do Norte",
+    RS: "Todo o Rio Grande do Sul", RO: "Toda Rondônia", RR: "Todo o estado de Roraima", SC: "Toda Santa Catarina",
+    SP: "Todo o estado de São Paulo", SE: "Todo Sergipe", TO: "Todo o Tocantins",
+  };
+
   // Região: "Todo o Brasil", depois cada estado com suas cidades
   opcao(selRegiao, "Todo o Brasil", TODO_BRASIL);
   ordenar(NEGOCIOS.map((n) => n.estado)).forEach((uf) => {
     const grupo = document.createElement("optgroup");
     grupo.label = uf;
-    opcao(grupo, "Todo o " + uf, "UF|" + uf);
+    opcao(grupo, TODO_ESTADO[uf] || "Todo o " + uf, "UF|" + uf);
     ordenar(NEGOCIOS.filter((n) => n.estado === uf).map((n) => n.cidade))
       .forEach((cid) => opcao(grupo, cid + ", " + uf, "CID|" + uf + "|" + cid));
     selRegiao.appendChild(grupo);
@@ -105,14 +116,28 @@
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
-    if (onde) c.appendChild(el("p", "local", "📍 " + onde));
+    if (onde) {
+      const p = el("p", "local", "📍 ");
+      if (n.endereco) {
+        const a = el("a", "link-mapa", onde);
+        a.href = "https://www.google.com/maps/search/?api=1&query=" +
+          encodeURIComponent([n.endereco, n.cidade, n.estado].filter(Boolean).join(", "));
+        a.target = "_blank"; a.rel = "noopener";
+        a.title = "Ver no mapa: " + n.endereco;
+        a.addEventListener("click", () => registrarClique("Mapa: " + n.nome));
+        p.appendChild(a);
+      } else {
+        p.appendChild(document.createTextNode(onde));
+      }
+      c.appendChild(p);
+    }
 
     if (n.igreja || n.pastor) {
       // ✓ alinhado com a igreja; "O irmão Marlon congrega na" e a referência alinhados com o nome da igreja
       const ref = el("div", "referencia referencia-grade");
-      const primeiroNome = (n.responsavel || "").trim().split(/\s+/)[0];
-      if (primeiroNome && n.igreja) {
-        const frase = (n.tratamento ? "O " + n.tratamento + " " : "") + primeiroNome + " congrega " + (n.preposicaoIgreja || "em");
+      const nomeCompleto = (n.responsavel || "").trim();
+      if (nomeCompleto && n.igreja) {
+        const frase = (n.tratamento ? "O " + n.tratamento + " " : "") + nomeCompleto + " congrega " + (n.preposicaoIgreja || "em");
         ref.appendChild(el("span", "congrega", frase));
       }
       ref.appendChild(el("span", "referencia-icone", "✓"));
@@ -162,7 +187,7 @@
       c.appendChild(el("h2", null, "Seu negócio aqui"));
       c.appendChild(el("p", "descricao", categoriaAtual === "Todos"
         ? "Você vende algo ou presta algum serviço? Cadastre-se gratuitamente e seja um dos primeiros do guia."
-        : "Você também trabalha com " + categoriaAtual + "? Cadastre-se gratuitamente e apareça aqui."));
+        : "Você também trabalha com " + categoriaAtual.toLocaleLowerCase("pt-BR") + "? Cadastre-se gratuitamente e apareça aqui."));
       c.appendChild(el("span", "botao botao-azul", "Quero cadastrar meu negócio"));
       grade.appendChild(c);
     }
