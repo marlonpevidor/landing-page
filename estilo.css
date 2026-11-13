@@ -294,3 +294,6 @@ a.botao-grande { text-align: center; }
   .linha-filtros { grid-template-columns: repeat(2, minmax(0, 406px)); justify-content: center; column-gap: 24px; }
   .filtro-igreja select { flex: 1; width: auto; min-width: 0; }
 }
+
+.rodape .credito { font-size: .75rem; margin-top: 12px !important; }
+.rodape .credito a { font-weight: 400; color: var(--suave); }
