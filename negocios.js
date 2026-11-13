@@ -15,7 +15,11 @@
    - endereco (opcional): só para quem atende em local fixo, ex.:
      "Rua das Flores, 120, Loja 2 - Centro". Com ele, a cidade no cartão
      vira link para o mapa. Nunca coloque endereço residencial.
-   - cidade e estado: usados no filtro "Região". Estado sempre com a
+   - cidade e estado: onde fica o negócio (sigla do estado: DF, GO, SP...).
+   - atende: "cidade" (só na cidade), "estado" (todo o estado) ou
+     "brasil" (todo o Brasil, online ou por entrega). Decide em quais
+     regiões o negócio aparece no filtro e o texto do 📍 no cartão.
+   - local (opcional, só para "cidade"): bairros atendidos, ex.: "Centro, Asa Norte". Estado sempre com a
      sigla (DF, GO, SP...). Escreva a cidade sempre do mesmo jeito.
    - tratamento ("irmão" ou "irmã") e preposicaoIgreja ("na" ou "no"):
      montam a frase "O irmão Marlon congrega na" acima da igreja.
@@ -78,7 +82,7 @@ const NEGOCIOS = [
     responsavel: "Marlon Pevidor",
     categoria: "Educação",
     descricao: "Mentoria individual de carreira em Educação Cristã Clássica e consultoria para abertura de escolas ou transição de escolas cristãs para cristãs clássicas.",
-    local: "Taguatinga, DF",
+    atende: "brasil",
     cidade: "Taguatinga",
     estado: "DF",
     whatsapp: "5561984366777",
@@ -94,7 +98,7 @@ const NEGOCIOS = [
     responsavel: "Carol Sá",
     categoria: "Semijoias",
     descricao: "Semijoias de luxo com significado, elegância e propósito: colares, brincos, anéis e pulseiras para usar no dia a dia ou presentear. Atendimento em Brasília.",
-    local: "Atende todo o DF",
+    atende: "estado",
     cidade: "Águas Claras",
     estado: "DF",
     whatsapp: "5561984310004",

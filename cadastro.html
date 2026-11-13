@@ -68,10 +68,16 @@
           <label>Complemento <small>(ex.: Loja 2, Sala 305)</small><input name="complemento"></label>
         </div>
         <div class="linha-campos">
-          <label>Cidade *<input name="cidade" required></label>
+          <label>Cidade * <small>(onde fica o seu negócio)</small><input name="cidade" required></label>
           <label>Estado *<select name="estado" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
         </div>
-        <label>Bairro ou região que atende * <small>(ex.: Centro, Asa Norte, atende toda a cidade)</small><input name="local" required></label>
+        <div class="grupo-opcoes grupo-coluna" role="radiogroup" aria-label="Onde você atende">
+          <span>Onde você atende? *</span>
+          <label><input type="radio" name="atende" value="cidade" required> Só na minha cidade</label>
+          <label><input type="radio" name="atende" value="estado"> Em todo o meu estado</label>
+          <label><input type="radio" name="atende" value="brasil"> Em todo o Brasil (online ou por entrega)</label>
+        </div>
+        <label id="campoBairros" hidden>Bairros que atende <small>(opcional; ex.: Centro, Asa Norte)</small><input name="local"></label>
         <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram <small>(opcional)</small><input name="instagram" placeholder="@seuperfil"></label>
       </fieldset>
@@ -97,6 +103,11 @@
 
   <script src="negocios.js"></script>
   <script>
+    // Bairros só aparecem para quem atende só na cidade
+    document.querySelectorAll('[name="atende"]').forEach((r) => r.addEventListener("change", () => {
+      document.getElementById("campoBairros").hidden = r.value !== "cidade" || !r.checked;
+    }));
+
     // Contador de caracteres da descrição
     const campoDescricao = document.querySelector('[name="descricao"]');
     const contadorDescricao = document.getElementById("contadorDescricao");
@@ -120,7 +131,6 @@
         if (r.erro) { aviso.textContent = "CEP não encontrado. Confira o número ou preencha o endereço à mão."; aviso.hidden = false; return; }
         const f = (n) => document.querySelector('[name="' + n + '"]');
         if (r.logradouro) f("rua").value = r.logradouro;
-        if (r.bairro && !f("local").value) f("local").value = r.bairro;
         if (r.localidade) f("cidade").value = r.localidade;
         if (r.uf) f("estado").value = r.uf;
         f("numero").focus();
@@ -160,7 +170,7 @@
         "*Categoria:* " + d.categoria,
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
-        "*Bairro/região:* " + d.local,
+        "*Atende:* " + ({ cidade: "só na cidade", estado: "todo o estado", brasil: "todo o Brasil (online ou por entrega)" }[d.atende] || "—") + (d.local ? " (" + d.local + ")" : ""),
         "*Endereço:* " + (d.rua ? d.rua + (d.numero ? ", " + d.numero : "") + (d.complemento ? " - " + d.complemento : "") + (d.cep ? " (CEP " + d.cep + ")" : "") : "—"),
         "*WhatsApp:* " + d.whatsapp,
         "*Instagram:* " + (d.instagram || "—"),

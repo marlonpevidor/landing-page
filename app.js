@@ -62,13 +62,15 @@
     selRegiao.appendChild(grupo);
   });
 
+  // A empresa aparece onde ela atende: na cidade, no estado inteiro ou no Brasil inteiro
   function naRegiao(n) {
-    const [tipo, uf, cid] = selRegiao.value.split("|");
     if (!selRegiao.value) return true;
-    if (tipo === "UF") return n.estado === uf;
-    return n.estado === uf && n.cidade === cid;
+    const [tipo, uf, cid] = selRegiao.value.split("|");
+    if (n.atende === "brasil") return true;
+    if (n.estado !== uf) return false;
+    if (tipo === "UF" || n.atende === "estado") return true;
+    return n.cidade === cid;
   }
-
   // Igreja: só as igrejas que têm negócios na região escolhida
   function montarIgrejas() {
     const atual = select.value;
@@ -106,11 +108,13 @@
   // Bairro + cidade/UF, para "Centro" nunca aparecer sem dizer de onde
   function textoLocal(n) {
     const cidadeUF = n.cidade ? n.cidade + (n.estado ? ", " + n.estado : "") : "";
-    if (!n.local) return cidadeUF;
-    if (!cidadeUF || normalizar(n.local).includes(normalizar(n.cidade))) return n.local;
-    return n.local + " — " + cidadeUF;
+    if (n.atende === "brasil") return "Atende todo o Brasil";
+    if (n.atende === "estado" && n.estado) {
+      const t = TODO_ESTADO[n.estado] || "Todo o " + n.estado;
+      return "Atende " + t.charAt(0).toLowerCase() + t.slice(1);
+    }
+    return "Atende em " + cidadeUF + (n.local ? " (" + n.local + ")" : "");
   }
-
   function cartao(n) {
     const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
     if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
@@ -128,19 +132,16 @@
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
-    if (onde) {
-      const p = el("p", "local", "📍 ");
-      if (n.endereco) {
-        const a = el("a", "link-mapa", onde);
-        a.href = "https://www.google.com/maps/search/?api=1&query=" +
-          encodeURIComponent([n.endereco, n.cidade, n.estado].filter(Boolean).join(", "));
-        a.target = "_blank"; a.rel = "noopener";
-        a.title = "Ver no mapa: " + n.endereco;
-        a.addEventListener("click", () => registrarClique("Mapa: " + n.nome));
-        p.appendChild(a);
-      } else {
-        p.appendChild(document.createTextNode(onde));
-      }
+    if (onde) c.appendChild(el("p", "local", "📍 " + onde));
+    if (n.endereco) {
+      const p = el("p", "local local-mapa", "🏬 ");
+      const a = el("a", "link-mapa", "Ver endereço no mapa");
+      a.href = "https://www.google.com/maps/search/?api=1&query=" +
+        encodeURIComponent([n.endereco, n.cidade, n.estado].filter(Boolean).join(", "));
+      a.target = "_blank"; a.rel = "noopener";
+      a.title = n.endereco;
+      a.addEventListener("click", () => registrarClique("Mapa: " + n.nome));
+      p.appendChild(a);
       c.appendChild(p);
     }
 
@@ -183,7 +184,7 @@
     $("limparBusca").hidden = !$("campoBusca").value;
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
-      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, n.igreja, n.pastor].join(" ")).includes(termo))
+      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, textoLocal(n), n.igreja, n.pastor].join(" ")).includes(termo))
       // Ordem: fixados primeiro; depois o cadastro mais recente (fim da lista em negocios.js) primeiro
       .sort((a, b) => (!!b.fixado - !!a.fixado) || (NEGOCIOS.indexOf(b) - NEGOCIOS.indexOf(a)));
 
