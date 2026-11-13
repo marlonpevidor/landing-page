@@ -358,3 +358,7 @@ a.botao-grande { text-align: center; }
 /* ---------- Contador de caracteres da descrição ---------- */
 .contador-texto { display: block; text-align: right; font-size: .8rem; font-weight: 400; color: var(--suave); opacity: .8; margin-top: 4px; font-variant-numeric: tabular-nums; }
 .contador-texto.perto { color: #a33; opacity: 1; }
+
+/* ---------- Irmão / irmã no cadastro ---------- */
+.formulario .grupo-opcoes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: -4px 0 14px; font-weight: 500; font-size: .95rem; }
+.formulario .grupo-opcoes label { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-weight: 400; }

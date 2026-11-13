@@ -47,7 +47,8 @@ const CONFIG = {
   planilhaAndamento: "https://docs.google.com/spreadsheets/d/1RkOVeutxmQbFa44LY12k7AkYhmQuHSsPblbh0YZJDU0/gviz/tq?tqx=out:csv",
 
   // Quem assina a mensagem enviada ao pastor
-  nomeResponsavel: "Marlon",
+  nomeResponsavel: "Marlon Pevidor",
+  igrejaResponsavel: "Igreja Batista Central de Taguatinga",
   // Formulário de referência do pastor (link pré-preenchido do Google Forms;
   // IRMAO, PASTOR e IGREJA são trocados pelos dados de cada cadastro)
   formularioPastor: "https://docs.google.com/forms/d/e/1FAIpQLSfNbKPUKw_ReS4m2MAaRpkyXAHCq-mOUdq3tEPMZjaYVvWWjg/viewform?usp=pp_url&entry.911691460=IRMAO&entry.1140995583=PASTOR&entry.1955880514=IGREJA",

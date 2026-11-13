@@ -47,6 +47,11 @@
         <legend>Seu negócio</legend>
         <label>Nome do negócio *<input name="nome" required></label>
         <label>Seu nome *<input name="responsavel" required></label>
+        <div class="grupo-opcoes" role="radiogroup" aria-label="Você é irmão ou irmã">
+          <span>Você é: *</span>
+          <label><input type="radio" name="tratamento" value="irmão" required> Irmão</label>
+          <label><input type="radio" name="tratamento" value="irmã"> Irmã</label>
+        </div>
         <label>Categoria * <small>(ex.: Papelaria, Mercado, Montagem de Móveis)</small><input name="categoria" required></label>
         <label>O que você faz ou vende? * <small>(resuma em poucas palavras)</small>
           <textarea name="descricao" rows="3" maxlength="200" required aria-describedby="contadorDescricao"></textarea>
@@ -151,7 +156,7 @@
         "*NOVO CADASTRO — " + CONFIG.titulo + "*",
         "",
         "*Negócio:* " + d.nome,
-        "*Responsável:* " + d.responsavel,
+        "*Responsável:* " + d.responsavel + " (" + d.tratamento + ")",
         "*Categoria:* " + d.categoria,
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
@@ -180,12 +185,12 @@
           .replace("=IRMAO", "=" + preencher(d.responsavel))
           .replace("=PASTOR", "=" + preencher(d.pastor))
           .replace("=IGREJA", "=" + preencher(d.igreja));
-        const pastor = d.pastor.trim().replace(/^(pr|pra|pastor|pastora|rev)\.?\s+/i, "");
         const fone = d.telefonePastor.replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, "");
-        const msgPastor = "A paz, pastor " + pastor + "! Sou " + CONFIG.nomeResponsavel + ", do " + CONFIG.titulo + ". " +
-          d.responsavel.trim() + " pediu para cadastrar seu negócio no guia e indicou o senhor como referência (com autorização para este contato). " +
-          "Pode responder 6 perguntinhas de clicar? Leva menos de 1 minuto: " + linkForm +
-          "\n\nAs respostas ficam só comigo e não aparecem no site. Deus abençoe!";
+        const ela = d.tratamento === "irmã";
+        const msgPastor = "A paz do Senhor, pastor! Sou " + CONFIG.nomeResponsavel + ", membro da " + CONFIG.igrejaResponsavel +
+          " e criador do *" + CONFIG.titulo + "*. " + (ela ? "A irmã " : "O irmão ") + d.responsavel.trim() +
+          " pediu para cadastrar o negócio " + (ela ? "dela" : "dele") + " no guia e indicou o senhor como referência (" +
+          (ela ? "ela" : "ele") + " autorizou esse contato). Pode responder 6 perguntinhas de clicar, por gentileza? Leva menos de 1 minuto:\n\n" + linkForm;
         msg.push(
           "",
           "*ENVIAR AO PASTOR* (confira antes se o número é mesmo dele):",
