@@ -6,6 +6,11 @@
   document.title = CONFIG.titulo;
   $("titulo").textContent = CONFIG.titulo;
   $("subtitulo").textContent = CONFIG.subtitulo;
+  if (CONFIG.canalWhatsApp) {
+    $("linkCanal").href = CONFIG.canalWhatsApp;
+    $("linkCanal").hidden = false;
+    $("linkCanal").addEventListener("click", () => registrarClique("Canal do WhatsApp (topo)"));
+  }
 
   function linkWhatsApp(numero, mensagem) {
     return "https://wa.me/" + String(numero).replace(/\D/g, "") + "?text=" + encodeURIComponent(mensagem);

@@ -232,3 +232,15 @@ a.botao-grande { text-align: center; }
 }
 .cartao-convite .descricao { color: var(--suave); margin-bottom: 16px; }
 .cartao-convite .botao { flex: none; }
+
+/* ---------- Canal do WhatsApp ---------- */
+.canal {
+  display: block; width: fit-content; max-width: 100%;
+  margin: 16px auto 0; padding: 10px 18px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.35); color: #fff; text-decoration: none;
+  font-size: .9rem; line-height: 1.4;
+}
+.canal[hidden] { display: none; }
+.canal:hover { background: rgba(255,255,255,.1); }
+.canal strong { display: block; font-size: .95rem; }
+.canal span { opacity: .85; }

@@ -27,6 +27,8 @@ const CONFIG = {
   subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
+  // Canal do WhatsApp (1 aviso por semana com os novos cadastros)
+  canalWhatsApp: "https://whatsapp.com/channel/0029Vb9X1p384OmL2EIjET2W",
 
   // Oferta por Pix (página "Cadastro enviado")
   pix: {
