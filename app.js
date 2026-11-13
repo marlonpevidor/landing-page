@@ -42,7 +42,11 @@
       const b = el("button", "chip" + (cat === categoriaAtual ? " ativo" : ""), cat);
       b.type = "button";
       b.setAttribute("aria-pressed", cat === categoriaAtual);
-      b.onclick = () => { categoriaAtual = cat; desenharFiltros(); desenharLista(); };
+      b.onclick = () => {
+        categoriaAtual = cat;
+        if (cat === "Todos") $("campoBusca").value = ""; // "Todos" também limpa a busca
+        desenharFiltros(); desenharLista();
+      };
       box.appendChild(b);
     });
   }
@@ -86,6 +90,7 @@
 
   function desenharLista() {
     const termo = normalizar($("campoBusca").value.trim());
+    $("limparBusca").hidden = !$("campoBusca").value;
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
       .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.igreja, n.pastor].join(" ")).includes(termo))
@@ -100,7 +105,15 @@
       " de " + igrejas + (igrejas === 1 ? " igreja" : " igrejas");
   }
 
-  $("campoBusca").addEventListener("input", desenharLista);
+  const busca = $("campoBusca");
+  busca.addEventListener("input", desenharLista);
+  // No celular, o "Enter"/"Buscar" fecha o teclado para mostrar os resultados
+  busca.addEventListener("keydown", (e) => { if (e.key === "Enter") busca.blur(); });
+  $("limparBusca").addEventListener("click", () => { busca.value = ""; desenharLista(); });
+  $("verTodos").addEventListener("click", () => {
+    busca.value = ""; categoriaAtual = "Todos"; $("filtroIgreja").value = TODAS;
+    desenharFiltros(); desenharLista();
+  });
   desenharFiltros();
   desenharLista();
 })();

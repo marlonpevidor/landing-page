@@ -21,7 +21,8 @@
 
   <main class="container">
     <div class="busca">
-      <input type="search" id="campoBusca" placeholder="O que você procura? Ex.: caderno, bolo, eletricista…" aria-label="Buscar">
+      <input type="search" id="campoBusca" placeholder="O que você procura? Ex.: caderno, bolo, eletricista…" aria-label="Buscar" enterkeyhint="search">
+      <button type="button" class="limpar-busca" id="limparBusca" aria-label="Limpar busca" hidden>✕</button>
     </div>
     <div class="linha-filtros">
       <label class="filtro-igreja">
@@ -32,7 +33,10 @@
     <div class="filtros" id="filtros" role="group" aria-label="Categorias"></div>
     <p class="contador" id="contador"></p>
     <section class="grade" id="grade"></section>
-    <p class="vazio" id="vazio" hidden>Nenhum negócio encontrado. Tente outra palavra, categoria ou igreja.</p>
+    <div class="vazio" id="vazio" hidden>
+      <p>Nenhum negócio encontrado. Tente outra palavra, categoria ou igreja.</p>
+      <button type="button" class="botao botao-azul" id="verTodos">Ver todos os negócios</button>
+    </div>
   </main>
 
   <footer class="rodape">
