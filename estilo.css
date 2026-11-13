@@ -70,7 +70,7 @@ body {
 
 .contador { color: var(--suave); font-size: .9rem; margin: 8px 0 16px; }
 
-.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding-bottom: 48px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding-bottom: 32px; }
 .cartao {
   background: var(--cartao);
   border: 1px solid var(--borda);
@@ -314,14 +314,31 @@ a.botao-grande { text-align: center; }
 .valor.destaque small { font-size: .7rem; font-weight: 500; opacity: .9; margin-top: 2px; }
 .valor.destaque.ativo, .valor.destaque:hover { background: var(--primaria-escura); }
 
-/* ---------- Testemunhos ---------- */
-.testemunhos { padding: 8px 0 40px; }
-.testemunhos h2 { text-align: center; font-size: 1.25rem; margin: 0 0 20px; }
-.lista-testemunhos { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+/* ---------- Testemunhos (carrossel) ---------- */
+.testemunhos { padding: 0 0 32px; }
+.testemunhos h2 { text-align: center; font-size: 1.25rem; margin: 0 0 16px; }
+.carrossel { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.lista-testemunhos {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  width: 100%; max-width: 460px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.lista-testemunhos::-webkit-scrollbar { display: none; }
 .testemunho {
-  margin: 0; flex: 1 1 280px; max-width: 420px;
+  margin: 0; flex: 0 0 100%; scroll-snap-align: center;
   background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px;
   padding: 24px 24px 20px; text-align: center;
+  display: flex; flex-direction: column; justify-content: center;
 }
 .testemunho blockquote { margin: 0 0 12px; font-size: 1.1rem; font-style: italic; line-height: 1.5; color: var(--texto); }
 .testemunho figcaption { color: var(--suave); font-size: .9rem; font-weight: 500; }
+.seta {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--borda); background: var(--cartao); color: var(--primaria);
+  font: inherit; font-size: 1.3rem; line-height: 1; display: grid; place-items: center;
+}
+.seta:hover { border-color: var(--primaria); }
+.seta:disabled { opacity: .35; cursor: default; }
+.pontos { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.pontos button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--borda); cursor: pointer; }
+.pontos button.ativo { background: var(--primaria); }
+.pontos:empty { display: none; }

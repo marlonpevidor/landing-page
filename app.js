@@ -227,6 +227,31 @@
       lista.appendChild(f);
     });
     $("testemunhos").hidden = false;
+
+    // Carrossel: setas e bolinhas só aparecem quando há mais de um testemunho
+    if (TESTEMUNHOS.length > 1) {
+      const ant = $("setaAnterior"), prox = $("setaProxima"), pontos = $("pontosTestemunhos");
+      ant.hidden = prox.hidden = false;
+      const atual = () => Math.round(lista.scrollLeft / lista.clientWidth);
+      const ir = (i) => lista.scrollTo({ left: i * lista.clientWidth });
+      TESTEMUNHOS.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.setAttribute("aria-label", "Testemunho " + (i + 1));
+        b.onclick = () => ir(i);
+        pontos.appendChild(b);
+      });
+      const marcar = () => {
+        const i = atual();
+        [...pontos.children].forEach((b, j) => b.classList.toggle("ativo", j === i));
+        ant.disabled = i === 0;
+        prox.disabled = i === TESTEMUNHOS.length - 1;
+      };
+      ant.onclick = () => ir(atual() - 1);
+      prox.onclick = () => ir(atual() + 1);
+      lista.addEventListener("scroll", () => requestAnimationFrame(marcar));
+      window.addEventListener("resize", marcar);
+      marcar();
+    }
   }
 
   desenharFiltros();
