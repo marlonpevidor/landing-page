@@ -37,6 +37,11 @@ const CONFIG = {
   },
 };
 
+// Registra um clique no painel do GoatCounter (marlonpevidor.goatcounter.com)
+function registrarClique(nome) {
+  try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: nome, title: nome, event: true }); } catch (e) {}
+}
+
 const NEGOCIOS = [
   {
     nome: "DECC — Davi Educação Cristã Clássica",

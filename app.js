@@ -75,12 +75,14 @@
       const a = el("a", "botao botao-whats", "WhatsApp");
       a.href = linkWhatsApp(n.whatsapp, "Olá, " + (n.responsavel || n.nome) + "! Vi seu contato no " + CONFIG.titulo + " e gostaria de saber mais sobre " + n.nome + ".");
       a.target = "_blank"; a.rel = "noopener";
+      a.addEventListener("click", () => registrarClique("WhatsApp: " + n.nome));
       acoes.appendChild(a);
     }
     if (n.instagram) {
       const a = el("a", "botao botao-insta", "Instagram");
       a.href = "https://instagram.com/" + n.instagram.replace(/^@/, "");
       a.target = "_blank"; a.rel = "noopener";
+      a.addEventListener("click", () => registrarClique("Instagram: " + n.nome));
       acoes.appendChild(a);
     }
     if (n.exemplo && !acoes.children.length) acoes.appendChild(el("p", "sem-contato", "Sem contato — empresa fictícia"));

@@ -50,6 +50,7 @@
     $("qr").innerHTML = qr.createSvgTag({ cellSize: 5, margin: 4, scalable: true });
     $("copiarPix").textContent = "Copiar código Pix";
     $("pixGerado").hidden = false;
+    registrarClique("Pix gerado: " + reais(valor));
     $("pixGerado").scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
@@ -92,5 +93,6 @@
     try { await navigator.clipboard.writeText(t.value); }
     catch (e) { t.select(); document.execCommand("copy"); }
     $("copiarPix").textContent = "✓ Código copiado! Agora cole no app do banco";
+    registrarClique("Pix copiado: " + $("pixValor").textContent);
   };
 })();
