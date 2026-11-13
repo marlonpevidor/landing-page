@@ -27,6 +27,14 @@ const CONFIG = {
   subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
+
+  // Oferta por Pix (página "Cadastro enviado")
+  pix: {
+    chave: "+5561984366777",     // chave Pix (telefone no formato +55 DDD número)
+    nome: "Marlon Pevidor",      // nome do recebedor (até 25 letras)
+    cidade: "Brasilia",          // cidade do recebedor (até 15 letras)
+    valores: [10, 20, 50],       // valores dos botões, em reais
+  },
 };
 
 const NEGOCIOS = [

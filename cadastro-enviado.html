@@ -38,8 +38,31 @@
     </section>
 
     <a class="botao botao-azul botao-grande" href="index.html">Voltar ao guia</a>
+
+    <section class="passos oferta" id="oferta">
+      <h2>Considere ofertar para este ministério</h2>
+      <p class="dica">Sua oferta ajuda a manter o guia no ar e a divulgá-lo para mais igrejas.</p>
+      <div class="valores" id="valores" role="group" aria-label="Valor da oferta"></div>
+      <div class="outro-valor" id="caixaOutro" hidden>
+        <label for="campoOutro">Valor da oferta (R$)</label>
+        <div class="linha-outro">
+          <input id="campoOutro" type="text" inputmode="decimal" placeholder="Ex.: 30,00">
+          <button type="button" class="botao botao-azul" id="gerarOutro">Gerar Pix</button>
+        </div>
+      </div>
+      <div class="pix-gerado" id="pixGerado" hidden>
+        <p class="pix-valor">Oferta de <strong id="pixValor"></strong></p>
+        <div class="qr" id="qr" aria-label="QR Code do Pix"></div>
+        <p class="dica">No celular: toque em <strong>Copiar código Pix</strong>, abra o app do seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o QR Code com o app do banco.</p>
+        <textarea id="pixCodigo" readonly rows="3" aria-label="Código Pix Copia e Cola"></textarea>
+        <button type="button" class="botao botao-whats botao-grande" id="copiarPix">Copiar código Pix</button>
+      </div>
+    </section>
   </main>
 
+  <script src="negocios.js"></script>
+  <script src="qrcode.js"></script>
+  <script src="pix.js"></script>
   <script>
     try {
       const link = sessionStorage.getItem("linkCadastro");

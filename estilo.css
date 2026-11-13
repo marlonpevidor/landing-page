@@ -190,3 +190,29 @@ body {
 .reenviar .botao { display: block; }
 .botao-azul { background: var(--primaria); }
 a.botao-grande { text-align: center; }
+
+/* ---------- Oferta por Pix ---------- */
+.oferta { margin-top: 24px; text-align: center; }
+.oferta .dica { margin-bottom: 16px; }
+.valores { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 520px) { .valores { grid-template-columns: repeat(4, 1fr); } }
+.valor {
+  font: inherit; font-weight: 600; font-size: 1rem;
+  padding: 12px; border-radius: 10px; cursor: pointer;
+  border: 2px solid var(--primaria); background: var(--cartao); color: var(--primaria);
+}
+.valor.ativo, .valor:hover { background: var(--primaria); color: #fff; }
+.outro-valor { margin-top: 16px; text-align: left; }
+.outro-valor label { font-weight: 500; font-size: .95rem; }
+.linha-outro { display: flex; gap: 8px; margin-top: 6px; }
+.linha-outro input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; padding: 10px 12px; border: 1px solid var(--borda); border-radius: 10px; }
+.linha-outro .botao { flex: none; border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+.pix-gerado { margin-top: 20px; border-top: 1px solid var(--borda); padding-top: 16px; }
+.pix-valor { margin: 0 0 12px; font-size: 1.1rem; }
+.qr { width: 220px; max-width: 100%; margin: 0 auto 12px; background: #fff; border-radius: 10px; }
+.qr svg { display: block; width: 100%; height: auto; }
+.pix-gerado textarea {
+  width: 100%; font: .75rem/1.4 ui-monospace, Menlo, monospace; color: var(--suave);
+  padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; resize: none;
+  margin-bottom: 12px; word-break: break-all;
+}

@@ -65,7 +65,7 @@
       ref.appendChild(el("span", "referencia-icone", "✓"));
       const txt = el("div");
       txt.appendChild(el("strong", null, n.igreja || ""));
-      if (n.pastor) txt.appendChild(el("span", null, "Referência: " + n.pastor + (n.referenciaEm ? " · " + n.referenciaEm : "")));
+      if (n.pastor) txt.appendChild(el("span", null, "Referência: " + n.pastor + (n.referenciaEm ? " (" + n.referenciaEm + ")" : "")));
       ref.appendChild(txt);
       c.appendChild(ref);
     }
