@@ -68,6 +68,12 @@
     document.getElementById("formCadastro").addEventListener("submit", function (e) {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(this));
+      // Código de acompanhamento (sem letras parecidas como O/0 e I/1)
+      const letras = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+      const sorteio = new Uint32Array(6);
+      crypto.getRandomValues(sorteio);
+      const codigo = Array.from(sorteio, (n) => letras[n % letras.length]).join("");
+      const linkAcompanhar = CONFIG.siteUrl + "/cadastro-enviado.html#" + codigo;
       const msg = [
         "*NOVO CADASTRO — " + CONFIG.titulo + "*",
         "",
@@ -88,12 +94,20 @@
         "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
         "✓ Autorizo a publicação do meu negócio e que meu pastor responda perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
+        "",
+        "*Código de acompanhamento:* " + codigo,
+        linkAcompanhar,
       ].join("\n");
       const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg);
       // Guarda o link para a página de confirmação poder reenviar, se preciso
-      try { sessionStorage.setItem("linkCadastro", link); } catch (erro) {}
+      try {
+        sessionStorage.setItem("linkCadastro", link);
+        sessionStorage.setItem("dadosAviso", JSON.stringify({
+          codigo: codigo, nome: d.responsavel, negocio: d.nome, pastor: d.pastor, telefonePastor: d.telefonePastor,
+        }));
+      } catch (erro) {}
       window.open(link, "_blank");
-      window.location.href = "cadastro-enviado.html";
+      window.location.href = "cadastro-enviado.html#" + codigo;
     });
   </script>
   <!-- Contagem de visitas e cliques (GoatCounter) -->

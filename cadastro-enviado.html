@@ -14,22 +14,31 @@
     <div class="container">
       <a class="voltar" href="index.html">← Voltar ao guia</a>
       <div class="icone-ok" aria-hidden="true">✓</div>
-      <h1>Cadastro enviado!</h1>
-      <p class="subtitulo">Obrigado por fazer parte do guia. Recebemos seus dados pelo WhatsApp.</p>
+      <h1 id="tituloAndamento">Cadastro enviado!</h1>
+      <p class="subtitulo" id="subtituloAndamento">Obrigado por fazer parte do guia. Acompanhe abaixo o andamento do seu cadastro.</p>
     </div>
   </header>
 
   <main class="container estreito">
     <section class="passos">
-      <h2>E agora?</h2>
-      <ol class="etapas">
-        <li class="feito"><strong>Cadastro enviado</strong><br>Seus dados chegaram ao responsável pelo guia.</li>
-        <li><strong>Confirmação com seu pastor</strong><br>Vamos enviar ao seu pastor um formulário rápido, de poucos cliques, para ele confirmar a referência. As respostas ficam só com o responsável pelo guia e não aparecem no site.</li>
-        <li><strong>Publicação no guia</strong><br>Confirmada a referência, seu negócio aparece no site.</li>
-      </ol>
-      <p class="prazo">⏳ O prazo costuma ser de <strong>até 72 horas</strong>, dependendo do retorno do pastor.</p>
-      <p class="dica">Dica: avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
+      <h2>Andamento do cadastro</h2>
+      <ol class="etapas" id="etapas"></ol>
+      <p class="prazo" id="prazo">⏳ O prazo costuma ser de <strong>até 72 horas</strong>, dependendo do retorno do pastor.</p>
     </section>
+
+    <section class="passos acompanhar" id="acompanhar" hidden>
+      <h2>Guarde este link</h2>
+      <p>Abra este link quando quiser para ver em que etapa está o seu cadastro. Seu código é <strong id="codigoTexto"></strong>.</p>
+      <input id="linkAcompanhar" readonly aria-label="Link de acompanhamento">
+      <button type="button" class="botao botao-azul botao-grande" id="copiarLink">Copiar link de acompanhamento</button>
+    </section>
+
+    <section class="passos" id="avisarPastor" hidden>
+      <h2>Avise seu pastor</h2>
+      <p>Mande uma mensagem rápida ao seu pastor contando que ele vai receber nosso formulário. Assim ele já espera o contato e a confirmação fica mais rápida.</p>
+      <a class="botao botao-whats botao-grande" id="btnAvisarPastor" target="_blank" rel="noopener">Avisar meu pastor pelo WhatsApp</a>
+    </section>
+    <p class="dica dica-solta" id="dicaPastor">Dica: avise seu pastor que entraremos em contato. Assim a confirmação é mais rápida.</p>
 
     <section class="passos reenviar" id="reenviar" hidden>
       <h2>O WhatsApp não abriu?</h2>
@@ -63,15 +72,7 @@
   <script src="negocios.js"></script>
   <script src="qrcode.js"></script>
   <script src="pix.js"></script>
-  <script>
-    try {
-      const link = sessionStorage.getItem("linkCadastro");
-      if (link) {
-        document.getElementById("btnReenviar").href = link;
-        document.getElementById("reenviar").hidden = false;
-      }
-    } catch (erro) {}
-  </script>
+  <script src="andamento.js"></script>
   <!-- Contagem de visitas e cliques (GoatCounter) -->
   <script data-goatcounter="https://marlonpevidor.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

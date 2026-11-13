@@ -264,3 +264,16 @@ a.botao-grande { text-align: center; }
 .rodape a.botao-rodape { color: #fff; display: inline-block; flex: none; padding: 12px 22px; }
 
 .canal span b { font-weight: 700; opacity: 1; color: #fff; }
+
+/* ---------- Acompanhamento do cadastro ---------- */
+.etapas li.atual::before { border-color: var(--primaria); box-shadow: inset 0 0 0 4px var(--cartao), inset 0 0 0 10px var(--primaria); }
+.etapas li.atual strong { color: var(--primaria); }
+.ver-no-guia { display: inline-block; margin-top: 6px; color: var(--primaria); font-weight: 600; }
+.acompanhar p, #avisarPastor p { margin: 0 0 12px; }
+.acompanhar input {
+  width: 100%; font: .85rem ui-monospace, Menlo, monospace; color: var(--suave);
+  padding: 10px 12px; border: 1px solid var(--borda); border-radius: 10px; margin-bottom: 10px; background: #fff;
+}
+.passos .botao-grande, .acompanhar .botao-grande { border: 0; cursor: pointer; text-align: center; }
+.dica-solta { text-align: center; margin: -8px 0 24px; }
+.passos + .passos { margin-top: 0; }

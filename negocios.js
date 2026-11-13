@@ -29,6 +29,14 @@ const CONFIG = {
   subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão em Cristo. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
+  // Endereço oficial do site (usado nos links de acompanhamento)
+  siteUrl: "https://guia-de-negocios-da-igreja.netlify.app",
+
+  // Planilha do andamento dos cadastros (Google Planilhas publicada como CSV).
+  // Colunas: codigo | etapa (2 = pedido ao pastor, 3 = pastor respondeu, 4 = publicado).
+  // Enquanto estiver vazio, a página de acompanhamento mostra só a etapa 1.
+  planilhaAndamento: "",
+
   // Canal do WhatsApp (1 aviso por semana com os novos cadastros)
   canalWhatsApp: "https://whatsapp.com/channel/0029Vb9X1p384OmL2EIjET2W",
 
