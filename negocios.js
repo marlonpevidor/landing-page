@@ -14,6 +14,9 @@
      filtros juntem tudo certinho.
    - cidade e estado: usados no filtro "Região". Estado sempre com a
      sigla (DF, GO, SP...). Escreva a cidade sempre do mesmo jeito.
+   - tratamento ("irmão" ou "irmã") e preposicaoIgreja ("na" ou "no"):
+     montam a frase "O irmão Marlon congrega na" acima da igreja.
+     Sem eles, aparece "Marlon congrega em".
    - pastor: nome de quem deu a referência (aparece no site).
    - referenciaEm: mês/ano em que a referência foi confirmada.
    - exemplo: true marca um negócio FICTÍCIO (aparece o aviso
@@ -65,7 +68,9 @@ const NEGOCIOS = [
     estado: "DF",
     whatsapp: "5561984366777",
     instagram: "marlonpevidor",
+    tratamento: "irmão",
     igreja: "Igreja Batista Central de Taguatinga",
+    preposicaoIgreja: "na",
     pastor: "Pr. Matheus Guimarães Guerra Gama",
     referenciaEm: "11/2026",
   },

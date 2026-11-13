@@ -108,12 +108,16 @@
     if (onde) c.appendChild(el("p", "local", "📍 " + onde));
 
     if (n.igreja || n.pastor) {
-      const ref = el("div", "referencia");
+      // ✓ alinhado com a igreja; "O irmão Marlon congrega na" e a referência alinhados com o nome da igreja
+      const ref = el("div", "referencia referencia-grade");
+      const primeiroNome = (n.responsavel || "").trim().split(/\s+/)[0];
+      if (primeiroNome && n.igreja) {
+        const frase = (n.tratamento ? "O " + n.tratamento + " " : "") + primeiroNome + " congrega " + (n.preposicaoIgreja || "em");
+        ref.appendChild(el("span", "congrega", frase));
+      }
       ref.appendChild(el("span", "referencia-icone", "✓"));
-      const txt = el("div");
-      txt.appendChild(el("strong", null, n.igreja || ""));
-      if (n.pastor) txt.appendChild(el("span", null, "Referência: " + n.pastor + (n.referenciaEm ? " (" + n.referenciaEm + ")" : "")));
-      ref.appendChild(txt);
+      ref.appendChild(el("strong", "ref-igreja", n.igreja || ""));
+      if (n.pastor) ref.appendChild(el("span", "ref-pastor", "Referência: " + n.pastor + (n.referenciaEm ? " (" + n.referenciaEm + ")" : "")));
       c.appendChild(ref);
     }
 

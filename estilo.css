@@ -283,3 +283,8 @@ a.botao-grande { text-align: center; }
 .botao-voltar-topo { display: inline-block; margin-bottom: 20px; padding: 10px 20px; font-size: .95rem; }
 
 #btnMeuWhats { margin-bottom: 14px; }
+
+/* ---------- Quadro da igreja: "O irmão Marlon congrega na" ---------- */
+.referencia-grade { display: grid; grid-template-columns: 22px 1fr; column-gap: 10px; row-gap: 2px; align-items: center; }
+.referencia-grade .congrega { grid-column: 2; color: var(--suave); font-size: .8rem; }
+.referencia-grade .ref-pastor { grid-column: 2; }
