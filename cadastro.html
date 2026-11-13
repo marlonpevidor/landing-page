@@ -62,7 +62,7 @@
           <label>CEP <small>(o endereço é preenchido sozinho)</small><input name="cep" inputmode="numeric" placeholder="00000-000" maxlength="9"></label>
           <p class="aviso-cep" id="avisoCep" hidden></p>
           <div class="linha-campos">
-            <label>Rua / avenida<input name="rua"></label>
+            <label>Rua, avenida<input name="rua"></label>
             <label>Número<input name="numero" inputmode="numeric"></label>
           </div>
           <label>Complemento <small>(ex.: Loja 2, Sala 305)</small><input name="complemento"></label>
@@ -75,7 +75,7 @@
           <span>Onde você atende? *</span>
           <label><input type="radio" name="atende" value="cidade" required> Só na minha cidade</label>
           <label><input type="radio" name="atende" value="estado"> Em todo o meu estado</label>
-          <label><input type="radio" name="atende" value="brasil"> Em todo o Brasil (online ou por entrega)</label>
+          <label><input type="radio" name="atende" value="brasil"> Em todo o Brasil (<em>online</em> ou por entrega)</label>
         </div>
         <label id="campoBairros" hidden>Bairros que atende <small>(opcional; ex.: Centro, Asa Norte)</small><input name="local"></label>
         <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
@@ -85,7 +85,7 @@
       <fieldset>
         <legend>Referência pastoral</legend>
         <label>Nome da sua igreja *<input name="igreja" required></label>
-        <label>Cidade / bairro da igreja *<input name="cidadeIgreja" required></label>
+        <label>Cidade, bairro da igreja *<input name="cidadeIgreja" required></label>
         <label>Nome do seu pastor *<input name="pastor" required></label>
         <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram ou site da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
@@ -170,7 +170,7 @@
         "*Categoria:* " + d.categoria,
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
-        "*Atende:* " + ({ cidade: "só na cidade", estado: "todo o estado", brasil: "todo o Brasil (online ou por entrega)" }[d.atende] || "—") + (d.local ? " (" + d.local + ")" : ""),
+        "*Atende:* " + ({ cidade: "só na cidade", estado: "todo o estado", brasil: "todo o Brasil (_online_ ou por entrega)" }[d.atende] || "—") + (d.local ? " (" + d.local + ")" : ""),
         "*Endereço:* " + (d.rua ? d.rua + (d.numero ? ", " + d.numero : "") + (d.complemento ? " - " + d.complemento : "") + (d.cep ? " (CEP " + d.cep + ")" : "") : "—"),
         "*WhatsApp:* " + d.whatsapp,
         "*Instagram:* " + (d.instagram || "—"),
