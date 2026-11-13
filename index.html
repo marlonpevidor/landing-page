@@ -8,6 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilo.css">
+  <script>
+    // Abre a página sempre no topo, mesmo quando o celular tenta manter a rolagem da página anterior
+    (function () {
+      try { history.scrollRestoration = "manual"; } catch (e) {}
+      function topo() {
+        window.scrollTo(0, 0);
+        try { document.documentElement.scrollIntoView({ block: "start" }); } catch (e) {}
+      }
+      window.addEventListener("pageshow", topo);
+      window.addEventListener("load", topo);
+    })();
+  </script>
 </head>
 <body>
   <header class="topo">
