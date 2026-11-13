@@ -102,13 +102,16 @@
     grade.innerHTML = "";
     lista.forEach((n) => grade.appendChild(cartao(n)));
 
-    // Cartão-convite no fim da lista completa: incentiva novos cadastros
-    if (!termo && categoriaAtual === "Todos" && select.value === TODAS) {
+    // Cartão-convite no fim da lista (também em cada categoria e igreja);
+    // some só durante uma busca por palavra
+    if (!termo) {
       const c = el("a", "cartao cartao-convite");
       c.href = "cadastro.html";
       c.appendChild(el("span", "convite-icone", "+"));
       c.appendChild(el("h2", null, "Seu negócio aqui"));
-      c.appendChild(el("p", "descricao", "Você vende algo ou presta algum serviço? Cadastre-se de graça e seja um dos primeiros do guia."));
+      c.appendChild(el("p", "descricao", categoriaAtual === "Todos"
+        ? "Você vende algo ou presta algum serviço? Cadastre-se de graça e seja um dos primeiros do guia."
+        : "Você também trabalha com " + categoriaAtual + "? Cadastre-se de graça e apareça aqui."));
       c.appendChild(el("span", "botao botao-azul", "Quero cadastrar meu negócio"));
       grade.appendChild(c);
     }
