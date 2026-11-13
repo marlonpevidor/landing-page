@@ -22,7 +22,7 @@
       <h2>Como funciona</h2>
       <ol>
         <li>Você preenche o formulário e envia pelo WhatsApp.</li>
-        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong> para confirmar que você é membro da igreja e tem bom testemunho.</li>
+        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong>, que responde um formulário rápido para confirmar que você é da igreja e recomendar seu cadastro.</li>
         <li>Confirmada a referência, seu negócio entra no guia.</li>
       </ol>
       <p class="dica">Avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
@@ -56,7 +56,7 @@
 
       <label class="check">
         <input type="checkbox" name="autorizo" required>
-        <span>Autorizo que os dados do meu negócio sejam publicados no guia e que o responsável entre em contato com meu pastor para confirmar a referência.</span>
+        <span>Autorizo a publicação dos dados do meu negócio no guia e que o responsável entre em contato com meu pastor, que poderá responder algumas perguntas sobre meu vínculo com a igreja. <strong>Essas respostas não serão publicadas.</strong></span>
       </label>
 
       <button type="submit" class="botao botao-whats botao-grande">Enviar pelo WhatsApp</button>
@@ -87,7 +87,7 @@
         "*Rede/site da igreja:* " + (d.redeIgreja || "—"),
         "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
-        "✓ Autorizo a publicação e o contato com meu pastor.",
+        "✓ Autorizo a publicação do meu negócio e que meu pastor responda perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
       ].join("\n");
       const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(msg);
       // Guarda o link para a página de confirmação poder reenviar, se preciso
