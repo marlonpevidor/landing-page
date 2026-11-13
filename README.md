@@ -18,7 +18,11 @@ confirmada com o pastor da pessoa.
 
 O telefone do pastor e a conversa de referência **não** vão para o site. Este repositório e o site são públicos.
 
-## Publicar no Netlify (atualização automática)
-1. Em https://app.netlify.com, clique em **Add new site → Import an existing project → GitHub**.
-2. Escolha este repositório e a branch `main`. Deixe "Build command" vazio e "Publish directory" como `.`.
-3. A cada alteração enviada para a `main`, o Netlify atualiza o site sozinho.
+## Publicar no Cloudflare Pages
+1. Em https://dash.cloudflare.com, abra **Workers & Pages** e crie um projeto do tipo **Pages** com **upload direto** (Upload assets).
+2. Dê o nome `guia-de-negocios-da-igreja`. O endereço será `https://guia-de-negocios-da-igreja.pages.dev`.
+3. Arraste a pasta do site (com `index.html` dentro) e clique em **Deploy**.
+4. Para atualizar: abra o projeto, clique em **Create deployment** (nova implantação) e arraste a pasta nova.
+
+Se o endereço for diferente, atualize `siteUrl` em `negocios.js`.
+O arquivo `_headers` faz o navegador sempre conferir se há versão nova do site.

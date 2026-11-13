@@ -33,7 +33,7 @@ const CONFIG = {
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
   // Endereço oficial do site (usado nos links de acompanhamento)
-  siteUrl: "https://guia-de-negocios-da-igreja.netlify.app",
+  siteUrl: "https://guia-de-negocios-da-igreja.pages.dev",
 
   // Planilha do andamento dos cadastros (Google Planilhas publicada como CSV).
   // Colunas: codigo | etapa (2 = pedido ao pastor, 3 = pastor respondeu, 4 = publicado).
