@@ -94,6 +94,17 @@
     }
   } catch (e) {}
 
+  // Manda o código e o link para o próprio WhatsApp da pessoa (conversa consigo mesma)
+  if (dados && codigo && dados.whatsapp) {
+    const meu = String(dados.whatsapp).replace(/\D/g, "");
+    const meuNumero = meu.length <= 11 ? "55" + meu : meu;
+    const texto = "📌 *" + CONFIG.titulo + "*\nAcompanhamento do meu cadastro (" + dados.negocio + ")\n\n*Código:* " + codigo +
+      "\n*Link:* " + CONFIG.siteUrl + "/cadastro-enviado.html#" + codigo;
+    $("btnMeuWhats").href = "https://wa.me/" + meuNumero + "?text=" + encodeURIComponent(texto);
+    $("btnMeuWhats").hidden = false;
+    $("btnMeuWhats").addEventListener("click", () => registrarClique("Enviou link para o próprio WhatsApp"));
+  }
+
   if (dados) {
     const fone = String(dados.telefonePastor || "").replace(/\D/g, "");
     const numero = fone.length <= 11 ? "55" + fone : fone;
