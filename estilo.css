@@ -427,3 +427,4 @@ a.botao-grande { text-align: center; }
 .cartao .local { display: flex; gap: 6px; align-items: flex-start; }
 .cartao .local-icone { flex: none; }
 .cartao .local-texto { min-width: 0; }
+.linha-nome { align-items: flex-start; } .linha-nome .avatar { margin-top: 2px; }
