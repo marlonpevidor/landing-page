@@ -422,3 +422,8 @@ a.botao-grande { text-align: center; }
 .coluna-nome { min-width: 0; }
 .coluna-nome .responsavel { margin: 2px 0 0; }
 .linha-nome { margin-bottom: 12px; }
+
+/* Ícone à esquerda; o texto que quebra fica alinhado com a primeira linha */
+.cartao .local { display: flex; gap: 6px; align-items: flex-start; }
+.cartao .local-icone { flex: none; }
+.cartao .local-texto { min-width: 0; }

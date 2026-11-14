@@ -157,29 +157,33 @@
     linhaNome.appendChild(colunaNome);
     c.appendChild(linhaNome);
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
+    // Linhas com ícone: o texto que quebra fica alinhado com o texto de cima, não com o ícone
+    function linhaIcone(icone, classe, ...partes) {
+      const p = el("p", "local " + classe);
+      p.appendChild(el("span", "local-icone", icone));
+      const t = el("span", "local-texto");
+      partes.forEach((x) => t.appendChild(typeof x === "string" ? document.createTextNode(x) : x));
+      p.appendChild(t);
+      c.appendChild(p);
+    }
     const onde = textoLocal(n);
-    if (onde) c.appendChild(el("p", "local", "📍 " + onde));
+    if (onde) linhaIcone("📍", "local-onde", onde);
     // 🌐 até onde o negócio atende
     if (n.atende === "brasil") {
-      const p = el("p", "local local-alcance", "🌐 Atende em todo o Brasil (");
-      p.appendChild(el("em", null, "online"));
-      p.appendChild(document.createTextNode(" ou por entrega)"));
-      c.appendChild(p);
+      linhaIcone("🌐", "local-alcance", "Atende em todo o Brasil (", el("em", null, "online"), " ou por entrega)");
     } else if (n.atende === "estado" && n.estado) {
-      c.appendChild(el("p", "local local-alcance", "🌐 Atende em " + (TODO_ESTADO[n.estado] || "todo o " + n.estado)));
+      linhaIcone("🌐", "local-alcance", "Atende em " + (TODO_ESTADO[n.estado] || "todo o " + n.estado));
     } else if (n.cidade) {
-      c.appendChild(el("p", "local local-alcance", "🌐 Atende em " + n.cidade));
+      linhaIcone("🌐", "local-alcance", "Atende em " + n.cidade);
     }
     if (n.endereco) {
-      const p = el("p", "local local-mapa", "🏬 ");
       const a = el("a", "link-mapa", "Ver endereço no mapa");
       a.href = "https://www.google.com/maps/search/?api=1&query=" +
         encodeURIComponent([n.endereco, n.cidade, n.estado].filter(Boolean).join(", "));
       a.target = "_blank"; a.rel = "noopener";
       a.title = n.endereco;
       a.addEventListener("click", () => registrarClique("Mapa: " + n.nome));
-      p.appendChild(a);
-      c.appendChild(p);
+      linhaIcone("🏬", "local-mapa", a);
     }
 
     if (n.igreja || n.pastor) {
