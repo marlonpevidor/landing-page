@@ -99,6 +99,7 @@ const NEGOCIOS = [
   },
 {
     nome: "Carol Sá Semijoias de Luxo",
+    logo: "logos/carol-sa.jpg",
     responsavel: "Carol Sá",
     categoria: "Semijoias",
     descricao: "Semijoias de luxo com significado, elegância e propósito: colares, brincos, anéis e pulseiras para usar no dia a dia ou presentear. Atendimento em Brasília.",
