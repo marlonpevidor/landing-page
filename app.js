@@ -151,9 +151,11 @@
     }
     avatar.setAttribute("aria-hidden", "true");
     linhaNome.appendChild(avatar);
-    linhaNome.appendChild(el("h2", null, n.nome));
+    const colunaNome = el("div", "coluna-nome");
+    colunaNome.appendChild(el("h2", null, n.nome));
+    if (n.responsavel) colunaNome.appendChild(el("p", "responsavel", n.responsavel));
+    linhaNome.appendChild(colunaNome);
     c.appendChild(linhaNome);
-    if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
     if (onde) c.appendChild(el("p", "local", "📍 " + onde));
