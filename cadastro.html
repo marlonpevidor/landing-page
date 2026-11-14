@@ -86,7 +86,7 @@
         <label>Cidade, bairro da igreja *<input name="cidadeIgreja" required></label>
         <label>Nome de seu pastor *<input name="pastor" required></label>
         <label>Telefone do pastor * <small>(usado apenas para confirmar a referência — não aparece na página)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
-        <label>Instagram ou <em>site</em> da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
+        <label>Instagram ou página da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
         <label>Há quantos anos você é membro? * <small>(coloque 0 se for menos de 1 ano)</small><input name="tempoMembro" type="number" min="0" max="100" inputmode="numeric" required></label>
       </fieldset>
 
@@ -175,7 +175,7 @@
         "*Igreja:* " + d.igreja + " (" + d.cidadeIgreja + ")",
         "*Pastor(a):* " + d.pastor,
         "*Telefone do pastor:* " + d.telefonePastor,
-        "*Rede social ou _site_ da igreja:* " + (d.redeIgreja || "—"),
+        "*Rede social ou página da igreja:* " + (d.redeIgreja || "—"),
         "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
         "✓ Autorizo a publicação de meu negócio e que meu pastor responda a perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
