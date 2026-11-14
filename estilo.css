@@ -387,3 +387,13 @@ a.botao-grande { text-align: center; }
 .rodape { padding-top: var(--espaco); padding-bottom: var(--espaco); }
 .rodape .container > p { margin: 0 auto var(--espaco) !important; }
 .rodape .container > p:last-child { margin-bottom: 0 !important; }
+
+/* ---------- Espaçamento uniforme nas outras páginas ---------- */
+.botao-voltar-topo { margin-bottom: var(--espaco); }
+.icone-ok { margin: 0 auto var(--espaco); }
+.estreito { padding-top: var(--espaco); }
+.passos { margin-bottom: var(--espaco); }
+.oferta { margin-top: var(--espaco); }
+.dica-solta { margin: 0 0 var(--espaco); }
+.formulario fieldset { margin: 0 0 var(--espaco); }
+.formulario .check { margin-bottom: var(--espaco); }
