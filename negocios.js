@@ -27,7 +27,7 @@
      Sem eles, aparece "Marlon congrega em".
    - pastor: nome de quem deu a referência (aparece no site).
    - logo (opcional): imagem do logo, ex.: "logos/decc.jpg". Sem ela, o cartão
-     mostra as iniciais do negócio num círculo azul.
+     mostra as iniciais do negócio em um círculo azul.
    - fixado: true deixa o negócio sempre em primeiro, com o ícone de alfinete.
    - Ordem no site: fixados primeiro; depois, do cadastro mais recente
      (o último desta lista) para o mais antigo. Sempre acrescente no fim.

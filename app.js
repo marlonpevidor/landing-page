@@ -138,7 +138,7 @@
       topoCartao.appendChild(pino);
     }
     c.appendChild(topoCartao);
-    // Nome com o logo (ou as iniciais) num círculo ao lado
+    // Nome com o logo (ou as iniciais) em um círculo ao lado
     const linhaNome = el("div", "linha-nome");
     const avatar = el("span", "avatar");
     if (n.logo) {
