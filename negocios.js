@@ -82,6 +82,7 @@ const NEGOCIOS = [
   {
     fixado: true,
     nome: "DECC — Davi Educação Cristã Clássica",
+    logo: "logos/decc.jpg",
     responsavel: "Marlon Pevidor",
     categoria: "Educação",
     descricao: "Mentoria individual de carreira em Educação Cristã Clássica e consultoria para abertura de escolas ou transição de escolas cristãs para cristãs clássicas.",

@@ -118,12 +118,10 @@
     return (n.local ? n.local + ", " : "") + cidadeUF;
   }
 
-  // Iniciais do negócio (até 2 letras), ignorando palavras pequenas
+  // Iniciais do negócio (sempre 2 letras), ignorando palavras pequenas
   function iniciais(nome) {
     const pequenas = ["de", "da", "do", "das", "dos", "e"];
     const palavras = (nome || "").replace(/[—–-]/g, " ").split(/\s+/).filter((w) => w && !pequenas.includes(w.toLowerCase()));
-    // Se o nome começa com uma sigla (ex.: DECC), usa a sigla
-    if (palavras[0] && /^[A-ZÀ-Ý]{2,4}$/.test(palavras[0])) return palavras[0];
     return palavras.slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   }
 
