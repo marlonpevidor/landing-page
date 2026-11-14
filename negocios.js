@@ -2,7 +2,7 @@
    ARQUIVO DE DADOS — É SÓ ESTE ARQUIVO QUE VOCÊ PRECISA EDITAR
    =========================================================
 
-   Só adicione um negócio DEPOIS de confirmar a referência com o pastor.
+   Adicione um negócio apenas DEPOIS de confirmar a referência com o pastor.
 
    Para adicionar, copie um bloco { ... } da lista abaixo, cole no
    final (antes do "]") e troque os dados.
@@ -37,12 +37,12 @@
      Quando entrarem os cadastros reais, apague os exemplos.
 
    ATENÇÃO: este arquivo fica público. NÃO coloque aqui o telefone
-   do pastor nem a mensagem de referência — guarde isso só com você.
+   do pastor nem a mensagem de referência — guarde isso apenas com você.
 */
 
 const CONFIG = {
   titulo: "Guia de Negócios da Igreja",
-  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão em Cristo. Serviços, comércios e empresas de irmãos de várias igrejas — todos com referência pastoral.",
+  subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão em Cristo. Comércios, empresas e serviços de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
   // Endereço oficial do site (usado nos links de acompanhamento)
@@ -117,7 +117,7 @@ const NEGOCIOS = [
 ];
 
 /* =========================================================
-   TESTEMUNHOS — só publique com a autorização da pessoa
+   TESTEMUNHOS — publique apenas com a autorização da pessoa
    (guarde a autorização no WhatsApp).
    ========================================================= */
 const TESTEMUNHOS = [
