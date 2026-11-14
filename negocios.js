@@ -16,9 +16,10 @@
      "Rua das Flores, 120, Loja 2 - Centro". Com ele, a cidade no cartão
      vira link para o mapa. Nunca coloque endereço residencial.
    - cidade e estado: onde fica o negócio (sigla do estado: DF, GO, SP...).
-   - atende: "regiao" (só presencial, na região) ou "brasil" (também online
-     ou com entrega para todo o Brasil). Quem tem "brasil" aparece em
-     qualquer estado do filtro e ganha a linha 🌐 no cartão.
+   - atende: até onde o negócio atende (linha 🌐 do cartão):
+     "cidade" (apenas na cidade), "estado" (todo o estado) ou
+     "brasil" (todo o Brasil, online ou por entrega). Quem tem "brasil"
+     aparece em qualquer estado do filtro.
    - local (opcional): bairro onde fica, ex.: "Centro". Aparece no 📍. Estado sempre com a
      sigla (DF, GO, SP...). Escreva a cidade sempre do mesmo jeito.
    - tratamento ("irmão" ou "irmã") e preposicaoIgreja ("na" ou "no"):
@@ -98,7 +99,7 @@ const NEGOCIOS = [
     responsavel: "Carol Sá",
     categoria: "Semijoias",
     descricao: "Semijoias de luxo com significado, elegância e propósito: colares, brincos, anéis e pulseiras para usar no dia a dia ou presentear. Atendimento em Brasília.",
-    atende: "regiao",
+    atende: "estado",
     cidade: "Águas Claras",
     estado: "DF",
     whatsapp: "5561984310004",

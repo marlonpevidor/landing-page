@@ -72,10 +72,11 @@
           <label>Estado *<select name="estado" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
         </div>
         <label>Bairro <small>(opcional; onde fica o seu negócio, ex.: Centro)</small><input name="local"></label>
-        <div class="grupo-opcoes grupo-coluna" role="radiogroup" aria-label="Como você atende">
-          <span>Como você atende? *</span>
-          <label><input type="radio" name="atende" value="regiao" required> <span>Apenas presencialmente, na minha região</span></label>
-          <label><input type="radio" name="atende" value="brasil"> <span>Também <em>online</em> ou com entrega para todo o Brasil</span></label>
+        <div class="grupo-opcoes grupo-coluna" role="radiogroup" aria-label="Até onde você atende">
+          <span>Até onde você atende? *</span>
+          <label><input type="radio" name="atende" value="cidade" required> <span>Apenas na minha cidade</span></label>
+          <label><input type="radio" name="atende" value="estado"> <span>Em todo o meu estado</span></label>
+          <label><input type="radio" name="atende" value="brasil"> <span>Em todo o Brasil (<em>online</em> ou por entrega)</span></label>
         </div>
         <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram <small>(opcional)</small><input name="instagram" placeholder="@seuperfil"></label>
@@ -167,7 +168,7 @@
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
         "*Bairro:* " + (d.local || "—"),
-        "*Atende:* " + ({ regiao: "apenas presencialmente, na região", brasil: "também _online_ ou com entrega para todo o Brasil" }[d.atende] || "—"),
+        "*Atende:* " + ({ cidade: "apenas na cidade", estado: "todo o estado", brasil: "todo o Brasil (_online_ ou por entrega)" }[d.atende] || "—"),
         "*Endereço:* " + (d.rua ? d.rua + (d.numero ? ", " + d.numero : "") + (d.complemento ? " - " + d.complemento : "") + (d.cep ? " (CEP " + d.cep + ")" : "") : "—"),
         "*WhatsApp:* " + d.whatsapp,
         "*Instagram:* " + (d.instagram || "—"),

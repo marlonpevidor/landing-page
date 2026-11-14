@@ -368,3 +368,4 @@ a.botao-grande { text-align: center; }
 .linha-campos { align-items: end; }
 .linha-filtros > .filtro-igreja { min-width: 0; }
 .formulario .grupo-opcoes label { align-items: flex-start; } .formulario .grupo-opcoes input[type=radio] { margin-top: 4px; flex: none; }
+.cartao .local + .local { margin-top: -10px; }

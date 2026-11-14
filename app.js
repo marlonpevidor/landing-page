@@ -40,6 +40,17 @@
     pai.appendChild(o);
   }
 
+  // "todo o estado" com o português correto
+  const TODO_ESTADO = {
+    AC: "todo o Acre", AL: "todo o estado de Alagoas", AP: "todo o Amapá", AM: "todo o Amazonas",
+    BA: "toda a Bahia", CE: "todo o Ceará", DF: "todo o DF", ES: "todo o Espírito Santo",
+    GO: "todo Goiás", MA: "todo o Maranhão", MT: "todo o Mato Grosso", MS: "todo o Mato Grosso do Sul",
+    MG: "toda Minas Gerais", PA: "todo o Pará", PB: "toda a Paraíba", PR: "todo o Paraná",
+    PE: "todo Pernambuco", PI: "todo o Piauí", RJ: "todo o estado do Rio de Janeiro", RN: "todo o Rio Grande do Norte",
+    RS: "todo o Rio Grande do Sul", RO: "toda Rondônia", RR: "todo o estado de Roraima", SC: "toda Santa Catarina",
+    SP: "todo o estado de São Paulo", SE: "todo Sergipe", TO: "todo o Tocantins",
+  };
+
   const NOME_ESTADO = {
     AC: "Acre", AL: "Alagoas", AP: "Amapá", AM: "Amazonas", BA: "Bahia", CE: "Ceará", DF: "Distrito Federal",
     ES: "Espírito Santo", GO: "Goiás", MA: "Maranhão", MT: "Mato Grosso", MS: "Mato Grosso do Sul",
@@ -126,11 +137,16 @@
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
     if (onde) c.appendChild(el("p", "local", "📍 " + onde));
+    // 🌐 até onde o negócio atende
     if (n.atende === "brasil") {
-      const p = el("p", "local local-brasil", "🌐 Atende todo o Brasil (");
+      const p = el("p", "local local-alcance", "🌐 Atende em todo o Brasil (");
       p.appendChild(el("em", null, "online"));
       p.appendChild(document.createTextNode(" ou por entrega)"));
       c.appendChild(p);
+    } else if (n.atende === "estado" && n.estado) {
+      c.appendChild(el("p", "local local-alcance", "🌐 Atende em " + (TODO_ESTADO[n.estado] || "todo o " + n.estado)));
+    } else if (n.cidade) {
+      c.appendChild(el("p", "local local-alcance", "🌐 Atende em " + n.cidade));
     }
     if (n.endereco) {
       const p = el("p", "local local-mapa", "🏬 ");
