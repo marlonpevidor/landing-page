@@ -4,7 +4,6 @@
   const TODAS = "Todas as igrejas";
 
   document.title = CONFIG.titulo;
-  $("titulo").textContent = CONFIG.titulo;
   $("subtitulo").textContent = CONFIG.subtitulo;
   $("linkRemover").href = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" +
     encodeURIComponent("Olá! Gostaria de corrigir ou remover meu cadastro no " + CONFIG.titulo + ".");

@@ -397,3 +397,11 @@ a.botao-grande { text-align: center; }
 .dica-solta { margin: 0 0 var(--espaco); }
 .formulario fieldset { margin: 0 0 var(--espaco); }
 .formulario .check { margin-bottom: var(--espaco); }
+
+/* ---------- Marca no topo: igreja à esquerda, título em duas linhas ---------- */
+.marca {
+  display: flex; align-items: center; justify-content: center; gap: .45em;
+  font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0 auto var(--espaco);
+}
+.marca-icone { height: 2.3em; width: auto; flex: none; color: #fff; }
+.topo .marca h1 { font-size: 1em; line-height: 1.15; margin: 0; text-align: left; }
