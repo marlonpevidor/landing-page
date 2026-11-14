@@ -32,14 +32,14 @@ A mensagem chega no WhatsApp do responsável com todos os dados, o **código de 
 
 ## 3. Colocar o negócio no site
 
-**Com o Claude:** cole a mensagem do cadastro (como chegou no WhatsApp) e diga "a referência foi confirmada, pode cadastrar". O Claude devolve um zip pronto. Vários cadastros podem ir juntos em uma mensagem só.
+**Com o Claude:** cole a mensagem do cadastro (como chegou no WhatsApp) e diga "a referência foi confirmada, pode cadastrar". O Claude devolve um zip pronto. Vários cadastros podem ir juntos em uma única mensagem.
 
 **Sozinho:** abra `negocios.js` em um editor de texto, copie um bloco `{ ... },` da lista `NEGOCIOS`, cole **no fim da lista** e troque os dados. Campos:
 
 - `nome`, `responsavel`, `categoria`, `descricao`
 - `local` (bairro ou região que atende), `cidade`, `estado` (sigla: DF, GO, SP…)
-- `endereco` (opcional, só para loja/escritório; nunca residencial)
-- `whatsapp` (só números: 55 + DDD + número), `instagram` (sem @)
+- `endereco` (opcional, apenas para loja ou escritório; nunca residencial)
+- `whatsapp` (apenas números: 55 + DDD + número), `instagram` (sem @)
 - `tratamento` ("irmão" ou "irmã"), `igreja`, `preposicaoIgreja` ("na" ou "no")
 - `pastor` (ex.: "Pr. Fulano"), `referenciaEm` (mês/ano, ex.: "11/2026")
 - `fixado: true` (opcional: fica sempre em primeiro, com alfinete)
@@ -66,7 +66,7 @@ Se a página abrir com `404`, os arquivos foram para dentro de uma pasta. Gere o
 
 - [ ] Responder os cadastros e mandar os formulários aos pastores
 - [ ] Atualizar a planilha do andamento (etapas 2, 3 e 4)
-- [ ] Publicar os aprovados (um zip só)
+- [ ] Publicar os aprovados (em um único zip)
 - [ ] Postar no **canal do WhatsApp**, apenas se entrou alguém. Modelo:
   > 📋 *Novidades da semana no Guia*
   > Entraram *N novos negócios* de irmãos: …
