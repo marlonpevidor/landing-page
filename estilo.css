@@ -436,3 +436,8 @@ a.botao-grande { text-align: center; }
   padding: var(--espaco);
 }
 .moldura-testemunhos .testemunho { background: var(--fundo); }
+@media (max-width: 520px) {
+  .carrossel { gap: 6px; }
+  .seta { width: 32px; height: 32px; font-size: 1.1rem; }
+  .moldura-testemunhos .testemunho { padding: 18px 16px 16px; }
+}
