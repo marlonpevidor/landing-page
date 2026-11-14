@@ -119,6 +119,7 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 | `cadastro-enviado.html`, `andamento.js` | Acompanhamento do cadastro e oferta |
 | `pix.js`, `qrcode.js` | Geração do Pix e do QR Code |
 | `privacidade.html` | Página de privacidade |
+| `referencia.html` | Por que pedimos referência pastoral |
 | `estilo.css` | Aparência |
 | `icone.png`, `apple-touch-icon.png`, `favicon.ico`, `compartilhar.jpg` | Ícones e imagem do WhatsApp |
 | `_headers` | Faz o navegador sempre buscar a versão mais nova |
