@@ -190,8 +190,11 @@
           .replace("=PASTOR", "=" + preencher(d.pastor))
           .replace("=IGREJA", "=" + preencher(d.igreja));
         const fone = d.telefonePastor.replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, "");
-        const msgPastor = "A paz do Senhor, pastor! Sou " + CONFIG.nomeResponsavel + ", membro da " + CONFIG.igrejaResponsavel +
-          " e criador do *" + CONFIG.titulo + "*. " + d.responsavel.trim() +
+        // Primeiro nome do pastor, sem título (Pr., Pastor, Rev.…)
+        const primeiroNomePastor = d.pastor.trim().replace(/^(pr|pra|pastor|pastora|rev|reverendo)\.?\s+/i, "").split(/\s+/)[0];
+        const msgPastor = "A paz do Senhor, pastor " + primeiroNomePastor + "! Sou " + CONFIG.nomeResponsavel + ", membro da " + CONFIG.igrejaResponsavel +
+          " e criador do *" + CONFIG.titulo + "*, uma iniciativa cujo objetivo é aproximar empreendedores cristãos de clientes cristãos:\n" +
+          CONFIG.siteUrl + "\n\n" + d.responsavel.trim() +
           " pediu para cadastrar o próprio negócio no guia e indicou o senhor como referência (com autorização para este contato). " +
           "Pode responder a 6 perguntinhas de clicar, por gentileza? Leva menos de 1 minuto:\n\n" + linkForm;
         msg.push(

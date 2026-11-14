@@ -109,7 +109,7 @@
   if (dados) {
     const fone = String(dados.telefonePastor || "").replace(/\D/g, "");
     const numero = fone.length <= 11 ? "55" + fone : fone;
-    const pastor = String(dados.pastor || "").replace(/^(pr|pra|pastor|pastora|rev)\.?\s+/i, "");
+    const pastor = String(dados.pastor || "").trim().replace(/^(pr|pra|pastor|pastora|rev|reverendo)\.?\s+/i, "").split(/\s+/)[0];
     const msg = "A paz, pastor " + pastor + "! Aqui é " + dados.nome + ". Cadastrei meu negócio (" + dados.negocio +
       ") no " + CONFIG.titulo + " e indiquei o senhor como referência. O responsável pelo guia vai lhe enviar um formulário curto pelo WhatsApp " +
       CONFIG.whatsappResponsavel.replace(/^55(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3") + ". São apenas alguns cliques. Obrigado!";
