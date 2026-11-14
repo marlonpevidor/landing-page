@@ -108,10 +108,11 @@
   // Bairro + cidade/UF, para "Centro" nunca aparecer sem dizer de onde
   function textoLocal(n) {
     const cidadeUF = n.cidade ? n.cidade + (n.estado ? ", " + n.estado : "") : "";
-    if (n.atende === "brasil") return "Atende todo o Brasil";
+    const sede = cidadeUF ? " (fica em " + cidadeUF + ")" : "";
+    if (n.atende === "brasil") return "Atende todo o Brasil" + sede;
     if (n.atende === "estado" && n.estado) {
       const t = TODO_ESTADO[n.estado] || "Todo o " + n.estado;
-      return "Atende " + t.charAt(0).toLowerCase() + t.slice(1);
+      return "Atende " + t.charAt(0).toLowerCase() + t.slice(1) + sede;
     }
     return "Atende em " + cidadeUF + (n.local ? " (" + n.local + ")" : "");
   }
