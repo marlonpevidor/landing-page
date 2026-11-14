@@ -441,3 +441,8 @@ a.botao-grande { text-align: center; }
   .seta { width: 32px; height: 32px; font-size: 1.1rem; }
   .moldura-testemunhos .testemunho { padding: 18px 16px 16px; }
 }
+
+/* ---------- Topo azul das páginas internas: 22 em cima e embaixo ---------- */
+.topo.topo-curto { padding-top: var(--espaco); padding-bottom: var(--espaco); }
+.topo-curto .container > :last-child { margin-bottom: 0; }
+.topo { padding-top: var(--espaco); }
