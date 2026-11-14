@@ -429,3 +429,10 @@ a.botao-grande { text-align: center; }
 .cartao .local-texto { min-width: 0; }
 .linha-nome { align-items: flex-start; } .linha-nome .avatar { margin-top: 2px; }
 .linha-nome .avatar { margin-top: 7px; }
+
+/* ---------- Testemunhos dentro de uma moldura, igual aos cartões ---------- */
+.moldura-testemunhos {
+  background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px;
+  padding: var(--espaco);
+}
+.moldura-testemunhos .testemunho { border: 0; background: transparent; padding: 0 8px; }
