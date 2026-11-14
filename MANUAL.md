@@ -21,7 +21,7 @@ Código: GitHub, repositório `marlonpevidor/landing-page`, ramo `claude/focused
 
 A mensagem chega no WhatsApp do responsável com todos os dados, o **código de acompanhamento** e o link **ENVIAR AO PASTOR**.
 
-1. **Confira o número do pastor** no Instagram ou no *site* da igreja (a mensagem traz a rede social da igreja). Nunca aceite print ou mensagem encaminhada pelo próprio irmão.
+1. **Confira o número do pastor** no Instagram ou na página da igreja (a mensagem traz a rede social da igreja). Nunca aceite print ou mensagem encaminhada pelo próprio irmão.
 2. Toque no link **ENVIAR AO PASTOR** e envie. O formulário chega com o nome do irmão, do pastor e da igreja já preenchidos.
 3. Na **planilha do andamento**, acrescente uma linha: `código | 2`.
 4. Quando o pastor responder (as respostas ficam na planilha do Google Forms), mude a etapa para `3`.
