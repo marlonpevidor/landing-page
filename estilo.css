@@ -369,3 +369,21 @@ a.botao-grande { text-align: center; }
 .linha-filtros > .filtro-igreja { min-width: 0; }
 .formulario .grupo-opcoes label { align-items: flex-start; } .formulario .grupo-opcoes input[type=radio] { margin-top: 4px; flex: none; }
 .cartao .local + .local { margin-top: -10px; }
+
+/* ---------- Espaçamento uniforme entre as partes da página (24px) ---------- */
+:root { --espaco: 24px; }
+.topo { padding-bottom: calc(var(--espaco) + 28px); }
+.topo h1 { margin-bottom: var(--espaco); }
+.topo .subtitulo { margin: 0 auto var(--espaco); }
+.topo .versiculo { margin: 0 auto var(--espaco); }
+.topo .canal { margin-top: var(--espaco); }
+.linha-filtros { margin-top: var(--espaco); }
+.filtros { margin: var(--espaco) 0 0; }
+.contador { margin: var(--espaco) 0; }
+.grade { gap: var(--espaco); padding-bottom: var(--espaco); }
+.testemunhos { padding: 0 0 var(--espaco); }
+.testemunhos h2 { margin: 0 0 var(--espaco); }
+.pontos { margin-top: var(--espaco); }
+.rodape { padding-top: var(--espaco); padding-bottom: var(--espaco); }
+.rodape .container > p { margin: 0 auto var(--espaco) !important; }
+.rodape .container > p:last-child { margin-bottom: 0 !important; }
