@@ -11,8 +11,8 @@
   const ETAPAS = [
     ["Cadastro enviado", "", "Seus dados foram enviados ao responsável pelo guia pelo WhatsApp."],
     ["Pedido de referência ao pastor",
-      "Vamos enviar ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam só com o responsável pelo guia e não aparecem no site.",
-      "Enviamos ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam só com o responsável pelo guia e não aparecem no site."],
+      "Vamos enviar ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no site.",
+      "Enviamos ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no site."],
     ["Resposta do pastor",
       "Aguardando a resposta do seu pastor.",
       "Seu pastor respondeu. Agora estamos preparando o cartão do seu negócio. Os novos cadastros entram no site uma vez por semana."],
@@ -111,7 +111,7 @@
     const pastor = String(dados.pastor || "").replace(/^(pr|pra|pastor|pastora|rev)\.?\s+/i, "");
     const msg = "A paz, pastor " + pastor + "! Aqui é " + dados.nome + ". Cadastrei meu negócio (" + dados.negocio +
       ") no " + CONFIG.titulo + " e indiquei o senhor como referência. O responsável pelo guia vai lhe enviar um formulário rápido pelo WhatsApp " +
-      CONFIG.whatsappResponsavel.replace(/^55(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3") + ". São só alguns cliques. Obrigado!";
+      CONFIG.whatsappResponsavel.replace(/^55(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3") + ". São apenas alguns cliques. Obrigado!";
     $("btnAvisarPastor").href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(msg);
     $("btnAvisarPastor").addEventListener("click", () => registrarClique("Avisou o pastor"));
   }

@@ -74,7 +74,7 @@
         <label>Bairro <small>(opcional; onde fica o seu negócio, ex.: Centro)</small><input name="local"></label>
         <div class="grupo-opcoes grupo-coluna" role="radiogroup" aria-label="Como você atende">
           <span>Como você atende? *</span>
-          <label><input type="radio" name="atende" value="regiao" required> <span>Só presencialmente, na minha região</span></label>
+          <label><input type="radio" name="atende" value="regiao" required> <span>Apenas presencialmente, na minha região</span></label>
           <label><input type="radio" name="atende" value="brasil"> <span>Também <em>online</em> ou com entrega para todo o Brasil</span></label>
         </div>
         <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
@@ -86,7 +86,7 @@
         <label>Nome da sua igreja *<input name="igreja" required></label>
         <label>Cidade, bairro da igreja *<input name="cidadeIgreja" required></label>
         <label>Nome do seu pastor *<input name="pastor" required></label>
-        <label>Telefone do pastor * <small>(usado só para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
+        <label>Telefone do pastor * <small>(usado apenas para confirmar a referência — não aparece no site)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram ou site da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
         <label>Há quantos anos você é membro? * <small>(coloque 0 se for menos de 1 ano)</small><input name="tempoMembro" type="number" min="0" max="100" inputmode="numeric" required></label>
       </fieldset>
@@ -167,7 +167,7 @@
         "*Descrição:* " + d.descricao,
         "*Cidade:* " + d.cidade + ", " + d.estado,
         "*Bairro:* " + (d.local || "—"),
-        "*Atende:* " + ({ regiao: "só presencialmente, na região", brasil: "também _online_ ou com entrega para todo o Brasil" }[d.atende] || "—"),
+        "*Atende:* " + ({ regiao: "apenas presencialmente, na região", brasil: "também _online_ ou com entrega para todo o Brasil" }[d.atende] || "—"),
         "*Endereço:* " + (d.rua ? d.rua + (d.numero ? ", " + d.numero : "") + (d.complemento ? " - " + d.complemento : "") + (d.cep ? " (CEP " + d.cep + ")" : "") : "—"),
         "*WhatsApp:* " + d.whatsapp,
         "*Instagram:* " + (d.instagram || "—"),
