@@ -446,3 +446,4 @@ a.botao-grande { text-align: center; }
 .topo.topo-curto { padding-top: var(--espaco); padding-bottom: var(--espaco); }
 .topo-curto .container > :last-child { margin-bottom: 0; }
 .topo { padding-top: var(--espaco); }
+.topo:not(.topo-curto) { padding-top: 36px; }
