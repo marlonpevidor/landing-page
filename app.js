@@ -40,37 +40,32 @@
     pai.appendChild(o);
   }
 
-  // Como escrever "todo o estado" com o português correto
-  const TODO_ESTADO = {
-    AC: "Todo o Acre", AL: "Todo o estado de Alagoas", AP: "Todo o Amapá", AM: "Todo o Amazonas",
-    BA: "Toda a Bahia", CE: "Todo o Ceará", DF: "Todo o DF", ES: "Todo o Espírito Santo",
-    GO: "Todo Goiás", MA: "Todo o Maranhão", MT: "Todo o Mato Grosso", MS: "Todo o Mato Grosso do Sul",
-    MG: "Toda Minas Gerais", PA: "Todo o Pará", PB: "Toda a Paraíba", PR: "Todo o Paraná",
-    PE: "Todo Pernambuco", PI: "Todo o Piauí", RJ: "Todo o estado do Rio de Janeiro", RN: "Todo o Rio Grande do Norte",
-    RS: "Todo o Rio Grande do Sul", RO: "Toda Rondônia", RR: "Todo o estado de Roraima", SC: "Toda Santa Catarina",
-    SP: "Todo o estado de São Paulo", SE: "Todo Sergipe", TO: "Todo o Tocantins",
+  const NOME_ESTADO = {
+    AC: "Acre", AL: "Alagoas", AP: "Amapá", AM: "Amazonas", BA: "Bahia", CE: "Ceará", DF: "Distrito Federal",
+    ES: "Espírito Santo", GO: "Goiás", MA: "Maranhão", MT: "Mato Grosso", MS: "Mato Grosso do Sul",
+    MG: "Minas Gerais", PA: "Pará", PB: "Paraíba", PR: "Paraná", PE: "Pernambuco", PI: "Piauí",
+    RJ: "Rio de Janeiro", RN: "Rio Grande do Norte", RS: "Rio Grande do Sul", RO: "Rondônia", RR: "Roraima",
+    SC: "Santa Catarina", SP: "São Paulo", SE: "Sergipe", TO: "Tocantins",
   };
 
-  // Região: "Todo o Brasil", depois cada estado com suas cidades
+  // Região: "Todo o Brasil" e os estados que têm negócios
   opcao(selRegiao, "Todo o Brasil", TODO_BRASIL);
-  ordenar(NEGOCIOS.map((n) => n.estado)).forEach((uf) => {
-    const grupo = document.createElement("optgroup");
-    grupo.label = uf;
-    opcao(grupo, TODO_ESTADO[uf] || "Todo o " + uf, "UF|" + uf);
-    ordenar(NEGOCIOS.filter((n) => n.estado === uf).map((n) => n.cidade))
-      .forEach((cid) => opcao(grupo, cid + ", " + uf, "CID|" + uf + "|" + cid));
-    selRegiao.appendChild(grupo);
-  });
+  ordenar(NEGOCIOS.map((n) => n.estado))
+    .sort((a, b) => (NOME_ESTADO[a] || a).localeCompare(NOME_ESTADO[b] || b, "pt-BR"))
+    .forEach((uf) => opcao(selRegiao, NOME_ESTADO[uf] || uf, uf));
 
-  // A empresa aparece onde ela atende: na cidade, no estado inteiro ou no Brasil inteiro
+  // Lembra o último estado escolhido neste aparelho
+  try {
+    const salvo = localStorage.getItem("regiaoGuia");
+    if (salvo && [...selRegiao.options].some((o) => o.value === salvo)) selRegiao.value = salvo;
+  } catch (e) {}
+
+  // No estado escolhido aparecem os negócios de lá e os que atendem todo o Brasil
   function naRegiao(n) {
     if (!selRegiao.value) return true;
-    const [tipo, uf, cid] = selRegiao.value.split("|");
-    if (n.atende === "brasil") return true;
-    if (n.estado !== uf) return false;
-    if (tipo === "UF" || n.atende === "estado") return true;
-    return n.cidade === cid;
+    return n.estado === selRegiao.value || n.atende === "brasil";
   }
+
   // Igreja: só as igrejas que têm negócios na região escolhida
   function montarIgrejas() {
     const atual = select.value;
@@ -82,7 +77,9 @@
   montarIgrejas();
 
   select.addEventListener("change", () => { categoriaAtual = "Todos"; desenharFiltros(); desenharLista(); });
-  selRegiao.addEventListener("change", () => { categoriaAtual = "Todos"; montarIgrejas(); desenharFiltros(); desenharLista(); });
+  selRegiao.addEventListener("change", () => {
+    try { localStorage.setItem("regiaoGuia", selRegiao.value); } catch (e) {}
+    categoriaAtual = "Todos"; montarIgrejas(); desenharFiltros(); desenharLista(); });
 
   function negociosDaIgreja() {
     return NEGOCIOS.filter(naRegiao).filter((n) => select.value === TODAS || n.igreja === select.value);
@@ -105,17 +102,12 @@
     });
   }
 
-  // Bairro + cidade/UF, para "Centro" nunca aparecer sem dizer de onde
+  // 📍 onde o negócio está (bairros, cidade e estado)
   function textoLocal(n) {
     const cidadeUF = n.cidade ? n.cidade + (n.estado ? ", " + n.estado : "") : "";
-    const sede = cidadeUF ? " (fica em " + cidadeUF + ")" : "";
-    if (n.atende === "brasil") return "Atende todo o Brasil" + sede;
-    if (n.atende === "estado" && n.estado) {
-      const t = TODO_ESTADO[n.estado] || "Todo o " + n.estado;
-      return "Atende " + t.charAt(0).toLowerCase() + t.slice(1) + sede;
-    }
-    return "Atende em " + cidadeUF + (n.local ? " (" + n.local + ")" : "");
+    return (n.local ? n.local + ", " : "") + cidadeUF;
   }
+
   function cartao(n) {
     const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
     if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
@@ -134,6 +126,12 @@
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
     if (onde) c.appendChild(el("p", "local", "📍 " + onde));
+    if (n.atende === "brasil") {
+      const p = el("p", "local local-brasil", "🌐 Atende todo o Brasil (");
+      p.appendChild(el("em", null, "online"));
+      p.appendChild(document.createTextNode(" ou por entrega)"));
+      c.appendChild(p);
+    }
     if (n.endereco) {
       const p = el("p", "local local-mapa", "🏬 ");
       const a = el("a", "link-mapa", "Ver endereço no mapa");
@@ -185,7 +183,7 @@
     $("limparBusca").hidden = !$("campoBusca").value;
     const lista = negociosDaIgreja()
       .filter((n) => categoriaAtual === "Todos" || n.categoria === categoriaAtual)
-      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, textoLocal(n), n.igreja, n.pastor].join(" ")).includes(termo))
+      .filter((n) => !termo || normalizar([n.nome, n.responsavel, n.categoria, n.descricao, n.local, n.cidade, n.estado, n.atende === "brasil" ? "online" : "", n.igreja, n.pastor].join(" ")).includes(termo))
       // Ordem: fixados primeiro; depois o cadastro mais recente (fim da lista em negocios.js) primeiro
       .sort((a, b) => (!!b.fixado - !!a.fixado) || (NEGOCIOS.indexOf(b) - NEGOCIOS.indexOf(a)));
 
@@ -219,6 +217,7 @@
   $("limparBusca").addEventListener("click", () => { busca.value = ""; desenharLista(); });
   $("verTodos").addEventListener("click", () => {
     busca.value = ""; categoriaAtual = "Todos"; selRegiao.value = TODO_BRASIL;
+    try { localStorage.setItem("regiaoGuia", TODO_BRASIL); } catch (e) {}
     montarIgrejas(); select.value = TODAS;
     desenharFiltros(); desenharLista();
   });
