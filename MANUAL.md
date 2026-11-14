@@ -46,6 +46,8 @@ A mensagem chega no WhatsApp do responsável com todos os dados, o **código de 
 
 Ordem na página: fixados primeiro; depois do cadastro mais recente para o mais antigo.
 
+**Dias de publicação: segundas e quintas-feiras.** Com a etapa `3`, a página de acompanhamento avisa o dia sozinha: de segunda a quarta, "nesta quinta-feira"; de quinta a domingo, "na próxima segunda-feira".
+
 Depois de publicar, marque na planilha do andamento a etapa `4`.
 
 ---
@@ -66,7 +68,7 @@ Se a página abrir com `404`, os arquivos foram para dentro de uma pasta. Gere o
 
 - [ ] Responder os cadastros e mandar os formulários aos pastores
 - [ ] Atualizar a planilha do andamento (etapas 2, 3 e 4)
-- [ ] Publicar os aprovados (em um único zip)
+- [ ] Publicar os aprovados às segundas e quintas-feiras (em um único zip)
 - [ ] Postar no **canal do WhatsApp**, apenas se entrou alguém. Modelo:
   > 📋 *Novidades da semana no Guia*
   > Entraram *N novos negócios* de irmãos: …

@@ -7,6 +7,19 @@
   try { history.scrollRestoration = "manual"; } catch (e) {}
   window.scrollTo(0, 0);
 
+  // Dia da próxima publicação (os novos negócios entram às segundas e quintas-feiras).
+  // De segunda a quarta: quinta-feira. De quinta a domingo: segunda-feira.
+  // Usa o horário de Brasília. Na segunda e na quinta já aponta para a publicação seguinte,
+  // para nunca prometer um dia que já passou; se o negócio entrar antes, a etapa vira 4.
+  function proximaPublicacao() {
+    let dia = new Date().getDay();
+    try {
+      const nome = new Intl.DateTimeFormat("en-US", { weekday: "short", timeZone: "America/Sao_Paulo" }).format(new Date());
+      dia = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(nome);
+    } catch (e) {}
+    return dia >= 1 && dia <= 3 ? "nesta quinta-feira" : "na próxima segunda-feira";
+  }
+
   // [título, texto enquanto não aconteceu, texto depois que aconteceu]
   const ETAPAS = [
     ["Cadastro enviado", "", "Seu cadastro foi enviado pelo WhatsApp."],
@@ -15,7 +28,7 @@
       "Enviamos a seu pastor um formulário curto, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem na página."],
     ["Resposta do pastor",
       "Aguardando a resposta de seu pastor.",
-      "Seu pastor respondeu. Agora estamos preparando o cartão de seu negócio. Os novos cadastros entram na página uma vez por semana."],
+      "Seu pastor respondeu. Agora estamos preparando o cartão de seu negócio, que entra na página " + proximaPublicacao() + "."],
     ["Publicação no guia",
       "Confirmada a referência, seu negócio aparece na página.",
       "Pronto! Seu negócio já aparece no guia."],
