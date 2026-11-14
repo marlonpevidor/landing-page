@@ -371,7 +371,7 @@ a.botao-grande { text-align: center; }
 .cartao .local + .local { margin-top: -10px; }
 
 /* ---------- Espaçamento uniforme entre as partes da página (24px) ---------- */
-:root { --espaco: 24px; }
+:root { --espaco: 22px; }
 .topo { padding-bottom: calc(var(--espaco) + 28px); }
 .topo h1 { margin-bottom: var(--espaco); }
 .topo .subtitulo { margin: 0 auto var(--espaco); }
