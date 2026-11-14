@@ -25,16 +25,16 @@ A mensagem chega no WhatsApp do responsável com todos os dados, o **código de 
 2. Toque no link **ENVIAR AO PASTOR** e envie. O formulário chega com o nome do irmão, do pastor e da igreja já preenchidos.
 3. Na **planilha do andamento**, acrescente uma linha: `código | 2`.
 4. Quando o pastor responder (as respostas ficam na planilha do Google Forms), mude a etapa para `3`.
-   - Só entra no guia quem receber **"Sim, recomendo"**.
+   - Entra no guia apenas quem receber **"Sim, recomendo"**.
    - Quem receber "Não conheço esta pessoa" ou "Prefiro não recomendar" não entra. Apague a mensagem do cadastro em até 30 dias.
 
 ---
 
 ## 3. Colocar o negócio no site
 
-**Com o Claude:** cole a mensagem do cadastro (como chegou no WhatsApp) e diga "a referência foi confirmada, pode cadastrar". O Claude devolve um zip pronto. Vários cadastros podem ir juntos numa mensagem só.
+**Com o Claude:** cole a mensagem do cadastro (como chegou no WhatsApp) e diga "a referência foi confirmada, pode cadastrar". O Claude devolve um zip pronto. Vários cadastros podem ir juntos em uma mensagem só.
 
-**Sozinho:** abra `negocios.js` num editor de texto, copie um bloco `{ ... },` da lista `NEGOCIOS`, cole **no fim da lista** e troque os dados. Campos:
+**Sozinho:** abra `negocios.js` em um editor de texto, copie um bloco `{ ... },` da lista `NEGOCIOS`, cole **no fim da lista** e troque os dados. Campos:
 
 - `nome`, `responsavel`, `categoria`, `descricao`
 - `local` (bairro ou região que atende), `cidade`, `estado` (sigla: DF, GO, SP…)
@@ -67,7 +67,7 @@ Se a página abrir com `404`, os arquivos foram para dentro de uma pasta. Gere o
 - [ ] Responder os cadastros e mandar os formulários aos pastores
 - [ ] Atualizar a planilha do andamento (etapas 2, 3 e 4)
 - [ ] Publicar os aprovados (um zip só)
-- [ ] Postar no **canal do WhatsApp**, só se entrou alguém. Modelo:
+- [ ] Postar no **canal do WhatsApp**, apenas se entrou alguém. Modelo:
   > 📋 *Novidades da semana no Guia*
   > Entraram *N novos negócios* de irmãos: …
   > Agora são *X negócios* de *Y igrejas* no guia.
@@ -88,7 +88,7 @@ O rodapé do site tem "Quer corrigir ou remover seu cadastro?". Ao receber um pe
 
 ## 7. Testemunhos
 
-Só publique com autorização por escrito (guarde a conversa no WhatsApp).
+Publique apenas com autorização por escrito (guarde a conversa no WhatsApp).
 Em `negocios.js`, lista `TESTEMUNHOS`: `{ texto: "…", nome: "…", detalhe: "igreja ou cidade (opcional)" }`.
 
 ---
@@ -125,7 +125,7 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 
 ---
 
-## 11. Continuar com o Claude numa conversa nova
+## 11. Continuar com o Claude em uma conversa nova
 
 Diga: *"O site do Guia de Negócios da Igreja está no repositório `marlonpevidor/landing-page`, ramo `claude/focused-cerf-4mgf48`. Leia o MANUAL.md."*
 O Claude também mantém uma prévia (artifact) para testar antes de publicar.
