@@ -120,7 +120,7 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 | `pix.js`, `qrcode.js` | Geração do Pix e do QR Code |
 | `privacidade.html` | Página de privacidade |
 | `estilo.css` | Aparência |
-| `icone.png`, `apple-touch-icon.png`, `compartilhar.jpg` | Ícones e imagem do WhatsApp |
+| `icone.png`, `apple-touch-icon.png`, `favicon.ico`, `compartilhar.jpg` | Ícones e imagem do WhatsApp |
 | `_headers` | Faz o navegador sempre buscar a versão mais nova |
 
 ---
