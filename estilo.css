@@ -448,3 +448,7 @@ a.botao-grande { text-align: center; }
 .topo { padding-top: var(--espaco); }
 .topo:not(.topo-curto) { padding-top: 36px; }
 .topo, .topo.topo-curto, .topo:not(.topo-curto) { padding-top: 36px; }
+
+/* Caixa amarela: o bloco de texto fica com o mesmo espaço à esquerda e à direita, alinhado à esquerda */
+.prazo { padding: 12px 16px; display: flex; justify-content: center; }
+.prazo-texto { text-align: left; display: block; }

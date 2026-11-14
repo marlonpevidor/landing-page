@@ -11,13 +11,13 @@
   const ETAPAS = [
     ["Cadastro enviado", "", "Seus dados foram enviados ao responsável pelo guia pelo WhatsApp."],
     ["Pedido de referência ao pastor",
-      "Vamos enviar ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no site.",
-      "Enviamos ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no site."],
+      "Vamos enviar ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no <em>site</em>.",
+      "Enviamos ao seu pastor um formulário rápido, de poucos cliques. As respostas ficam apenas com o responsável pelo guia e não aparecem no <em>site</em>."],
     ["Resposta do pastor",
       "Aguardando a resposta do seu pastor.",
-      "Seu pastor respondeu. Agora estamos preparando o cartão do seu negócio. Os novos cadastros entram no site uma vez por semana."],
+      "Seu pastor respondeu. Agora estamos preparando o cartão do seu negócio. Os novos cadastros entram no <em>site</em> uma vez por semana."],
     ["Publicação no guia",
-      "Confirmada a referência, seu negócio aparece no site.",
+      "Confirmada a referência, seu negócio aparece no <em>site</em>.",
       "Pronto! Seu negócio já aparece no guia."],
   ];
 
@@ -38,7 +38,7 @@
       t.textContent = titulo;
       li.appendChild(t);
       li.appendChild(document.createElement("br"));
-      li.appendChild(document.createTextNode(texto));
+      li.insertAdjacentHTML("beforeend", texto);
       if (i === 3 && etapa >= 4) {
         const a = document.createElement("a");
         a.href = "index.html"; a.className = "ver-no-guia"; a.textContent = "Ver meu negócio no guia →";
@@ -48,6 +48,7 @@
       lista.appendChild(li);
     });
     $("prazo").hidden = etapa >= 3;
+    requestAnimationFrame(ajustarPrazo);
     $("dicaPastor").hidden = etapa >= 2 || !!dados;
     $("avisarPastor").hidden = etapa >= 2 || !dados;
     if (etapa >= 4) {
@@ -81,7 +82,7 @@
     $("copiarLink").onclick = async () => {
       try { await navigator.clipboard.writeText(link); }
       catch (e) { $("linkAcompanhar").select(); document.execCommand("copy"); }
-      $("copiarLink").textContent = "✓ Link copiado";
+      $("copiarLink").innerHTML = "✓ <em>Link</em> copiado";
     };
   }
 
@@ -99,7 +100,7 @@
     const meu = String(dados.whatsapp).replace(/\D/g, "");
     const meuNumero = meu.length <= 11 ? "55" + meu : meu;
     const texto = "📌 *" + CONFIG.titulo + "*\nAcompanhamento do meu cadastro (" + dados.negocio + ")\n\n*Código:* " + codigo +
-      "\n*Link:* " + CONFIG.siteUrl + "/cadastro-enviado.html#" + codigo;
+      "\n*_Link_:* " + CONFIG.siteUrl + "/cadastro-enviado.html#" + codigo;
     $("btnMeuWhats").href = "https://wa.me/" + meuNumero + "?text=" + encodeURIComponent(texto);
     $("btnMeuWhats").hidden = false;
     $("btnMeuWhats").addEventListener("click", () => registrarClique("Enviou link para o próprio WhatsApp"));
@@ -115,6 +116,21 @@
     $("btnAvisarPastor").href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(msg);
     $("btnAvisarPastor").addEventListener("click", () => registrarClique("Avisou o pastor"));
   }
+
+  // Caixa amarela: o bloco de texto fica do tamanho da linha mais longa, centralizado na caixa
+  function ajustarPrazo() {
+    const t = document.querySelector(".prazo-texto");
+    if (!t || t.offsetParent === null) return;
+    t.style.width = "";
+    const r = document.createRange();
+    r.selectNodeContents(t);
+    const linhas = [...r.getClientRects()];
+    if (!linhas.length) return;
+    const largura = Math.max(...linhas.map((x) => x.right)) - Math.min(...linhas.map((x) => x.left));
+    t.style.width = Math.ceil(largura) + 1 + "px";
+  }
+  window.addEventListener("resize", ajustarPrazo);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarPrazo);
 
   desenhar(1);
   buscarEtapa().then(desenhar);

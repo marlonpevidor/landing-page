@@ -102,7 +102,7 @@
     const t = $("pixCodigo");
     try { await navigator.clipboard.writeText(t.value); }
     catch (e) { t.select(); document.execCommand("copy"); }
-    $("copiarPix").textContent = "✓ Código copiado! Agora cole no app do banco";
+    $("copiarPix").innerHTML = "✓ Código copiado! Agora cole no <em>app</em> do banco";
     registrarClique("Pix copiado: " + $("pixValor").textContent);
   };
 })();
