@@ -25,11 +25,11 @@
    - tratamento ("irmão" ou "irmã") e preposicaoIgreja ("na" ou "no"):
      montam a frase "O irmão Marlon congrega na" acima da igreja.
      Sem eles, aparece "Marlon congrega em".
-   - pastor: nome de quem deu a referência (aparece no site).
+   - pastor: nome de quem deu a referência (aparece na página).
    - logo (opcional): imagem do logo, ex.: "logos/decc.jpg". Sem ela, o cartão
      mostra as iniciais do negócio em um círculo azul.
    - fixado: true deixa o negócio sempre em primeiro, com o ícone de alfinete.
-   - Ordem no site: fixados primeiro; depois, do cadastro mais recente
+   - Ordem na página: fixados primeiro; depois, do cadastro mais recente
      (o último desta lista) para o mais antigo. Sempre acrescente no fim.
    - referenciaEm: mês/ano em que a referência foi confirmada.
    - exemplo: true marca um negócio FICTÍCIO (aparece o aviso
@@ -45,7 +45,7 @@ const CONFIG = {
   subtitulo: "Antes de comprar em qualquer lugar, compre de um irmão em Cristo. Comércios, empresas e serviços de irmãos de várias igrejas — todos com referência pastoral.",
   // WhatsApp de quem organiza o guia (recebe os pedidos de cadastro)
   whatsappResponsavel: "5561984366777",
-  // Endereço oficial do site (usado nos links de acompanhamento)
+  // Endereço oficial da página (usado nos links de acompanhamento)
   siteUrl: "https://guia-de-negocios-da-igreja.pages.dev",
 
   // Planilha do andamento dos cadastros (Google Planilhas publicada como CSV).

@@ -1,6 +1,6 @@
 # Manual de operação — Guia de Negócios da Igreja
 
-Site: https://guia-de-negocios-da-igreja.pages.dev
+Página: https://guia-de-negocios-da-igreja.pages.dev
 Código: GitHub, repositório `marlonpevidor/landing-page`, ramo `claude/focused-cerf-4mgf48`
 
 ---
@@ -9,7 +9,7 @@ Código: GitHub, repositório `marlonpevidor/landing-page`, ramo `claude/focused
 
 | Conta | Para quê |
 |---|---|
-| **Cloudflare** (dash.cloudflare.com) | Hospeda o site. Projeto: `guia-de-negocios-da-igreja` |
+| **Cloudflare** (dash.cloudflare.com) | Hospeda a página. Projeto: `guia-de-negocios-da-igreja` |
 | **Google** | Formulário de referência do pastor, planilha do andamento |
 | **GitHub** | Cópia de segurança de todo o código |
 | **GoatCounter** (marlonpevidor.goatcounter.com) | Contagem de visitas e cliques |
@@ -21,7 +21,7 @@ Código: GitHub, repositório `marlonpevidor/landing-page`, ramo `claude/focused
 
 A mensagem chega no WhatsApp do responsável com todos os dados, o **código de acompanhamento** e o link **ENVIAR AO PASTOR**.
 
-1. **Confira o número do pastor** no Instagram ou no site da igreja (a mensagem traz a rede social da igreja). Nunca aceite print ou mensagem encaminhada pelo próprio irmão.
+1. **Confira o número do pastor** no Instagram ou no *site* da igreja (a mensagem traz a rede social da igreja). Nunca aceite print ou mensagem encaminhada pelo próprio irmão.
 2. Toque no link **ENVIAR AO PASTOR** e envie. O formulário chega com o nome do irmão, do pastor e da igreja já preenchidos.
 3. Na **planilha do andamento**, acrescente uma linha: `código | 2`.
 4. Quando o pastor responder (as respostas ficam na planilha do Google Forms), mude a etapa para `3`.
@@ -30,7 +30,7 @@ A mensagem chega no WhatsApp do responsável com todos os dados, o **código de 
 
 ---
 
-## 3. Colocar o negócio no site
+## 3. Colocar o negócio na página
 
 **Com o Claude:** cole a mensagem do cadastro (como chegou no WhatsApp) e diga "a referência foi confirmada, pode cadastrar". O Claude devolve um zip pronto. Vários cadastros podem ir juntos em uma única mensagem.
 
@@ -44,19 +44,19 @@ A mensagem chega no WhatsApp do responsável com todos os dados, o **código de 
 - `pastor` (ex.: "Pr. Fulano"), `referenciaEm` (mês/ano, ex.: "11/2026")
 - `fixado: true` (opcional: fica sempre em primeiro, com alfinete)
 
-Ordem no site: fixados primeiro; depois do cadastro mais recente para o mais antigo.
+Ordem na página: fixados primeiro; depois do cadastro mais recente para o mais antigo.
 
 Depois de publicar, marque na planilha do andamento a etapa `4`.
 
 ---
 
-## 4. Publicar o site (Cloudflare)
+## 4. Publicar a página (Cloudflare)
 
 1. dash.cloudflare.com → **Workers & Pages** → **guia-de-negocios-da-igreja**
 2. **Create deployment** → **Production**
 3. Arraste o **zip** (sem descompactar; os arquivos ficam soltos na raiz do zip)
 4. **Save and deploy**
-5. Abra o site e recarregue (no celular, puxe a tela para baixo).
+5. Abra a página e recarregue (no celular, puxe a tela para baixo).
 
 Se a página abrir com `404`, os arquivos foram para dentro de uma pasta. Gere o zip com os arquivos soltos.
 
@@ -78,7 +78,7 @@ Se a página abrir com `404`, os arquivos foram para dentro de uma pasta. Gere o
 
 ## 6. Pedidos de correção ou remoção (LGPD)
 
-O rodapé do site tem "Quer corrigir ou remover seu cadastro?". Ao receber um pedido:
+O rodapé da página tem "Quer corrigir ou remover seu cadastro?". Ao receber um pedido:
 
 1. Remova o bloco da pessoa em `negocios.js` (ou peça ao Claude) e publique **o quanto antes, em até 15 dias** (é o que a página de Privacidade promete).
 2. Apague a linha dela na planilha do andamento e as respostas do pastor no Google Forms.
@@ -109,7 +109,7 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 
 ---
 
-## 10. Arquivos do site
+## 10. Arquivos da página
 
 | Arquivo | O que é |
 |---|---|
@@ -127,5 +127,5 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 
 ## 11. Continuar com o Claude em uma conversa nova
 
-Diga: *"O site do Guia de Negócios da Igreja está no repositório `marlonpevidor/landing-page`, ramo `claude/focused-cerf-4mgf48`. Leia o MANUAL.md."*
+Diga: *"A página do Guia de Negócios da Igreja está no repositório `marlonpevidor/landing-page`, ramo `claude/focused-cerf-4mgf48`. Leia o MANUAL.md."*
 O Claude também mantém uma prévia (artifact) para testar antes de publicar.

@@ -36,7 +36,7 @@
       <h2>Como funciona</h2>
       <ol>
         <li>Você preenche o formulário.</li>
-        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong>, que responde a um formulário rápido para confirmar que você é da igreja e recomendar seu cadastro.</li>
+        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong>, que responde a um formulário curto para confirmar que você é da igreja e recomendar seu cadastro.</li>
         <li>Confirmada a referência, seu negócio entra no guia.</li>
       </ol>
       <p class="dica">Avise seu pastor que entraremos em contato. Assim, a confirmação é mais rápida.</p>
@@ -69,28 +69,28 @@
         <label>Bairro <small>(opcional; onde fica o seu negócio, ex.: Centro)</small><input name="local"></label>
         <div class="grupo-opcoes grupo-coluna" role="radiogroup" aria-label="Até onde você atende">
           <span>Até onde você atende? *</span>
-          <label><input type="radio" name="atende" value="cidade" required> <span>Apenas na minha cidade</span></label>
+          <label><input type="radio" name="atende" value="cidade" required> <span>Apenas em minha cidade</span></label>
           <label><input type="radio" name="atende" value="estado"> <span>Em todo o meu estado</span></label>
           <label><input type="radio" name="atende" value="brasil"> <span>Em todo o Brasil (<em>online</em> ou por entrega)</span></label>
         </div>
         <label>WhatsApp do negócio * <small>(com DDD)</small><input name="whatsapp" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram <small>(opcional)</small><input name="instagram" placeholder="@seuperfil"></label>
-        <p class="dica-logo"><small><strong>Tem um logo?</strong> Depois de enviar o cadastro, mande a imagem do logo na mesma conversa do WhatsApp. Ela aparece em um círculo ao lado do nome do seu negócio.</small></p>
+        <p class="dica-logo"><small><strong>Tem um logo?</strong> Depois de enviar o cadastro, mande a imagem do logo na mesma conversa do WhatsApp. Ela aparece em um círculo ao lado do nome de seu negócio.</small></p>
       </fieldset>
 
       <fieldset>
         <legend>Referência pastoral</legend>
-        <label>Nome da sua igreja *<input name="igreja" required></label>
+        <label>Nome de sua igreja *<input name="igreja" required></label>
         <label>Cidade, bairro da igreja *<input name="cidadeIgreja" required></label>
-        <label>Nome do seu pastor *<input name="pastor" required></label>
-        <label>Telefone do pastor * <small>(usado apenas para confirmar a referência — não aparece no <em>site</em>)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
+        <label>Nome de seu pastor *<input name="pastor" required></label>
+        <label>Telefone do pastor * <small>(usado apenas para confirmar a referência — não aparece na página)</small><input name="telefonePastor" type="tel" inputmode="tel" placeholder="(61) 99999-9999" required></label>
         <label>Instagram ou <em>site</em> da igreja <small>(opcional, ajuda a confirmar)</small><input name="redeIgreja"></label>
         <label>Há quantos anos você é membro? * <small>(coloque 0 se for menos de 1 ano)</small><input name="tempoMembro" type="number" min="0" max="100" inputmode="numeric" required></label>
       </fieldset>
 
       <label class="check">
         <input type="checkbox" name="autorizo" required>
-        <span>Autorizo a publicação dos dados do meu negócio no guia e que o responsável entre em contato com meu pastor, que poderá responder a algumas perguntas sobre meu vínculo com a igreja. <strong>Essas respostas não serão publicadas.</strong> <a href="privacidade.html" target="_blank">Veja como cuidamos dos seus dados</a>.</span>
+        <span>Autorizo a publicação dos dados de meu negócio no guia e que o responsável entre em contato com meu pastor, que poderá responder a algumas perguntas sobre meu vínculo com a igreja. <strong>Essas respostas não serão publicadas.</strong> <a href="privacidade.html" target="_blank">Veja como cuidamos de seus dados</a>.</span>
       </label>
 
       <button type="submit" class="botao botao-whats botao-grande">Enviar pelo WhatsApp</button>
@@ -176,7 +176,7 @@
         "*Rede social ou _site_ da igreja:* " + (d.redeIgreja || "—"),
         "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
-        "✓ Autorizo a publicação do meu negócio e que meu pastor responda a perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
+        "✓ Autorizo a publicação de meu negócio e que meu pastor responda a perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
         "",
         "*Código de acompanhamento:* " + codigo,
         linkAcompanhar,
