@@ -118,6 +118,15 @@
     return (n.local ? n.local + ", " : "") + cidadeUF;
   }
 
+  // Iniciais do negócio (até 2 letras), ignorando palavras pequenas
+  function iniciais(nome) {
+    const pequenas = ["de", "da", "do", "das", "dos", "e"];
+    const palavras = (nome || "").replace(/[—–-]/g, " ").split(/\s+/).filter((w) => w && !pequenas.includes(w.toLowerCase()));
+    // Se o nome começa com uma sigla (ex.: DECC), usa a sigla
+    if (palavras[0] && /^[A-ZÀ-Ý]{2,4}$/.test(palavras[0])) return palavras[0];
+    return palavras.slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+  }
+
   function cartao(n) {
     const c = el("article", "cartao" + (n.exemplo ? " cartao-exemplo" : ""));
     if (n.exemplo) c.appendChild(el("p", "aviso-exemplo", "Exemplo fictício — apenas para teste"));
@@ -131,7 +140,21 @@
       topoCartao.appendChild(pino);
     }
     c.appendChild(topoCartao);
-    c.appendChild(el("h2", null, n.nome));
+    // Nome com o logo (ou as iniciais) num círculo ao lado
+    const linhaNome = el("div", "linha-nome");
+    const avatar = el("span", "avatar");
+    if (n.logo) {
+      const img = document.createElement("img");
+      img.src = n.logo; img.alt = ""; img.loading = "lazy";
+      img.onerror = () => { img.remove(); avatar.textContent = iniciais(n.nome); };
+      avatar.appendChild(img);
+    } else {
+      avatar.textContent = iniciais(n.nome);
+    }
+    avatar.setAttribute("aria-hidden", "true");
+    linhaNome.appendChild(avatar);
+    linhaNome.appendChild(el("h2", null, n.nome));
+    c.appendChild(linhaNome);
     if (n.responsavel) c.appendChild(el("p", "responsavel", n.responsavel));
     if (n.descricao) c.appendChild(el("p", "descricao", n.descricao));
     const onde = textoLocal(n);
