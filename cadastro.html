@@ -36,7 +36,7 @@
       <h2>Como funciona</h2>
       <ol>
         <li>Você preenche o formulário.</li>
-        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong>, que responde um formulário rápido para confirmar que você é da igreja e recomendar seu cadastro.</li>
+        <li>Nós entramos em contato <strong>diretamente com seu pastor</strong>, que responde a um formulário rápido para confirmar que você é da igreja e recomendar seu cadastro.</li>
         <li>Confirmada a referência, seu negócio entra no guia.</li>
       </ol>
       <p class="dica">Avise seu pastor que entraremos em contato — assim a confirmação é mais rápida.</p>
@@ -90,7 +90,7 @@
 
       <label class="check">
         <input type="checkbox" name="autorizo" required>
-        <span>Autorizo a publicação dos dados do meu negócio no guia e que o responsável entre em contato com meu pastor, que poderá responder algumas perguntas sobre meu vínculo com a igreja. <strong>Essas respostas não serão publicadas.</strong> <a href="privacidade.html" target="_blank">Veja como cuidamos dos seus dados</a>.</span>
+        <span>Autorizo a publicação dos dados do meu negócio no guia e que o responsável entre em contato com meu pastor, que poderá responder a algumas perguntas sobre meu vínculo com a igreja. <strong>Essas respostas não serão publicadas.</strong> <a href="privacidade.html" target="_blank">Veja como cuidamos dos seus dados</a>.</span>
       </label>
 
       <button type="submit" class="botao botao-whats botao-grande">Enviar pelo WhatsApp</button>
@@ -176,7 +176,7 @@
         "*Rede/site da igreja:* " + (d.redeIgreja || "—"),
         "*Membro há:* " + (d.tempoMembro === "0" ? "menos de 1 ano" : d.tempoMembro + (d.tempoMembro === "1" ? " ano" : " anos")),
         "",
-        "✓ Autorizo a publicação do meu negócio e que meu pastor responda perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
+        "✓ Autorizo a publicação do meu negócio e que meu pastor responda a perguntas sobre meu vínculo com a igreja (respostas não publicadas).",
         "",
         "*Código de acompanhamento:* " + codigo,
         linkAcompanhar,
@@ -193,7 +193,7 @@
         const msgPastor = "A paz do Senhor, pastor! Sou " + CONFIG.nomeResponsavel + ", membro da " + CONFIG.igrejaResponsavel +
           " e criador do *" + CONFIG.titulo + "*. " + d.responsavel.trim() +
           " pediu para cadastrar o próprio negócio no guia e indicou o senhor como referência (com autorização para este contato). " +
-          "Pode responder 6 perguntinhas de clicar, por gentileza? Leva menos de 1 minuto:\n\n" + linkForm;
+          "Pode responder a 6 perguntinhas de clicar, por gentileza? Leva menos de 1 minuto:\n\n" + linkForm;
         msg.push(
           "",
           "*ENVIAR AO PASTOR* (confira antes se o número é mesmo dele):",
