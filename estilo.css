@@ -458,3 +458,8 @@ a.botao-grande { text-align: center; }
 .formulario .link-referencia a { color: var(--primaria); font-weight: 600; }
 .versiculo-texto { font-style: italic; }
 .versiculo-texto strong { font-style: normal; white-space: nowrap; }
+
+/* Página de avisos de publicação */
+.previa-msg { white-space: pre-wrap; background: var(--fundo, #f5f3ee); border: 1px solid var(--borda); border-radius: 12px; padding: 12px 14px; font-size: .95rem; margin: 0 0 16px; }
+.aviso-erro { background: #fdecea; border: 1px solid #f5c2bd; border-radius: 12px; padding: 12px 16px; margin: 0 0 var(--espaco); }
+.passos .dica + .previa-msg { margin-top: 12px; }

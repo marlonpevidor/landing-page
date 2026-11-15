@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avisos de publicação</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="icone.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="estilo.css">
+  <script>
+    // Abre a página sempre no topo, mesmo quando o celular tenta manter a rolagem da página anterior
+    (function () {
+      try { history.scrollRestoration = "manual"; } catch (e) {}
+      function topo() {
+        window.scrollTo(0, 0);
+        try { document.documentElement.scrollIntoView({ block: "start" }); } catch (e) {}
+      }
+      window.addEventListener("pageshow", topo);
+      window.addEventListener("load", topo);
+    })();
+  </script>
+</head>
+<body>
+  <header class="topo topo-curto">
+    <div class="container">
+      <a class="botao botao-claro botao-voltar-topo" href="index.html">Voltar ao guia</a>
+      <h1>Avisos de publicação</h1>
+      <p class="subtitulo">Mensagens prontas para enviar depois que o negócio entra no guia.</p>
+    </div>
+  </header>
+
+  <main class="container estreito">
+    <p class="aviso-erro" id="semDados" hidden>Este <em>link</em> está incompleto. Abra o <em>link</em> "DEPOIS DE PUBLICAR" que veio na mensagem do cadastro.</p>
+
+    <section class="passos" id="aviso1" hidden>
+      <h2>1. Avisar <span data-campo="primeiro"></span></h2>
+      <p class="previa-msg" id="msg1"></p>
+      <a class="botao botao-whats botao-grande" id="btn1" target="_blank" rel="noopener">Enviar a <span data-campo="primeiro"></span></a>
+    </section>
+
+    <section class="passos" id="aviso2" hidden>
+      <h2>2. Agradecer ao pastor <span data-campo="pastor"></span></h2>
+      <p class="previa-msg" id="msg2"></p>
+      <a class="botao botao-whats botao-grande" id="btn2" target="_blank" rel="noopener">Enviar ao pastor <span data-campo="pastor"></span></a>
+    </section>
+
+    <section class="passos" id="aviso3" hidden>
+      <h2>3. Convite para o pastor encaminhar</h2>
+      <p class="dica">Envie logo depois do agradecimento. O pastor encaminha esta mensagem aos irmãos da igreja que têm um negócio.</p>
+      <p class="previa-msg" id="msg3"></p>
+      <a class="botao botao-whats botao-grande" id="btn3" target="_blank" rel="noopener">Enviar ao pastor <span data-campo="pastor"></span></a>
+    </section>
+
+    <a class="botao botao-azul botao-grande" href="index.html">Voltar ao guia</a>
+  </main>
+
+  <script src="negocios.js"></script>
+  <script>
+    // Os dados vêm depois do # do link (não são enviados a nenhum servidor nem guardados na página).
+    // r = responsável, n = negócio, w = WhatsApp do negócio, p = pastor, t = telefone do pastor
+    (function () {
+      const q = new URLSearchParams(location.hash.slice(1));
+      const r = (q.get("r") || "").trim(), n = (q.get("n") || "").trim(), p = (q.get("p") || "").trim();
+      const fone = (x) => { const d = (x || "").replace(/\D/g, "").replace(/^55(?=\d{10,11}$)/, ""); return d.length >= 10 ? "55" + d : ""; };
+      const w = fone(q.get("w")), t = fone(q.get("t"));
+      if (!r || !n || !p || !w || !t) { document.getElementById("semDados").hidden = false; return; }
+
+      const primeiro = r.split(/\s+/)[0];
+      const pastor = p.replace(/^(pr|pra|pastor|pastora|rev|reverendo)\.?\s+/i, "").split(/\s+/)[0];
+      document.querySelectorAll('[data-campo="primeiro"]').forEach((e) => (e.textContent = primeiro));
+      document.querySelectorAll('[data-campo="pastor"]').forEach((e) => (e.textContent = pastor));
+
+      const site = CONFIG.siteUrl, guia = "*" + CONFIG.titulo + "*";
+      const msgs = [
+        [w, "A paz do Senhor, " + primeiro + "! Boa notícia: seu pastor confirmou a referência, e *" + n + "* já está no " + guia + ":\n" + site +
+          "\n\nConfira seu cartão e compartilhe o guia com seus clientes e irmãos. Se precisar corrigir alguma informação, basta responder a esta mensagem. Que Deus abençoe seu trabalho!"],
+        [t, "A paz do Senhor, pastor " + pastor + "! Muito obrigado por responder ao formulário. " + r + " já está no " + guia + ":\n" + site +
+          "\n\nO senhor conhece outros irmãos da igreja que têm um comércio, uma empresa ou prestam algum serviço? Logo abaixo, envio um convite pronto. " +
+          "Se puder, encaminhe a eles, por gentileza. Com sua indicação, eles chegam ao guia muito mais rápido. Que Deus abençoe seu ministério!"],
+        [t, "A paz do Senhor! Quero indicar o " + guia + ", uma iniciativa que aproxima empreendedores e clientes cristãos. " + r +
+          ", aqui da nossa igreja, já está no guia.\n\nLembrei de você porque você também tem um negócio. O cadastro é gratuito, e eu mesmo confirmo sua referência. " +
+          "Veja o guia e faça seu cadastro:\n" + site],
+      ];
+      msgs.forEach(([numero, texto], i) => {
+        document.getElementById("msg" + (i + 1)).textContent = texto;
+        document.getElementById("btn" + (i + 1)).href = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+        document.getElementById("aviso" + (i + 1)).hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>

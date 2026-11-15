@@ -50,6 +50,12 @@ Ordem na página: fixados primeiro; depois do cadastro mais recente para o mais 
 
 Depois de publicar, marque na planilha do andamento a etapa `4`.
 
+Em seguida, abra o link **DEPOIS DE PUBLICAR** que veio na mensagem do cadastro. Ele abre a página de avisos com três mensagens prontas, cada uma com seu botão de WhatsApp:
+
+1. **Aviso ao irmão:** o negócio já está no guia.
+2. **Agradecimento ao pastor**, perguntando se ele conhece outros irmãos da igreja que têm um negócio.
+3. **Convite para o pastor encaminhar** a esses irmãos.
+
 ---
 
 ## 4. Publicar a página (Cloudflare)
@@ -121,6 +127,7 @@ Descubra o valor pelo extrato do banco (ofertas com a descrição "Oferta") ou p
 | `cadastro-enviado.html`, `andamento.js` | Acompanhamento do cadastro e oferta |
 | `pix.js`, `qrcode.js` | Geração do Pix e do QR Code |
 | `privacidade.html` | Página de privacidade |
+| `avisos.html` | Mensagens prontas depois da publicação (uso do responsável) |
 | `referencia.html` | Por que pedimos referência pastoral |
 | `estilo.css` | Aparência |
 | `icone.png`, `apple-touch-icon.png`, `favicon.ico`, `compartilhar.jpg` | Ícones e imagem do WhatsApp |

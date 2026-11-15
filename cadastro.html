@@ -213,6 +213,13 @@
           "*ENVIAR AO PASTOR* (confira antes se o número é mesmo dele):",
           "https://wa.me/55" + fone + "?text=" + encodeURIComponent(msgPastor)
         );
+        // Página com as mensagens prontas para depois da publicação (aviso ao irmão, agradecimento e convite ao pastor)
+        const avisos = new URLSearchParams({ r: d.responsavel.trim(), n: d.nome.trim(), w: d.whatsapp, p: d.pastor.trim(), t: d.telefonePastor });
+        msg.push(
+          "",
+          "*DEPOIS DE PUBLICAR* (etapa 4), avisos ao irmão e ao pastor:",
+          CONFIG.siteUrl + "/avisos.html#" + avisos.toString()
+        );
       }
       const textoFinal = msg.join("\n");
       const link = "https://wa.me/" + CONFIG.whatsappResponsavel + "?text=" + encodeURIComponent(textoFinal);
