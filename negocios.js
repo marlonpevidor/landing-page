@@ -121,7 +121,7 @@ const NEGOCIOS = [
     descricao: "Uma educação fundamentada na cosmovisão cristã, que integra fé e conhecimento e cultiva sabedoria, virtudes, bons hábitos e amor pelo aprendizado.",
     atende: "cidade",
     local: "Samambaia Norte",
-    cidade: "Brasília",
+    cidade: "Samambaia",
     estado: "DF",
     endereco: "QS 122 Conjunto 9 Comércio, Lote 1 - Samambaia Norte, 72304-529",
     whatsapp: "5561995538182",

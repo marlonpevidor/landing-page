@@ -64,7 +64,7 @@
           <label>Complemento <small>(ex.: Loja 2, Sala 305)</small><input name="complemento"></label>
         </div>
         <div class="linha-campos">
-          <label>Cidade * <small>(onde fica seu negócio)</small><input name="cidade" required></label>
+          <label>Cidade * <small>(onde fica seu negócio; no DF, a região administrativa, ex.: Taguatinga)</small><input name="cidade" required></label>
           <label>Estado *<select name="estado" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
         </div>
         <label>Bairro <small>(opcional; onde fica seu negócio, ex.: Centro)</small><input name="local"></label>
@@ -125,10 +125,19 @@
         if (r.erro) { aviso.textContent = "CEP não encontrado. Confira o número ou preencha o endereço à mão."; aviso.hidden = false; return; }
         const f = (n) => document.querySelector('[name="' + n + '"]');
         if (r.logradouro) f("rua").value = r.logradouro;
-        if (r.bairro && !f("local").value) f("local").value = r.bairro;
-        if (r.localidade) f("cidade").value = r.localidade;
+        // No DF, o ViaCEP devolve sempre "Brasília" como cidade. A cidade de verdade é a
+        // região administrativa, que às vezes vem entre parênteses no bairro: "Samambaia Norte (Samambaia)".
+        let bairro = r.bairro || "", cidade = r.localidade || "";
+        if (r.uf === "DF") {
+          const ra = bairro.match(/\(([^)]+)\)/);
+          bairro = bairro.replace(/\s*\([^)]*\)/, "").trim();
+          cidade = ra ? ra[1].trim() : "";
+        }
+        if (bairro && !f("local").value) f("local").value = bairro;
+        f("cidade").value = cidade;
         if (r.uf) f("estado").value = r.uf;
-        f("numero").focus();
+        if (!cidade) { f("cidade").placeholder = "Ex.: Samambaia, Taguatinga"; f("cidade").focus(); }
+        else { f("cidade").placeholder = ""; f("numero").focus(); }
       } catch (e) {
         aviso.textContent = "Não foi possível buscar o CEP agora. Preencha o endereço à mão.";
         aviso.hidden = false;
