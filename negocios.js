@@ -12,7 +12,7 @@
    - Se a pessoa não tiver algum contato, deixe "" (vazio).
    - categoria e igreja: escreva sempre do MESMO jeito para que os
      filtros juntem tudo certinho.
-   - endereco (opcional): só para quem atende em local fixo, ex.:
+   - endereco (opcional): apenas para quem atende em local fixo, ex.:
      "Rua das Flores, 120, Loja 2 - Centro". Com ele, a cidade no cartão
      vira link para o mapa. Nunca coloque endereço residencial.
    - cidade e estado: onde fica o negócio (sigla do estado: DF, GO, SP...).
@@ -97,7 +97,7 @@ const NEGOCIOS = [
     pastor: "Pr. Matheus Guimarães Guerra Gama",
     referenciaEm: "11/2026",
   },
-{
+  {
     nome: "Carol Sá Semijoias de Luxo",
     logo: "logos/carol-sa.jpg",
     responsavel: "Carol Sá",
@@ -112,6 +112,24 @@ const NEGOCIOS = [
     igreja: "Igreja Batista Central de Taguatinga",
     preposicaoIgreja: "na",
     pastor: "Pr. Matheus Guimarães Guerra Gama",
+    referenciaEm: "11/2026",
+  },
+  {
+    nome: "Anima School — Educação Cristã Clássica",
+    responsavel: "Neuma Coimbra",
+    categoria: "Educação",
+    descricao: "Uma educação fundamentada na cosmovisão cristã, que integra fé e conhecimento e cultiva sabedoria, virtudes, bons hábitos e amor pelo aprendizado.",
+    atende: "cidade",
+    local: "Samambaia Norte",
+    cidade: "Brasília",
+    estado: "DF",
+    endereco: "QS 122 Conjunto 9 Comércio, Lote 1 - Samambaia Norte, 72304-529",
+    whatsapp: "5561995538182",
+    instagram: "animaschool.ecc",
+    tratamento: "irmã",
+    igreja: "Igreja Cristã Evangélica Betesda",
+    preposicaoIgreja: "na",
+    pastor: "Pr. Gilvane de Abreu",
     referenciaEm: "11/2026",
   },
 ];
