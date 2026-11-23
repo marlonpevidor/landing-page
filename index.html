@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introdução à Educação Cristã Clássica · Marlon Pevidor</title>
+<meta name="description" content="Curso online gratuito de introdução à educação cristã clássica, com Marlon Pevidor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1c2a44;
+    --navy-deep: #131d31;
+    --oxblood: #7a1f2b;
+    --gold: #b38b3f;
+    --gold-soft: #d9c08a;
+    --parchment: #f6f0e3;
+    --parchment-dark: #ece2cc;
+    --ink: #2a2622;
+    --ink-soft: #5c544a;
+    --rule: #d8cbb0;
+    --display: "Cormorant Garamond", Georgia, serif;
+    --body: "EB Garamond", Georgia, serif;
+    --caps: "Cinzel", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--oxblood); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .eyebrow {
+    font-family: var(--caps);
+    font-size: .78rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 .75rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.12; margin: 0; color: var(--navy); }
+  h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
+  .ornament {
+    display: flex; align-items: center; gap: 14px;
+    color: var(--gold); margin: 1.25rem 0;
+  }
+  .ornament::before, .ornament::after { content: ""; height: 1px; background: currentColor; flex: 1; opacity: .6; }
+  .ornament.center { max-width: 260px; margin-left: auto; margin-right: auto; }
+  .btn {
+    display: inline-block;
+    font-family: var(--caps);
+    font-size: .85rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .95rem 1.8rem;
+    border: 1px solid var(--gold);
+    background: var(--oxblood);
+    color: var(--parchment);
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: var(--gold); color: var(--navy-deep); }
+  .btn.ghost { background: transparent; color: var(--gold-soft); }
+  .btn.ghost:hover { background: var(--gold); color: var(--navy-deep); }
+
+  /* Header */
+  header.top {
+    background: var(--navy-deep);
+    border-bottom: 1px solid rgba(179,139,63,.35);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--parchment); }
+  .crest {
+    width: 40px; height: 40px; flex: none;
+  }
+  .brand span { font-family: var(--caps); letter-spacing: .16em; font-size: .9rem; }
+  nav.links a {
+    color: var(--gold-soft); text-decoration: none; font-family: var(--caps);
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; margin-left: 28px;
+  }
+  nav.links a:hover { color: var(--parchment); }
+  @media (max-width: 760px) { nav.links { display: none; } }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(179,139,63,.18), transparent 60%),
+      var(--navy);
+    color: var(--parchment);
+    text-align: center;
+    padding: 96px 0 104px;
+    position: relative;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 14px;
+    border: 1px solid rgba(179,139,63,.28); pointer-events: none;
+  }
+  .hero h1 {
+    color: var(--parchment);
+    font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+    max-width: 16ch; margin: 0 auto;
+  }
+  .hero h1 em { color: var(--gold-soft); font-style: italic; font-weight: 500; }
+  .hero p.lede { max-width: 40rem; margin: 0 auto 2.25rem; color: #d9d3c4; font-size: 1.25rem; }
+  .hero .meta {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 28px;
+    margin-top: 2.5rem; font-family: var(--caps); font-size: .75rem; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--gold-soft);
+  }
+  .hero .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .motto { font-style: italic; color: var(--gold-soft); margin-top: 1rem; font-size: 1.05rem; }
+
+  section { padding: 88px 0; }
+  .section-head { text-align: center; max-width: 44rem; margin: 0 auto 3rem; }
+  .section-head p { color: var(--ink-soft); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  .about-grid p { margin: 0 0 1rem; }
+  .dropcap::first-letter {
+    font-family: var(--display); float: left; font-size: 4.2rem; line-height: .85;
+    padding: .35rem .5rem 0 0; color: var(--oxblood); font-weight: 700;
+  }
+  blockquote {
+    margin: 0; padding: 2rem 2rem 1.75rem; background: var(--parchment-dark);
+    border-left: 3px solid var(--oxblood); font-family: var(--display);
+    font-size: 1.55rem; line-height: 1.35; color: var(--navy); font-style: italic;
+  }
+  blockquote cite { display: block; margin-top: 1rem; font-family: var(--caps); font-style: normal; font-size: .75rem; letter-spacing: .16em; color: var(--ink-soft); text-transform: uppercase; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* Trivium */
+  .trivium { background: var(--parchment-dark); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .pillar {
+    background: var(--parchment); border: 1px solid var(--rule); padding: 2.25rem 1.75rem 2rem; text-align: center;
+  }
+  .pillar .num { font-family: var(--caps); color: var(--gold); font-size: .85rem; letter-spacing: .2em; }
+  .pillar h3 { font-size: 1.9rem; margin: .4rem 0 .2rem; }
+  .pillar .latin { font-style: italic; color: var(--oxblood); margin-bottom: .9rem; }
+  .pillar p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
+  @media (max-width: 860px) { .pillars { grid-template-columns: 1fr; } }
+
+  /* Course player */
+  .course { background: var(--navy-deep); color: var(--parchment); }
+  .course .section-head h2 { color: var(--parchment); }
+  .course .section-head p { color: #c9c2b2; }
+  .player-grid { display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start; }
+  @media (max-width: 960px) { .player-grid { grid-template-columns: 1fr; } }
+  .stage { border: 1px solid rgba(179,139,63,.4); background: #0d1424; }
+  .video {
+    position: relative; aspect-ratio: 16 / 9; background: #0d1424;
+  }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video .placeholder {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px; color: var(--gold-soft);
+    background: radial-gradient(circle at 50% 40%, rgba(179,139,63,.12), transparent 65%);
+  }
+  .video .placeholder svg { width: 56px; height: 56px; margin-bottom: 14px; opacity: .85; }
+  .video .placeholder strong { font-family: var(--caps); letter-spacing: .16em; font-size: .85rem; font-weight: 500; }
+  .video .placeholder span { color: #a9a294; font-size: 1rem; margin-top: .35rem; }
+  .lesson-info { padding: 24px 26px 28px; }
+  .lesson-info .eyebrow { margin-bottom: .4rem; }
+  .lesson-info h3 { color: var(--parchment); font-size: 1.85rem; }
+  .lesson-info p { color: #c9c2b2; margin: .75rem 0 0; }
+  .lesson-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 1.4rem; }
+  .lesson-nav button {
+    background: none; border: 1px solid rgba(179,139,63,.45); color: var(--gold-soft);
+    font-family: var(--caps); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    padding: .65rem 1rem; cursor: pointer;
+  }
+  .lesson-nav button:hover:not(:disabled) { background: var(--gold); color: var(--navy-deep); }
+  .lesson-nav button:disabled { opacity: .3; cursor: default; }
+
+  .syllabus { border: 1px solid rgba(179,139,63,.4); max-height: 640px; overflow: auto; }
+  .module-title {
+    font-family: var(--caps); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--gold); padding: 14px 18px 10px; background: #18233a; border-bottom: 1px solid rgba(179,139,63,.2);
+    position: sticky; top: 0;
+  }
+  .lesson {
+    display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center;
+    width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid rgba(255,255,255,.06);
+    padding: 14px 18px; color: #e4ddcd; font: inherit; font-size: 1.05rem; cursor: pointer; line-height: 1.3;
+  }
+  .lesson:hover { background: rgba(179,139,63,.08); }
+  .lesson.active { background: rgba(122,31,43,.45); box-shadow: inset 3px 0 0 var(--gold); }
+  .lesson .n { font-family: var(--caps); color: var(--gold); font-size: .8rem; }
+  .lesson .tag {
+    font-family: var(--caps); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+    color: #8f887a; border: 1px solid rgba(255,255,255,.14); padding: 2px 7px; white-space: nowrap;
+  }
+  .lesson .tag.ok { color: var(--gold-soft); border-color: rgba(179,139,63,.5); }
+  .progress { padding: 14px 18px; font-size: .95rem; color: #a9a294; border-top: 1px solid rgba(179,139,63,.2); }
+
+  /* Instructor */
+  .instructor-grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
+  .portrait {
+    aspect-ratio: 4 / 5; background: var(--parchment-dark); border: 1px solid var(--rule);
+    outline: 1px solid var(--gold); outline-offset: 10px;
+    display: flex; align-items: center; justify-content: center; color: var(--ink-soft);
+    font-family: var(--caps); font-size: .75rem; letter-spacing: .16em; text-align: center; padding: 20px;
+  }
+  .instructor-grid p { margin: 0 0 1rem; }
+  @media (max-width: 760px) { .instructor-grid { grid-template-columns: 1fr; } .portrait { max-width: 280px; margin: 0 auto 12px; } }
+
+  /* FAQ */
+  .faq { background: var(--parchment-dark); border-top: 1px solid var(--rule); }
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  details { border-bottom: 1px solid var(--rule); padding: 1.1rem 0; }
+  summary {
+    cursor: pointer; list-style: none; font-family: var(--display); font-size: 1.45rem; font-weight: 600; color: var(--navy);
+    display: flex; justify-content: space-between; gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--gold); font-family: var(--body); }
+  details[open] summary::after { content: "−"; }
+  details p { margin: .7rem 0 0; color: var(--ink-soft); }
+
+  /* CTA + footer */
+  .final { background: var(--oxblood); color: var(--parchment); text-align: center; padding: 80px 0; }
+  .final h2 { color: var(--parchment); }
+  .final p { color: #ecd9d5; max-width: 36rem; margin: 1rem auto 2rem; }
+  .final .btn { background: var(--navy-deep); }
+  footer { background: var(--navy-deep); color: #9c9586; text-align: center; padding: 40px 0; font-size: .95rem; }
+  footer .soli { font-family: var(--caps); letter-spacing: .3em; color: var(--gold); font-size: .8rem; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg class="crest" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 L36 8 V20 C36 29 28 35 20 38 C12 35 4 29 4 20 V8 Z" fill="none" stroke="#b38b3f" stroke-width="1.5"/>
+        <path d="M20 10 V30 M13 17 H27" stroke="#d9c08a" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+      <span>MARLON PEVIDOR</span>
+    </a>
+    <nav class="links">
+      <a href="#sobre">O curso</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#professor">Professor</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Curso online · Gratuito</p>
+    <h1>Introdução à Educação <em>Cristã Clássica</em></h1>
+    <div class="ornament center">✦</div>
+    <p class="lede">Redescubra a tradição que formou gerações pela verdade, pela bondade e pela beleza — e entenda como aplicá-la hoje, em casa ou na escola.</p>
+    <div class="actions">
+      <a class="btn" href="#aulas">Começar a assistir</a>
+      <a class="btn ghost" href="#sobre">Conhecer o curso</a>
+    </div>
+    <div class="meta">
+      <span id="meta-count">12 aulas</span><span>·</span><span>4 módulos</span><span>·</span><span>Assista no seu ritmo</span>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">Sobre o curso</p>
+      <h2>Uma educação que forma o homem inteiro</h2>
+      <div class="ornament">✦</div>
+      <p class="dropcap">A educação cristã clássica não é um método novo, mas uma herança antiga. Ela une a sabedoria da tradição greco-romana à fé cristã, buscando formar pessoas que amam o que é digno de ser amado.</p>
+      <p>Neste curso introdutório, você vai conhecer os fundamentos dessa tradição: sua história, o Trivium, a ideia de <em>paideia</em> e o papel dos grandes livros — com uma linguagem acessível a pais, professores e educadores.</p>
+      <p><em>[Texto provisório — será substituído pela descrição do curso que você me enviar.]</em></p>
+    </div>
+    <blockquote>
+      “Tudo o que é verdadeiro, tudo o que é respeitável, tudo o que é justo, tudo o que é puro, tudo o que é amável… seja isso o que ocupe o vosso pensamento.”
+      <cite>Filipenses 4.8</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="trivium">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">O que você vai aprender</p>
+      <h2>As três artes do Trivium</h2>
+      <p>O coração da educação clássica: aprender a conhecer, a pensar e a expressar a verdade.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">I</div>
+        <h3>Gramática</h3>
+        <div class="latin">Grammatica</div>
+        <p>O fundamento: conhecer, memorizar e nomear as coisas como elas são.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">II</div>
+        <h3>Lógica</h3>
+        <div class="latin">Dialectica</div>
+        <p>A compreensão: ordenar o pensamento, argumentar e discernir o verdadeiro do falso.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">III</div>
+        <h3>Retórica</h3>
+        <div class="latin">Rhetorica</div>
+        <p>A sabedoria expressa: comunicar a verdade com clareza, beleza e persuasão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course" id="aulas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sala de aula</p>
+      <h2>Aulas do curso</h2>
+      <p>Escolha uma aula na lista ao lado. Novas aulas são publicadas regularmente.</p>
+    </div>
+    <div class="player-grid">
+      <div class="stage">
+        <div class="video" id="video"></div>
+        <div class="lesson-info">
+          <p class="eyebrow" id="lesson-module"></p>
+          <h3 id="lesson-title"></h3>
+          <p id="lesson-desc"></p>
+          <div class="lesson-nav">
+            <button id="prev">← Aula anterior</button>
+            <button id="next">Próxima aula →</button>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="syllabus" id="syllabus"></div>
+        <div class="progress" id="progress"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="professor">
+  <div class="wrap instructor-grid">
+    <div class="portrait">Sua foto aqui</div>
+    <div>
+      <p class="eyebrow">Seu professor</p>
+      <h2>Marlon Pevidor</h2>
+      <div class="ornament">✦</div>
+      <p>[Mini-biografia provisória.] Educador dedicado à educação cristã clássica, Marlon ajuda pais, professores e escolas a recuperarem uma visão de ensino enraizada na tradição e nas Escrituras.</p>
+      <p>Me envie sua biografia, formação e experiência para substituir este texto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="perguntas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Para quem é este curso?</summary>
+        <p>Para pais que educam em casa, professores, diretores de escola e qualquer pessoa interessada em conhecer a educação cristã clássica.</p>
+      </details>
+      <details>
+        <summary>Preciso ter algum conhecimento prévio?</summary>
+        <p>Não. O curso é introdutório e parte do zero.</p>
+      </details>
+      <details>
+        <summary>O curso é gratuito?</summary>
+        <p>Sim, todas as aulas ficam disponíveis gratuitamente no YouTube e podem ser assistidas aqui. [Ajuste se for diferente.]</p>
+      </details>
+      <details>
+        <summary>Com que frequência saem novas aulas?</summary>
+        <p>As aulas são publicadas à medida que ficam prontas. As que ainda não foram lançadas aparecem como “Em breve”.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Comece hoje a sua jornada</h2>
+    <p>A primeira aula já está esperando por você.</p>
+    <a class="btn" href="#aulas">Assistir à primeira aula</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="soli">SOLI DEO GLORIA</div>
+    <div>© <span id="year"></span> Marlon Pevidor · Introdução à Educação Cristã Clássica</div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   AULAS DO CURSO — edite apenas esta lista.
+   Para publicar uma aula, cole o link do YouTube em "youtube".
+   Aulas com youtube vazio aparecem como "Em breve".
+   ========================================================== */
+const MODULOS = [
+  {
+    titulo: "Módulo I · Fundamentos",
+    aulas: [
+      { titulo: "O que é educação cristã clássica?", descricao: "Uma visão geral do curso e da tradição que vamos estudar.", youtube: "" },
+      { titulo: "Por que a educação moderna perdeu o rumo", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Verdade, bondade e beleza", descricao: "Descrição provisória.", youtube: "" },
+    ],
+  },
+  {
+    titulo: "Módulo II · História da tradição",
+    aulas: [
+      { titulo: "A paideia grega e romana", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "A Igreja e a educação na Idade Média", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Dorothy Sayers e a redescoberta", descricao: "Descrição provisória.", youtube: "" },
+    ],
+  },
+  {
+    titulo: "Módulo III · O Trivium",
+    aulas: [
+      { titulo: "Gramática: o fundamento", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Lógica: a arte de pensar", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Retórica: a sabedoria expressa", descricao: "Descrição provisória.", youtube: "" },
+    ],
+  },
+  {
+    titulo: "Módulo IV · Na prática",
+    aulas: [
+      { titulo: "Os grandes livros", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Educação clássica em casa", descricao: "Descrição provisória.", youtube: "" },
+      { titulo: "Próximos passos", descricao: "Descrição provisória.", youtube: "" },
+    ],
+  },
+];
+
+/* ---------- daqui para baixo não precisa mexer ---------- */
+function youtubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);
+  return m ? m[1] : (/^[\w-]{11}$/.test(url) ? url : null);
+}
+
+const lessons = [];
+MODULOS.forEach((mod) => mod.aulas.forEach((a) => lessons.push({ ...a, modulo: mod.titulo, id: youtubeId(a.youtube) })));
+
+const $ = (s) => document.querySelector(s);
+const syllabus = $("#syllabus");
+const playIcon = '<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="28" cy="28" r="26"/><path d="M23 18 L38 28 L23 38 Z"/></svg>';
+let current = 0;
+
+function render() {
+  let n = 0, html = "";
+  MODULOS.forEach((mod) => {
+    html += `<div class="module-title">${mod.titulo}</div>`;
+    mod.aulas.forEach(() => {
+      const l = lessons[n];
+      html += `<button class="lesson" data-i="${n}">
+        <span class="n">${String(n + 1).padStart(2, "0")}</span>
+        <span>${l.titulo}</span>
+        <span class="tag ${l.id ? "ok" : ""}">${l.id ? "Assistir" : "Em breve"}</span>
+      </button>`;
+      n++;
+    });
+  });
+  syllabus.innerHTML = html;
+  syllabus.addEventListener("click", (e) => {
+    const b = e.target.closest(".lesson");
+    if (b) { location.hash = "aula-" + (+b.dataset.i + 1); }
+  });
+  const published = lessons.filter((l) => l.id).length;
+  $("#progress").textContent = `${published} de ${lessons.length} aulas publicadas`;
+  $("#meta-count").textContent = `${lessons.length} aulas`;
+}
+
+function show(i, scroll) {
+  current = Math.max(0, Math.min(lessons.length - 1, i));
+  const l = lessons[current];
+  $("#video").innerHTML = l.id
+    ? `<iframe src="https://www.youtube-nocookie.com/embed/${l.id}?rel=0" title="${l.titulo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    : `<div class="placeholder">${playIcon}<strong>EM BREVE</strong><span>Esta aula ainda não foi publicada.</span></div>`;
+  $("#lesson-module").textContent = `Aula ${current + 1} · ${l.modulo}`;
+  $("#lesson-title").textContent = l.titulo;
+  $("#lesson-desc").textContent = l.descricao;
+  document.querySelectorAll(".lesson").forEach((b) => b.classList.toggle("active", +b.dataset.i === current));
+  $("#prev").disabled = current === 0;
+  $("#next").disabled = current === lessons.length - 1;
+  if (scroll) $("#aulas").scrollIntoView({ behavior: "smooth" });
+}
+
+function fromHash(scroll) {
+  const m = location.hash.match(/^#aula-(\d+)$/);
+  if (m) show(+m[1] - 1, scroll);
+}
+
+$("#prev").onclick = () => (location.hash = "aula-" + current);
+$("#next").onclick = () => (location.hash = "aula-" + (current + 2));
+window.addEventListener("hashchange", () => fromHash(true));
+$("#year").textContent = new Date().getFullYear();
+
+render();
+show(0);
+fromHash(true);
+</script>
+</body>
+</html>
