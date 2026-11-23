@@ -230,6 +230,24 @@
   </div>
 </section>
 
+<section class="ofertar" id="ofertar">
+  <div class="wrap">
+    <div class="pix-box" id="ofertar-box">
+      <p class="eyebrow">Oferta</p>
+      <h2>Considere ofertar para este ministério</h2>
+      <p>Sua oferta ajuda a manter os cursos gratuitos no ar e a levá-los a mais famílias.</p>
+      <div class="pix-valores"></div>
+      <div class="pix-resultado" hidden>
+        <p class="pix-titulo"></p>
+        <div class="pix-qr"></div>
+        <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o app do seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o QR Code com o app do banco.</p>
+        <textarea readonly aria-label="Código Pix copia e cola"></textarea>
+        <button type="button" class="pix-copiar">Copiar código Pix</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="soli">SOLI DEO GLORIA</div>
@@ -393,5 +411,7 @@ render();
 show(0);
 fromHash(true);
 </script>
+<script src="../qrcode.js"></script>
+<script src="../pix.js"></script>
 </body>
 </html>
