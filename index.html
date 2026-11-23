@@ -243,6 +243,28 @@
   .final .btn { background: var(--navy-deep); }
   footer { background: var(--navy-deep); color: #9c9586; text-align: center; padding: 40px 0; font-size: .95rem; }
   footer .soli { font-family: var(--caps); letter-spacing: .3em; color: var(--gold); font-size: .8rem; margin-bottom: .5rem; }
+  /* Para quem é / objetivos */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { border-top: 2px solid var(--oxblood); padding-top: 1.25rem; }
+  .card h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+  .goals { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .goals li { padding: .7rem 0 .7rem 2.2rem; border-bottom: 1px solid var(--rule); position: relative; }
+  .goals li::before { content: "✦"; position: absolute; left: .4rem; color: var(--gold); }
+  .goals strong { font-family: var(--display); font-size: 1.3rem; color: var(--navy); font-weight: 600; }
+  .trinity { max-width: 44rem; margin: 2.5rem auto 0; text-align: center; font-style: italic; color: var(--ink-soft); }
+  .book { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+  .book-cover {
+    aspect-ratio: 2 / 3; background: var(--navy); color: var(--parchment); padding: 22px 18px;
+    display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--gold);
+    outline: 1px solid var(--gold); outline-offset: -8px; box-shadow: 8px 10px 0 var(--parchment-dark);
+  }
+  .book-cover .t { font-family: var(--display); font-size: 1.15rem; line-height: 1.2; }
+  .book-cover .t em { color: var(--gold-soft); }
+  .book-cover .a { font-family: var(--caps); font-size: .65rem; letter-spacing: .2em; color: var(--gold-soft); }
+  .book p { margin: 0 0 1rem; }
+  @media (max-width: 760px) { .book { grid-template-columns: 1fr; } .book-cover { max-width: 200px; margin: 0 auto; } }
 </style>
 </head>
 <body>
@@ -270,13 +292,13 @@
     <p class="eyebrow">Curso online · Gratuito</p>
     <h1>Introdução à Educação <em>Cristã Clássica</em></h1>
     <div class="ornament center">✦</div>
-    <p class="lede">Redescubra a tradição que formou gerações pela verdade, pela bondade e pela beleza — e entenda como aplicá-la hoje, em casa ou na escola.</p>
+    <p class="lede">Como transformar a mente e o coração da sua família: redescubra um modo de educar que une fé, razão, beleza e verdade — e forma homens e mulheres à imagem de Cristo.</p>
     <div class="actions">
       <a class="btn" href="#aulas">Começar a assistir</a>
       <a class="btn ghost" href="#sobre">Conhecer o curso</a>
     </div>
     <div class="meta">
-      <span id="meta-count">12 aulas</span><span>·</span><span>4 módulos</span><span>·</span><span>Assista no seu ritmo</span>
+      <span id="meta-count">aulas</span><span>·</span><span>7 módulos + conclusão</span><span>·</span><span>Assista no seu ritmo</span>
     </div>
   </div>
 </section>
@@ -285,15 +307,20 @@
   <div class="wrap about-grid">
     <div>
       <p class="eyebrow">Sobre o curso</p>
-      <h2>Uma educação que forma o homem inteiro</h2>
+      <h2>Uma trilha clara para entender e aplicar a educação cristã clássica</h2>
       <div class="ornament">✦</div>
-      <p class="dropcap">A educação cristã clássica não é um método novo, mas uma herança antiga. Ela une a sabedoria da tradição greco-romana à fé cristã, buscando formar pessoas que amam o que é digno de ser amado.</p>
-      <p>Neste curso introdutório, você vai conhecer os fundamentos dessa tradição: sua história, o Trivium, a ideia de <em>paideia</em> e o papel dos grandes livros — com uma linguagem acessível a pais, professores e educadores.</p>
-      <p><em>[Texto provisório — será substituído pela descrição do curso que você me enviar.]</em></p>
+      <p class="dropcap">A educação cristã clássica não é um método novo: é antiga, enraizada nas Escrituras, alinhada à natureza humana e sustentada por séculos de tradição cristã. Este curso é uma introdução clara e prática a essa herança.</p>
+      <p>As aulas seguem as perguntas que os jornalistas fazem — <em>para quem, o quê, por quê, para quê, como e onde</em> — e formam uma estrutura curricular simples de seguir, do primeiro conceito até a aplicação na sua casa.</p>
+      <p>Você vai conhecer a grande conversa, as grandes ideias e os grandes livros; a história da educação, dos gregos e romanos até hoje; e o <em>trivium</em>, o método que ensina a aprender.</p>
+      <ul class="goals">
+        <li><strong>Verdade, bondade e beleza</strong></li>
+        <li><strong>Retorno à <em>imago Dei</em></strong></li>
+        <li><strong>Formação para a eternidade</strong></li>
+      </ul>
     </div>
     <blockquote>
-      “Tudo o que é verdadeiro, tudo o que é respeitável, tudo o que é justo, tudo o que é puro, tudo o que é amável… seja isso o que ocupe o vosso pensamento.”
-      <cite>Filipenses 4.8</cite>
+      “Ponde-vos nos caminhos, e vede, e perguntai pelas veredas antigas, qual é o bom caminho, e andai por ele; e achareis descanso para a vossa alma.”
+      <cite>Jeremias 6.16</cite>
     </blockquote>
   </div>
 </section>
@@ -301,28 +328,52 @@
 <section class="trivium">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">O que você vai aprender</p>
+      <p class="eyebrow">O método</p>
       <h2>As três artes do Trivium</h2>
-      <p>O coração da educação clássica: aprender a conhecer, a pensar e a expressar a verdade.</p>
+      <p>Cada fase corresponde a uma capacidade natural do aluno: primeiro, a memorização dos fatos; depois, o raciocínio sobre eles; por fim, a expressão clara e eloquente.</p>
     </div>
     <div class="pillars">
       <div class="pillar">
         <div class="num">I</div>
         <h3>Gramática</h3>
         <div class="latin">Grammatica</div>
-        <p>O fundamento: conhecer, memorizar e nomear as coisas como elas são.</p>
+        <p>O domínio dos fatos: observar, memorizar e nomear as coisas como elas são.</p>
       </div>
       <div class="pillar">
         <div class="num">II</div>
         <h3>Lógica</h3>
         <div class="latin">Dialectica</div>
-        <p>A compreensão: ordenar o pensamento, argumentar e discernir o verdadeiro do falso.</p>
+        <p>O domínio das relações entre os fatos: interpretar, ordenar o pensamento e discernir.</p>
       </div>
       <div class="pillar">
         <div class="num">III</div>
         <h3>Retórica</h3>
         <div class="latin">Rhetorica</div>
-        <p>A sabedoria expressa: comunicar a verdade com clareza, beleza e persuasão.</p>
+        <p>O domínio dos usos e aplicações: comunicar a verdade com clareza, beleza e persuasão.</p>
+      </div>
+    </div>
+    <p class="trinity">Deus primeiro nos diz quem Ele é (gramática), depois nos ensina como isso se conecta ao restante da realidade (lógica) e, por fim, nos envia a comunicar, ensinar e testemunhar (retórica).</p>
+  </div>
+</section>
+
+<section id="para-quem">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Para quem é este curso</p>
+      <h2>Para toda a família</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Pais de filhos em idade escolar</h3>
+        <p>E também noivos e recém-casados. A decisão sobre a educação dos filhos precisa ser tomada desde cedo — e precisa ser espiritual, não apenas prática.</p>
+      </div>
+      <div class="card">
+        <h3>Adultos</h3>
+        <p>Educação não termina na escola ou na faculdade. Com método e direção, você pode investir na sua própria formação — a autoeducação.</p>
+      </div>
+      <div class="card">
+        <h3>Crianças e adolescentes</h3>
+        <p>O <em>trivium</em> é uma caixa de ferramentas para aprender a aprender — e pode ser aplicado em casa, qualquer que seja a escola.</p>
       </div>
     </div>
   </div>
@@ -333,7 +384,7 @@
     <div class="section-head">
       <p class="eyebrow">Sala de aula</p>
       <h2>Aulas do curso</h2>
-      <p>Escolha uma aula na lista ao lado. Novas aulas são publicadas regularmente.</p>
+      <p>Escolha uma aula na lista. As aulas marcadas como “Em breve” serão publicadas nos próximos dias.</p>
     </div>
     <div class="player-grid">
       <div class="stage">
@@ -363,8 +414,28 @@
       <p class="eyebrow">Seu professor</p>
       <h2>Marlon Pevidor</h2>
       <div class="ornament">✦</div>
-      <p>[Mini-biografia provisória.] Educador dedicado à educação cristã clássica, Marlon ajuda pais, professores e escolas a recuperarem uma visão de ensino enraizada na tradição e nas Escrituras.</p>
-      <p>Me envie sua biografia, formação e experiência para substituir este texto.</p>
+      <p>Discípulo de Jesus Cristo desde 1999, Marlon é casado com Kelen desde 2004 e pai de três filhos. A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde ele serviu como diretor de educação cristã de 2021 a 2024.</p>
+      <p>É professor de humanidades integradas na Logos Online School (Moscow, Idaho, EUA), licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
+      <p>Descobriu a educação cristã clássica em 2015, através de <em>Como ler livros</em>, de Mortimer Adler — e desde então dedica-se a ajudar famílias a recuperar uma educação antiga, bíblica e orientada pelas Escrituras.</p>
+    </div>
+  </div>
+</section>
+
+<section class="trivium" id="livro">
+  <div class="wrap book">
+    <div class="book-cover">
+      <div class="t">Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></div>
+      <div class="a">MARLON PEVIDOR</div>
+    </div>
+    <div>
+      <p class="eyebrow">O livro do curso</p>
+      <h2>Aprofunde-se com o livro</h2>
+      <div class="ornament">✦</div>
+      <p>Este curso deu origem ao livro <em>Como transformar a mente e o coração de sua família através da educação cristã clássica</em>, que acompanha os mesmos capítulos com mais detalhes, exemplos e leituras complementares.</p>
+      <blockquote style="font-size:1.25rem;padding:1.4rem 1.6rem">
+        “Marlon expressa seus conceitos com convicção e admirável clareza.”
+        <cite>Ron Prater, no prefácio</cite>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -377,20 +448,20 @@
     </div>
     <div class="faq-list">
       <details>
-        <summary>Para quem é este curso?</summary>
-        <p>Para pais que educam em casa, professores, diretores de escola e qualquer pessoa interessada em conhecer a educação cristã clássica.</p>
+        <summary>Preciso ter algum conhecimento prévio?</summary>
+        <p>Não. O curso é introdutório e começa do zero, explicando cada conceito — <em>trivium</em>, <em>quadrivium</em>, sete artes liberais, grandes livros — passo a passo.</p>
       </details>
       <details>
-        <summary>Preciso ter algum conhecimento prévio?</summary>
-        <p>Não. O curso é introdutório e parte do zero.</p>
+        <summary>Meus filhos estudam numa escola convencional. O curso serve para mim?</summary>
+        <p>Sim. A formação da mente não depende exclusivamente da escola. O curso mostra caminhos como o <em>afterschooling</em> (aplicar a educação clássica em casa, no contraturno), a educação domiciliar e as escolas cristãs clássicas.</p>
+      </details>
+      <details>
+        <summary>Toda escola cristã é uma escola clássica?</summary>
+        <p>Não. Muitas escolas confessionais seguem a BNCC e acrescentam elementos religiosos, mas não adotam os fundamentos da educação cristã clássica. O módulo VII explica as diferenças.</p>
       </details>
       <details>
         <summary>O curso é gratuito?</summary>
-        <p>Sim, todas as aulas ficam disponíveis gratuitamente no YouTube e podem ser assistidas aqui. [Ajuste se for diferente.]</p>
-      </details>
-      <details>
-        <summary>Com que frequência saem novas aulas?</summary>
-        <p>As aulas são publicadas à medida que ficam prontas. As que ainda não foram lançadas aparecem como “Em breve”.</p>
+        <p>Sim. Todas as aulas ficam disponíveis gratuitamente no YouTube e podem ser assistidas aqui, no seu ritmo.</p>
       </details>
     </div>
   </div>
@@ -398,9 +469,9 @@
 
 <section class="final">
   <div class="wrap">
-    <h2>Comece hoje a sua jornada</h2>
-    <p>A primeira aula já está esperando por você.</p>
-    <a class="btn" href="#aulas">Assistir à primeira aula</a>
+    <h2>Este é o tempo de restaurar</h2>
+    <p>A educação cristã clássica é uma semente de fé lançada no solo da história. Comece hoje a cultivá-la na sua família.</p>
+    <a class="btn" href="#aula-1">Assistir à primeira aula</a>
   </div>
 </section>
 
@@ -412,42 +483,89 @@
 </footer>
 
 <script>
-/* ==========================================================
-   AULAS DO CURSO — edite apenas esta lista.
-   Para publicar uma aula, cole o link do YouTube em "youtube".
+/* ==================================================================
+   AULAS DO CURSO — para publicar uma aula, cole o link do YouTube
+   entre as aspas de youtube: "". O campo "arquivo" é só o nome do
+   vídeo no Google Drive, para você saber qual é qual.
    Aulas com youtube vazio aparecem como "Em breve".
-   ========================================================== */
+   ================================================================== */
 const MODULOS = [
   {
-    titulo: "Módulo I · Fundamentos",
+    titulo: "Módulo I · Apresentação",
     aulas: [
-      { titulo: "O que é educação cristã clássica?", descricao: "Uma visão geral do curso e da tradição que vamos estudar.", youtube: "" },
-      { titulo: "Por que a educação moderna perdeu o rumo", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Verdade, bondade e beleza", descricao: "Descrição provisória.", youtube: "" },
+      { arquivo: "M1A1", youtube: "", titulo: "O que você vai aprender neste curso?", descricao: "Uma visão geral da trilha do curso, organizada pelas perguntas: para quem, o quê, por quê, para quê, como e onde." },
+      { arquivo: "M1A2", youtube: "", titulo: "Quem sou eu?", descricao: "Um pouco da história do professor Marlon Pevidor e de como ele descobriu a educação cristã clássica." },
     ],
   },
   {
-    titulo: "Módulo II · História da tradição",
+    titulo: "Módulo II · Para quem é este curso?",
     aulas: [
-      { titulo: "A paideia grega e romana", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "A Igreja e a educação na Idade Média", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Dorothy Sayers e a redescoberta", descricao: "Descrição provisória.", youtube: "" },
+      { arquivo: "M2A1p1", youtube: "", titulo: "Pais de filhos em idade escolar (parte 1)", descricao: "Por que a decisão sobre a educação dos filhos precisa ser espiritual, e não apenas prática." },
+      { arquivo: "M2A1p2", youtube: "", titulo: "Pais de filhos em idade escolar (parte 2)", descricao: "Escolas confessionais, escolas cristãs clássicas e o que considerar na escolha." },
+      { arquivo: "M2A2",   youtube: "", titulo: "Adultos", descricao: "A educação cristã clássica também é para você: a autoeducação com método e direção." },
+      { arquivo: "M2A3",   youtube: "", titulo: "Crianças e adolescentes", descricao: "O trivium como caixa de ferramentas para aprender a aprender." },
     ],
   },
   {
-    titulo: "Módulo III · O Trivium",
+    titulo: "Módulo III · O que é educação cristã clássica?",
     aulas: [
-      { titulo: "Gramática: o fundamento", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Lógica: a arte de pensar", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Retórica: a sabedoria expressa", descricao: "Descrição provisória.", youtube: "" },
+      { arquivo: "M3A1p1", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 1)", descricao: "A conversa mantida pelas maiores mentes dos últimos quase três mil anos — e como entrar nela." },
+      { arquivo: "M3A1p2", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 2)", descricao: "Continuação." },
+      { arquivo: "M3A1p3", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 3)", descricao: "Continuação." },
+      { arquivo: "M3A1p4", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 4)", descricao: "Continuação." },
+      { arquivo: "M3A1p5", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 5)", descricao: "Continuação." },
+      { arquivo: "M3A2p1", youtube: "", titulo: "Breve história da educação (parte 1)", descricao: "Gregos e romanos: gramática, literatura, lógica e retórica." },
+      { arquivo: "M3A2p2", youtube: "", titulo: "Breve história da educação (parte 2)", descricao: "De Agostinho às sete artes liberais; o Renascimento e a Reforma." },
+      { arquivo: "M3A2p3", youtube: "", titulo: "Breve história da educação (parte 3)", descricao: "Do Iluminismo à educação progressista do século XX." },
     ],
   },
   {
-    titulo: "Módulo IV · Na prática",
+    titulo: "Módulo IV · Por que é importante saber o que é educação cristã clássica?",
     aulas: [
-      { titulo: "Os grandes livros", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Educação clássica em casa", descricao: "Descrição provisória.", youtube: "" },
-      { titulo: "Próximos passos", descricao: "Descrição provisória.", youtube: "" },
+      { arquivo: "M4A1p1", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 1)", descricao: "A defesa positiva: as características da educação cristã clássica." },
+      { arquivo: "M4A1p2", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 2)", descricao: "Continuação." },
+      { arquivo: "M4A1p3", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 3)", descricao: "Continuação." },
+      { arquivo: "M4A1p4", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 4)", descricao: "A defesa negativa: refutando acusações." },
+      { arquivo: "M4A1p5", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 5)", descricao: "Os defeitos das alternativas." },
+      { arquivo: "M4A2p1", youtube: "", titulo: "Textos bíblicos que referendam a educação cristã clássica (parte 1)", descricao: "O que as Escrituras dizem sobre educar." },
+      { arquivo: "M4A2p2", youtube: "", titulo: "Textos bíblicos que referendam a educação cristã clássica (parte 2)", descricao: "Continuação." },
+      { arquivo: "M4A3p1", youtube: "", titulo: "O trivium e a Trindade (parte 1)", descricao: "Gramática, lógica e retórica como analogia da revelação do Deus trino." },
+      { arquivo: "M4A3p2", youtube: "", titulo: "O trivium e a Trindade (parte 2)", descricao: "Continuação." },
+    ],
+  },
+  {
+    titulo: "Módulo V · Para que serve uma educação cristã clássica?",
+    aulas: [
+      { arquivo: "M5A1p1", youtube: "", titulo: "Objetivos: verdade, bondade e beleza", descricao: "O primeiro grande objetivo da educação cristã clássica." },
+      { arquivo: "M5A1p2", youtube: "", titulo: "Objetivos: o retorno à imago Dei", descricao: "Educar para que sejamos mais parecidos com Cristo." },
+      { arquivo: "M5A1p3", youtube: "", titulo: "Objetivos: formação para a eternidade", descricao: "Uma educação que não forma apenas para o mercado, mas para a eternidade." },
+    ],
+  },
+  {
+    titulo: "Módulo VI · Como autoeducar-se e educar seus filhos?",
+    aulas: [
+      { arquivo: "M6A1p1", youtube: "", titulo: "Os métodos (parte 1)", descricao: "As sete artes liberais: trivium e quadrivium." },
+      { arquivo: "M6A1p2", youtube: "", titulo: "Os métodos (parte 2)", descricao: "Continuação." },
+      { arquivo: "M6A1p3", youtube: "", titulo: "Os métodos (parte 3)", descricao: "Charlotte Mason, com Bruna Bugana." },
+      { arquivo: "M6A2p1", youtube: "", titulo: "Adultos: como educar sua mente (parte 1)", descricao: "Um plano de formação para a autoeducação." },
+      { arquivo: "M6A2p2", youtube: "", titulo: "Adultos: como educar sua mente (parte 2)", descricao: "Continuação." },
+      { arquivo: "M6A3",   youtube: "", titulo: "Crianças", descricao: "Ensinando o trivium e formando uma mente bem treinada." },
+    ],
+  },
+  {
+    titulo: "Módulo VII · Onde adquirir uma educação cristã clássica?",
+    aulas: [
+      { arquivo: "M7A1p1", youtube: "", titulo: "Em casa (parte 1)", descricao: "Educação domiciliar independente." },
+      { arquivo: "M7A1p2", youtube: "", titulo: "Em casa (parte 2)", descricao: "Educação domiciliar orientada." },
+      { arquivo: "M7A1p3", youtube: "", titulo: "Em casa (parte 3)", descricao: "Continuação." },
+      { arquivo: "M7A1p4", youtube: "", titulo: "Em casa (parte 4)", descricao: "Afterschooling: educação clássica no contraturno." },
+      { arquivo: "M7A2",   youtube: "", titulo: "Na escola", descricao: "Escolas cristãs clássicas e outras alternativas." },
+    ],
+  },
+  {
+    titulo: "Conclusão",
+    aulas: [
+      { arquivo: "M8A1", youtube: "", titulo: "E agora? O que fazer?", descricao: "Reparando as ruínas: um chamado à ação." },
     ],
   },
 ];
