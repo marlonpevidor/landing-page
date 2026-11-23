@@ -3,269 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Introdução à Educação Cristã Clássica · Marlon Pevidor</title>
-<meta name="description" content="Curso online gratuito de introdução à educação cristã clássica, com Marlon Pevidor.">
+<title>Marlon Pevidor · Educação Cristã Clássica</title>
+<meta name="description" content="Cursos online gratuitos de educação cristã clássica e história da Igreja, com o professor Marlon Pevidor.">
 <link rel="canonical" href="https://curso-iecc.pages.dev/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Marlon Pevidor">
 <meta property="og:url" content="https://curso-iecc.pages.dev/">
-<meta property="og:title" content="Introdução à Educação Cristã Clássica · Marlon Pevidor">
-<meta property="og:description" content="Curso online gratuito: redescubra a tradição que formou gerações pela verdade, pela bondade e pela beleza.">
+<meta property="og:title" content="Marlon Pevidor · Educação Cristã Clássica">
+<meta property="og:description" content="Cursos online gratuitos para formar a mente e o coração da sua família.">
 <meta property="og:image" content="https://curso-iecc.pages.dev/compartilhar.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+  // Links antigos (curso-iecc.pages.dev/#aula-3) continuam funcionando
+  if (/^#aula-\d+$/.test(location.hash)) location.replace("iecc/" + location.hash);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #1c2a44;
-    --navy-deep: #131d31;
-    --oxblood: #7a1f2b;
-    --gold: #b38b3f;
-    --gold-soft: #d9c08a;
-    --parchment: #f6f0e3;
-    --parchment-dark: #ece2cc;
-    --ink: #2a2622;
-    --ink-soft: #5c544a;
-    --rule: #d8cbb0;
-    --display: "Cormorant Garamond", Georgia, serif;
-    --body: "EB Garamond", Georgia, serif;
-    --caps: "Cinzel", Georgia, serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--parchment);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: var(--oxblood); }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
-  .eyebrow {
-    font-family: var(--caps);
-    font-size: .78rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin: 0 0 .75rem;
-  }
-  h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.12; margin: 0; color: var(--navy); }
-  h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
-  .ornament {
-    display: flex; align-items: center; gap: 14px;
-    color: var(--gold); margin: 1.25rem 0;
-  }
-  .ornament::before, .ornament::after { content: ""; height: 1px; background: currentColor; flex: 1; opacity: .6; }
-  .ornament.center { max-width: 260px; margin-left: auto; margin-right: auto; }
-  .btn {
-    display: inline-block;
-    font-family: var(--caps);
-    font-size: .85rem;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: .95rem 1.8rem;
-    border: 1px solid var(--gold);
-    background: var(--oxblood);
-    color: var(--parchment);
-    transition: background .2s, color .2s;
-  }
-  .btn:hover { background: var(--gold); color: var(--navy-deep); }
-  .btn.ghost { background: transparent; color: var(--gold-soft); }
-  .btn.ghost:hover { background: var(--gold); color: var(--navy-deep); }
-
-  /* Header */
-  header.top {
-    background: var(--navy-deep);
-    border-bottom: 1px solid rgba(179,139,63,.35);
-  }
-  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--parchment); }
-  .crest {
-    width: 40px; height: 40px; flex: none;
-  }
-  .brand span { font-family: var(--caps); letter-spacing: .16em; font-size: .9rem; }
-  nav.links a {
-    color: var(--gold-soft); text-decoration: none; font-family: var(--caps);
-    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; margin-left: 28px;
-  }
-  nav.links a:hover { color: var(--parchment); }
-  @media (max-width: 760px) { nav.links { display: none; } }
-
-  /* Hero */
-  .hero {
-    background:
-      radial-gradient(ellipse at 50% 0%, rgba(179,139,63,.18), transparent 60%),
-      var(--navy);
-    color: var(--parchment);
-    text-align: center;
-    padding: 96px 0 104px;
-    position: relative;
-  }
-  .hero::after {
-    content: ""; position: absolute; inset: 14px;
-    border: 1px solid rgba(179,139,63,.28); pointer-events: none;
-  }
-  .hero h1 {
-    color: var(--parchment);
-    font-size: clamp(2.6rem, 6.5vw, 4.6rem);
-    max-width: 16ch; margin: 0 auto;
-  }
-  .hero h1 em { color: var(--gold-soft); font-style: italic; font-weight: 500; }
-  .hero p.lede { max-width: 40rem; margin: 0 auto 2.25rem; color: #d9d3c4; font-size: 1.25rem; }
-  .hero .meta {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 28px;
-    margin-top: 2.5rem; font-family: var(--caps); font-size: .75rem; letter-spacing: .16em;
-    text-transform: uppercase; color: var(--gold-soft);
-  }
-  .hero .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .motto { font-style: italic; color: var(--gold-soft); margin-top: 1rem; font-size: 1.05rem; }
-
-  section { padding: 88px 0; }
-  .section-head { text-align: center; max-width: 44rem; margin: 0 auto 3rem; }
-  .section-head p { color: var(--ink-soft); }
-
-  /* About */
-  .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
-  .about-grid p { margin: 0 0 1rem; }
-  .dropcap::first-letter {
-    font-family: var(--display); float: left; font-size: 4.2rem; line-height: .85;
-    padding: .35rem .5rem 0 0; color: var(--oxblood); font-weight: 700;
-  }
-  blockquote {
-    margin: 0; padding: 2rem 2rem 1.75rem; background: var(--parchment-dark);
-    border-left: 3px solid var(--oxblood); font-family: var(--display);
-    font-size: 1.55rem; line-height: 1.35; color: var(--navy); font-style: italic;
-  }
-  blockquote cite { display: block; margin-top: 1rem; font-family: var(--caps); font-style: normal; font-size: .75rem; letter-spacing: .16em; color: var(--ink-soft); text-transform: uppercase; }
-  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
-
-  /* Trivium */
-  .trivium { background: var(--parchment-dark); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .pillar {
-    background: var(--parchment); border: 1px solid var(--rule); padding: 2.25rem 1.75rem 2rem; text-align: center;
-  }
-  .pillar .num { font-family: var(--caps); color: var(--gold); font-size: .85rem; letter-spacing: .2em; }
-  .pillar h3 { font-size: 1.9rem; margin: .4rem 0 .2rem; }
-  .pillar .latin { font-style: italic; color: var(--oxblood); margin-bottom: .9rem; }
-  .pillar p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
-  @media (max-width: 860px) { .pillars { grid-template-columns: 1fr; } }
-
-  /* Course player */
-  .course { background: var(--navy-deep); color: var(--parchment); }
-  .course .section-head h2 { color: var(--parchment); }
-  .course .section-head p { color: #c9c2b2; }
-  .player-grid { display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start; }
-  @media (max-width: 960px) { .player-grid { grid-template-columns: 1fr; } }
-  .stage { border: 1px solid rgba(179,139,63,.4); background: #0d1424; }
-  .video {
-    position: relative; aspect-ratio: 16 / 9; background: #0d1424;
-  }
-  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .video .placeholder {
-    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 24px; color: var(--gold-soft);
-    background: radial-gradient(circle at 50% 40%, rgba(179,139,63,.12), transparent 65%);
-  }
-  .video .placeholder svg { width: 56px; height: 56px; margin-bottom: 14px; opacity: .85; }
-  .video .placeholder strong { font-family: var(--caps); letter-spacing: .16em; font-size: .85rem; font-weight: 500; }
-  .video .placeholder span { color: #a9a294; font-size: 1rem; margin-top: .35rem; }
-  .lesson-info { padding: 24px 26px 28px; }
-  .lesson-info .eyebrow { margin-bottom: .4rem; }
-  .lesson-info h3 { color: var(--parchment); font-size: 1.85rem; }
-  .lesson-info p { color: #c9c2b2; margin: .75rem 0 0; }
-  .lesson-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 1.4rem; }
-  .lesson-nav button {
-    background: none; border: 1px solid rgba(179,139,63,.45); color: var(--gold-soft);
-    font-family: var(--caps); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
-    padding: .65rem 1rem; cursor: pointer;
-  }
-  .lesson-nav button:hover:not(:disabled) { background: var(--gold); color: var(--navy-deep); }
-  .lesson-nav button:disabled { opacity: .3; cursor: default; }
-
-  .syllabus { border: 1px solid rgba(179,139,63,.4); max-height: 640px; overflow: auto; }
-  .module-title {
-    font-family: var(--caps); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--gold); padding: 14px 18px 10px; background: #18233a; border-bottom: 1px solid rgba(179,139,63,.2);
-    position: sticky; top: 0;
-  }
-  .lesson {
-    display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center;
-    width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid rgba(255,255,255,.06);
-    padding: 14px 18px; color: #e4ddcd; font: inherit; font-size: 1.05rem; cursor: pointer; line-height: 1.3;
-  }
-  .lesson:hover { background: rgba(179,139,63,.08); }
-  .lesson.active { background: rgba(122,31,43,.45); box-shadow: inset 3px 0 0 var(--gold); }
-  .lesson .n { font-family: var(--caps); color: var(--gold); font-size: .8rem; }
-  .lesson .tag {
-    font-family: var(--caps); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
-    color: #8f887a; border: 1px solid rgba(255,255,255,.14); padding: 2px 7px; white-space: nowrap;
-  }
-  .lesson .tag.ok { color: var(--gold-soft); border-color: rgba(179,139,63,.5); }
-  .progress { padding: 14px 18px; font-size: .95rem; color: #a9a294; border-top: 1px solid rgba(179,139,63,.2); }
-
-  /* Instructor */
-  .instructor-grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
-  .portrait {
-    aspect-ratio: 4 / 5; background: var(--parchment-dark); border: 1px solid var(--rule);
-    outline: 1px solid var(--gold); outline-offset: 10px;
-    display: flex; align-items: center; justify-content: center; color: var(--ink-soft);
-    font-family: var(--caps); font-size: .75rem; letter-spacing: .16em; text-align: center; padding: 20px;
-  }
-  .instructor-grid p { margin: 0 0 1rem; }
-  @media (max-width: 760px) { .instructor-grid { grid-template-columns: 1fr; } .portrait { max-width: 280px; margin: 0 auto 12px; } }
-
-  /* FAQ */
-  .faq { background: var(--parchment-dark); border-top: 1px solid var(--rule); }
-  .faq-list { max-width: 760px; margin: 0 auto; }
-  details { border-bottom: 1px solid var(--rule); padding: 1.1rem 0; }
-  summary {
-    cursor: pointer; list-style: none; font-family: var(--display); font-size: 1.45rem; font-weight: 600; color: var(--navy);
-    display: flex; justify-content: space-between; gap: 16px;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--gold); font-family: var(--body); }
-  details[open] summary::after { content: "−"; }
-  details p { margin: .7rem 0 0; color: var(--ink-soft); }
-
-  /* CTA + footer */
-  .final { background: var(--oxblood); color: var(--parchment); text-align: center; padding: 80px 0; }
-  .final h2 { color: var(--parchment); }
-  .final p { color: #ecd9d5; max-width: 36rem; margin: 1rem auto 2rem; }
-  .final .btn { background: var(--navy-deep); }
-  footer { background: var(--navy-deep); color: #9c9586; text-align: center; padding: 40px 0; font-size: .95rem; }
-  footer .soli { font-family: var(--caps); letter-spacing: .3em; color: var(--gold); font-size: .8rem; margin-bottom: .5rem; }
-  /* Para quem é / objetivos */
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .card { border-top: 2px solid var(--oxblood); padding-top: 1.25rem; }
-  .card h3 { font-size: 1.6rem; margin-bottom: .5rem; }
-  .card p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
-  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
-  .goals { list-style: none; padding: 0; margin: 1.5rem 0 0; }
-  .goals li { padding: .7rem 0 .7rem 2.2rem; border-bottom: 1px solid var(--rule); position: relative; }
-  .goals li::before { content: "✦"; position: absolute; left: .4rem; color: var(--gold); }
-  .goals strong { font-family: var(--display); font-size: 1.3rem; color: var(--navy); font-weight: 600; }
-  .trinity { max-width: 44rem; margin: 2.5rem auto 0; text-align: center; font-style: italic; color: var(--ink-soft); }
-  .book { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
-  .book-cover {
-    aspect-ratio: 2 / 3; background: var(--navy); color: var(--parchment); padding: 22px 18px;
-    display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--gold);
-    outline: 1px solid var(--gold); outline-offset: -8px; box-shadow: 8px 10px 0 var(--parchment-dark);
-  }
-  .book-cover .t { font-family: var(--display); font-size: 1.15rem; line-height: 1.2; }
-  .book-cover .t em { color: var(--gold-soft); }
-  .book-cover .a { font-family: var(--caps); font-size: .65rem; letter-spacing: .2em; color: var(--gold-soft); }
-  .book p { margin: 0 0 1rem; }
-  @media (max-width: 760px) { .book { grid-template-columns: 1fr; } .book-cover { max-width: 200px; margin: 0 auto; } }
-</style>
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
@@ -279,144 +37,68 @@
       <span>MARLON PEVIDOR</span>
     </a>
     <nav class="links">
-      <a href="#sobre">O curso</a>
-      <a href="#aulas">Aulas</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#livro">Livro</a>
       <a href="#professor">Professor</a>
-      <a href="#perguntas">Perguntas</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Curso online · Gratuito</p>
-    <h1>Introdução à Educação <em>Cristã Clássica</em></h1>
+    <p class="eyebrow">Professor · Autor · Educação cristã clássica</p>
+    <h1>Marlon <em>Pevidor</em></h1>
     <div class="ornament center">✦</div>
-    <p class="lede">Como transformar a mente e o coração da sua família: redescubra um modo de educar que une fé, razão, beleza e verdade — e forma homens e mulheres à imagem de Cristo.</p>
+    <p class="lede">Cursos online gratuitos para ajudar famílias cristãs a recuperar uma educação antiga, bíblica e bela — que forma a mente e o coração à imagem de Cristo.</p>
     <div class="actions">
-      <a class="btn" href="#aulas">Começar a assistir</a>
-      <a class="btn ghost" href="#sobre">Conhecer o curso</a>
-    </div>
-    <div class="meta">
-      <span id="meta-count">aulas</span><span>·</span><span>7 módulos + conclusão</span><span>·</span><span>Assista no seu ritmo</span>
+      <a class="btn" href="#cursos">Ver cursos gratuitos</a>
+      <a class="btn ghost" href="#professor">Conhecer o professor</a>
     </div>
   </div>
 </section>
 
-<section id="sobre">
-  <div class="wrap about-grid">
-    <div>
-      <p class="eyebrow">Sobre o curso</p>
-      <h2>Uma trilha clara para entender e aplicar a educação cristã clássica</h2>
-      <div class="ornament">✦</div>
-      <p class="dropcap">A educação cristã clássica não é um método novo: é antiga, enraizada nas Escrituras, alinhada à natureza humana e sustentada por séculos de tradição cristã. Este curso é uma introdução clara e prática a essa herança.</p>
-      <p>As aulas seguem as perguntas que os jornalistas fazem — <em>para quem, o quê, por quê, para quê, como e onde</em> — e formam uma estrutura curricular simples de seguir, do primeiro conceito até a aplicação na sua casa.</p>
-      <p>Você vai conhecer a grande conversa, as grandes ideias e os grandes livros; a história da educação, dos gregos e romanos até hoje; e o <em>trivium</em>, o método que ensina a aprender.</p>
-      <ul class="goals">
-        <li><strong>Verdade, bondade e beleza</strong></li>
-        <li><strong>Retorno à <em>imago Dei</em></strong></li>
-        <li><strong>Formação para a eternidade</strong></li>
-      </ul>
-    </div>
-    <blockquote>
-      “Ponde-vos nos caminhos, e vede, e perguntai pelas veredas antigas, qual é o bom caminho, e andai por ele; e achareis descanso para a vossa alma.”
-      <cite>Jeremias 6.16</cite>
-    </blockquote>
-  </div>
-</section>
-
-<section class="trivium">
+<section id="cursos">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">O método</p>
-      <h2>As três artes do Trivium</h2>
-      <p>Cada fase corresponde a uma capacidade natural do aluno: primeiro, a memorização dos fatos; depois, o raciocínio sobre eles; por fim, a expressão clara e eloquente.</p>
+      <p class="eyebrow">Cursos gratuitos</p>
+      <h2>Escolha por onde começar</h2>
+      <p>Todos os cursos são gratuitos e podem ser assistidos no seu ritmo.</p>
     </div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="num">I</div>
-        <h3>Gramática</h3>
-        <div class="latin">Grammatica</div>
-        <p>O domínio dos fatos: observar, memorizar e nomear as coisas como elas são.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">II</div>
-        <h3>Lógica</h3>
-        <div class="latin">Dialectica</div>
-        <p>O domínio das relações entre os fatos: interpretar, ordenar o pensamento e discernir.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">III</div>
-        <h3>Retórica</h3>
-        <div class="latin">Rhetorica</div>
-        <p>O domínio dos usos e aplicações: comunicar a verdade com clareza, beleza e persuasão.</p>
-      </div>
-    </div>
-    <p class="trinity">Deus primeiro nos diz quem Ele é (gramática), depois nos ensina como isso se conecta ao restante da realidade (lógica) e, por fim, nos envia a comunicar, ensinar e testemunhar (retórica).</p>
-  </div>
-</section>
+    <div class="courses">
 
-<section id="para-quem">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Para quem é este curso</p>
-      <h2>Para toda a família</h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <h3>Pais de filhos em idade escolar</h3>
-        <p>E também noivos e recém-casados. A decisão sobre a educação dos filhos precisa ser tomada desde cedo — e precisa ser espiritual, não apenas prática.</p>
-      </div>
-      <div class="card">
-        <h3>Adultos</h3>
-        <p>Educação não termina na escola ou na faculdade. Com método e direção, você pode investir na sua própria formação — a autoeducação.</p>
-      </div>
-      <div class="card">
-        <h3>Crianças e adolescentes</h3>
-        <p>O <em>trivium</em> é uma caixa de ferramentas para aprender a aprender — e pode ser aplicado em casa, qualquer que seja a escola.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <a class="course-card" href="iecc/">
+        <div class="cover">
+          <p class="eyebrow">Comece por aqui</p>
+          <h3>Introdução à Educação Cristã Clássica</h3>
+        </div>
+        <div class="body">
+          <p>O que é, por que importa, para que serve e como aplicar a educação cristã clássica em casa ou na escola.</p>
+          <div class="meta"><span>38 aulas · 7 módulos</span><span class="go">Acessar →</span></div>
+        </div>
+      </a>
 
-<section class="course" id="aulas">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Sala de aula</p>
-      <h2>Aulas do curso</h2>
-      <p>Escolha uma aula na lista. As aulas marcadas como “Em breve” serão publicadas nos próximos dias.</p>
-    </div>
-    <div class="player-grid">
-      <div class="stage">
-        <div class="video" id="video"></div>
-        <div class="lesson-info">
-          <p class="eyebrow" id="lesson-module"></p>
-          <h3 id="lesson-title"></h3>
-          <p id="lesson-desc"></p>
-          <div class="lesson-nav">
-            <button id="prev">← Aula anterior</button>
-            <button id="next">Próxima aula →</button>
-          </div>
+      <div class="course-card alt soon">
+        <div class="cover">
+          <p class="eyebrow">História</p>
+          <h3>Panorama da História da Igreja</h3>
+        </div>
+        <div class="body">
+          <p>[Descrição provisória.] Uma visão geral da caminhada da Igreja ao longo dos séculos.</p>
+          <div class="meta"><span>Em breve</span><span class="go">Em breve</span></div>
         </div>
       </div>
-      <aside>
-        <div class="syllabus" id="syllabus"></div>
-        <div class="progress" id="progress"></div>
-      </aside>
-    </div>
-  </div>
-</section>
 
-<section id="professor">
-  <div class="wrap instructor-grid">
-    <div class="portrait">Sua foto aqui</div>
-    <div>
-      <p class="eyebrow">Seu professor</p>
-      <h2>Marlon Pevidor</h2>
-      <div class="ornament">✦</div>
-      <p>Discípulo de Jesus Cristo desde 1999, Marlon é casado com Kelen desde 2004 e pai de três filhos. A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde ele serviu como diretor de educação cristã de 2021 a 2024.</p>
-      <p>É professor de humanidades integradas na Logos Online School (Moscow, Idaho, EUA), licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
-      <p>Descobriu a educação cristã clássica em 2015, através de <em>Como ler livros</em>, de Mortimer Adler — e desde então dedica-se a ajudar famílias a recuperar uma educação antiga, bíblica e orientada pelas Escrituras.</p>
+      <div class="course-card alt2 soon">
+        <div class="cover">
+          <p class="eyebrow">[Categoria]</p>
+          <h3>Seminário</h3>
+        </div>
+        <div class="body">
+          <p>[Nome e descrição provisórios.]</p>
+          <div class="meta"><span>Em breve</span><span class="go">Em breve</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -428,10 +110,10 @@
       <div class="a">MARLON PEVIDOR</div>
     </div>
     <div>
-      <p class="eyebrow">O livro do curso</p>
-      <h2>Aprofunde-se com o livro</h2>
+      <p class="eyebrow">O livro</p>
+      <h2>Como transformar a mente e o coração de sua família</h2>
       <div class="ornament">✦</div>
-      <p>Este curso deu origem ao livro <em>Como transformar a mente e o coração de sua família através da educação cristã clássica</em>, que acompanha os mesmos capítulos com mais detalhes, exemplos e leituras complementares.</p>
+      <p>Um guia claro e prático para pais, adultos e jovens que desejam entender a educação cristã clássica e aplicá-la em casa: o que ela é, por que é urgente, quais são seus objetivos, como praticá-la em cada fase da vida e onde encontrá-la.</p>
       <blockquote style="font-size:1.25rem;padding:1.4rem 1.6rem">
         “Marlon expressa seus conceitos com convicção e admirável clareza.”
         <cite>Ron Prater, no prefácio</cite>
@@ -440,203 +122,35 @@
   </div>
 </section>
 
-<section class="faq" id="perguntas">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Dúvidas</p>
-      <h2>Perguntas frequentes</h2>
-    </div>
-    <div class="faq-list">
-      <details>
-        <summary>Preciso ter algum conhecimento prévio?</summary>
-        <p>Não. O curso é introdutório e começa do zero, explicando cada conceito — <em>trivium</em>, <em>quadrivium</em>, sete artes liberais, grandes livros — passo a passo.</p>
-      </details>
-      <details>
-        <summary>Meus filhos estudam numa escola convencional. O curso serve para mim?</summary>
-        <p>Sim. A formação da mente não depende exclusivamente da escola. O curso mostra caminhos como o <em>afterschooling</em> (aplicar a educação clássica em casa, no contraturno), a educação domiciliar e as escolas cristãs clássicas.</p>
-      </details>
-      <details>
-        <summary>Toda escola cristã é uma escola clássica?</summary>
-        <p>Não. Muitas escolas confessionais seguem a BNCC e acrescentam elementos religiosos, mas não adotam os fundamentos da educação cristã clássica. O módulo VII explica as diferenças.</p>
-      </details>
-      <details>
-        <summary>O curso é gratuito?</summary>
-        <p>Sim. Todas as aulas ficam disponíveis gratuitamente no YouTube e podem ser assistidas aqui, no seu ritmo.</p>
-      </details>
+<section id="professor">
+  <div class="wrap instructor-grid">
+    <div class="portrait">Sua foto aqui</div>
+    <div class="bio-long">
+      <p class="eyebrow">O professor</p>
+      <h2>Marlon Pevidor</h2>
+      <div class="ornament">✦</div>
+      <p>Antes de qualquer coisa, Marlon é discípulo de Jesus Cristo: foi convencido de seus pecados, redimido e selado pelo Espírito Santo em 1999. É casado com Kelen desde 2004 e pai de três filhos — Victoria, Arthur e Miguel —, que também confessaram Jesus como Senhor.</p>
+      <p>A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde Marlon serviu como diretor de educação cristã de 2021 a 2024, aplicando os princípios da educação cristã clássica no contexto da igreja local.</p>
+      <p>É professor de humanidades integradas na Logos Online School, em Moscow, Idaho (EUA), uma escola online que serve a famílias educadoras. É licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
+      <p>Sua jornada começou em 2015, quando experimentou uma verdadeira conversão de cosmovisão e descobriu, através de <em>Como ler livros</em>, de Mortimer Adler, o <em>trivium</em>, o <em>quadrivium</em>, as sete artes liberais e a grande conversa. Desde então, dedica-se a ajudar famílias a recuperar essa herança — antiga, bíblica e orientada pelas Escrituras.</p>
     </div>
   </div>
 </section>
 
 <section class="final">
   <div class="wrap">
-    <h2>Este é o tempo de restaurar</h2>
-    <p>A educação cristã clássica é uma semente de fé lançada no solo da história. Comece hoje a cultivá-la na sua família.</p>
-    <a class="btn" href="#aula-1">Assistir à primeira aula</a>
+    <h2>Comece hoje a sua jornada</h2>
+    <p>“Ponde-vos nos caminhos, e vede, e perguntai pelas veredas antigas, qual é o bom caminho, e andai por ele.” — Jeremias 6.16</p>
+    <a class="btn" href="iecc/">Começar pelo curso introdutório</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="soli">SOLI DEO GLORIA</div>
-    <div>© <span id="year"></span> Marlon Pevidor · Introdução à Educação Cristã Clássica</div>
+    <div>© <span id="year"></span> Marlon Pevidor</div>
   </div>
 </footer>
-
-<script>
-/* ==================================================================
-   AULAS DO CURSO — para publicar uma aula, cole o link do YouTube
-   entre as aspas de youtube: "". O campo "arquivo" é só o nome do
-   vídeo no Google Drive, para você saber qual é qual.
-   Aulas com youtube vazio aparecem como "Em breve".
-   ================================================================== */
-const MODULOS = [
-  {
-    titulo: "Módulo I · Apresentação",
-    aulas: [
-      { arquivo: "M1A1", youtube: "", titulo: "O que você vai aprender neste curso?", descricao: "Uma visão geral da trilha do curso, organizada pelas perguntas: para quem, o quê, por quê, para quê, como e onde." },
-      { arquivo: "M1A2", youtube: "", titulo: "Quem sou eu?", descricao: "Um pouco da história do professor Marlon Pevidor e de como ele descobriu a educação cristã clássica." },
-    ],
-  },
-  {
-    titulo: "Módulo II · Para quem é este curso?",
-    aulas: [
-      { arquivo: "M2A1p1", youtube: "", titulo: "Pais de filhos em idade escolar (parte 1)", descricao: "Por que a decisão sobre a educação dos filhos precisa ser espiritual, e não apenas prática." },
-      { arquivo: "M2A1p2", youtube: "", titulo: "Pais de filhos em idade escolar (parte 2)", descricao: "Escolas confessionais, escolas cristãs clássicas e o que considerar na escolha." },
-      { arquivo: "M2A2",   youtube: "", titulo: "Adultos", descricao: "A educação cristã clássica também é para você: a autoeducação com método e direção." },
-      { arquivo: "M2A3",   youtube: "", titulo: "Crianças e adolescentes", descricao: "O trivium como caixa de ferramentas para aprender a aprender." },
-    ],
-  },
-  {
-    titulo: "Módulo III · O que é educação cristã clássica?",
-    aulas: [
-      { arquivo: "M3A1p1", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 1)", descricao: "A conversa mantida pelas maiores mentes dos últimos quase três mil anos — e como entrar nela." },
-      { arquivo: "M3A1p2", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 2)", descricao: "Continuação." },
-      { arquivo: "M3A1p3", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 3)", descricao: "Continuação." },
-      { arquivo: "M3A1p4", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 4)", descricao: "Continuação." },
-      { arquivo: "M3A1p5", youtube: "", titulo: "As grandes ideias, a grande conversa e os grandes livros (parte 5)", descricao: "Continuação." },
-      { arquivo: "M3A2p1", youtube: "", titulo: "Breve história da educação (parte 1)", descricao: "Gregos e romanos: gramática, literatura, lógica e retórica." },
-      { arquivo: "M3A2p2", youtube: "", titulo: "Breve história da educação (parte 2)", descricao: "De Agostinho às sete artes liberais; o Renascimento e a Reforma." },
-      { arquivo: "M3A2p3", youtube: "", titulo: "Breve história da educação (parte 3)", descricao: "Do Iluminismo à educação progressista do século XX." },
-    ],
-  },
-  {
-    titulo: "Módulo IV · Por que é importante saber o que é educação cristã clássica?",
-    aulas: [
-      { arquivo: "M4A1p1", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 1)", descricao: "A defesa positiva: as características da educação cristã clássica." },
-      { arquivo: "M4A1p2", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 2)", descricao: "Continuação." },
-      { arquivo: "M4A1p3", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 3)", descricao: "Continuação." },
-      { arquivo: "M4A1p4", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 4)", descricao: "A defesa negativa: refutando acusações." },
-      { arquivo: "M4A1p5", youtube: "", titulo: "Uma defesa da educação cristã clássica (parte 5)", descricao: "Os defeitos das alternativas." },
-      { arquivo: "M4A2p1", youtube: "", titulo: "Textos bíblicos que referendam a educação cristã clássica (parte 1)", descricao: "O que as Escrituras dizem sobre educar." },
-      { arquivo: "M4A2p2", youtube: "", titulo: "Textos bíblicos que referendam a educação cristã clássica (parte 2)", descricao: "Continuação." },
-      { arquivo: "M4A3p1", youtube: "", titulo: "O trivium e a Trindade (parte 1)", descricao: "Gramática, lógica e retórica como analogia da revelação do Deus trino." },
-      { arquivo: "M4A3p2", youtube: "", titulo: "O trivium e a Trindade (parte 2)", descricao: "Continuação." },
-    ],
-  },
-  {
-    titulo: "Módulo V · Para que serve uma educação cristã clássica?",
-    aulas: [
-      { arquivo: "M5A1p1", youtube: "", titulo: "Objetivos: verdade, bondade e beleza", descricao: "O primeiro grande objetivo da educação cristã clássica." },
-      { arquivo: "M5A1p2", youtube: "", titulo: "Objetivos: o retorno à imago Dei", descricao: "Educar para que sejamos mais parecidos com Cristo." },
-      { arquivo: "M5A1p3", youtube: "", titulo: "Objetivos: formação para a eternidade", descricao: "Uma educação que não forma apenas para o mercado, mas para a eternidade." },
-    ],
-  },
-  {
-    titulo: "Módulo VI · Como autoeducar-se e educar seus filhos?",
-    aulas: [
-      { arquivo: "M6A1p1", youtube: "", titulo: "Os métodos (parte 1)", descricao: "As sete artes liberais: trivium e quadrivium." },
-      { arquivo: "M6A1p2", youtube: "", titulo: "Os métodos (parte 2)", descricao: "Continuação." },
-      { arquivo: "M6A1p3", youtube: "", titulo: "Os métodos (parte 3)", descricao: "Charlotte Mason, com Bruna Bugana." },
-      { arquivo: "M6A2p1", youtube: "", titulo: "Adultos: como educar sua mente (parte 1)", descricao: "Um plano de formação para a autoeducação." },
-      { arquivo: "M6A2p2", youtube: "", titulo: "Adultos: como educar sua mente (parte 2)", descricao: "Continuação." },
-      { arquivo: "M6A3",   youtube: "", titulo: "Crianças", descricao: "Ensinando o trivium e formando uma mente bem treinada." },
-    ],
-  },
-  {
-    titulo: "Módulo VII · Onde adquirir uma educação cristã clássica?",
-    aulas: [
-      { arquivo: "M7A1p1", youtube: "", titulo: "Em casa (parte 1)", descricao: "Educação domiciliar independente." },
-      { arquivo: "M7A1p2", youtube: "", titulo: "Em casa (parte 2)", descricao: "Educação domiciliar orientada." },
-      { arquivo: "M7A1p3", youtube: "", titulo: "Em casa (parte 3)", descricao: "Continuação." },
-      { arquivo: "M7A1p4", youtube: "", titulo: "Em casa (parte 4)", descricao: "Afterschooling: educação clássica no contraturno." },
-      { arquivo: "M7A2",   youtube: "", titulo: "Na escola", descricao: "Escolas cristãs clássicas e outras alternativas." },
-    ],
-  },
-  {
-    titulo: "Conclusão",
-    aulas: [
-      { arquivo: "M8A1", youtube: "", titulo: "E agora? O que fazer?", descricao: "Reparando as ruínas: um chamado à ação." },
-    ],
-  },
-];
-
-/* ---------- daqui para baixo não precisa mexer ---------- */
-function youtubeId(url) {
-  if (!url) return null;
-  const m = url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);
-  return m ? m[1] : (/^[\w-]{11}$/.test(url) ? url : null);
-}
-
-const lessons = [];
-MODULOS.forEach((mod) => mod.aulas.forEach((a) => lessons.push({ ...a, modulo: mod.titulo, id: youtubeId(a.youtube) })));
-
-const $ = (s) => document.querySelector(s);
-const syllabus = $("#syllabus");
-const playIcon = '<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="28" cy="28" r="26"/><path d="M23 18 L38 28 L23 38 Z"/></svg>';
-let current = 0;
-
-function render() {
-  let n = 0, html = "";
-  MODULOS.forEach((mod) => {
-    html += `<div class="module-title">${mod.titulo}</div>`;
-    mod.aulas.forEach(() => {
-      const l = lessons[n];
-      html += `<button class="lesson" data-i="${n}">
-        <span class="n">${String(n + 1).padStart(2, "0")}</span>
-        <span>${l.titulo}</span>
-        <span class="tag ${l.id ? "ok" : ""}">${l.id ? "Assistir" : "Em breve"}</span>
-      </button>`;
-      n++;
-    });
-  });
-  syllabus.innerHTML = html;
-  syllabus.addEventListener("click", (e) => {
-    const b = e.target.closest(".lesson");
-    if (b) { location.hash = "aula-" + (+b.dataset.i + 1); }
-  });
-  const published = lessons.filter((l) => l.id).length;
-  $("#progress").textContent = `${published} de ${lessons.length} aulas publicadas`;
-  $("#meta-count").textContent = `${lessons.length} aulas`;
-}
-
-function show(i, scroll) {
-  current = Math.max(0, Math.min(lessons.length - 1, i));
-  const l = lessons[current];
-  $("#video").innerHTML = l.id
-    ? `<iframe src="https://www.youtube-nocookie.com/embed/${l.id}?rel=0" title="${l.titulo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-    : `<div class="placeholder">${playIcon}<strong>EM BREVE</strong><span>Esta aula ainda não foi publicada.</span></div>`;
-  $("#lesson-module").textContent = `Aula ${current + 1} · ${l.modulo}`;
-  $("#lesson-title").textContent = l.titulo;
-  $("#lesson-desc").textContent = l.descricao;
-  document.querySelectorAll(".lesson").forEach((b) => b.classList.toggle("active", +b.dataset.i === current));
-  $("#prev").disabled = current === 0;
-  $("#next").disabled = current === lessons.length - 1;
-  if (scroll) $("#aulas").scrollIntoView({ behavior: "smooth" });
-}
-
-function fromHash(scroll) {
-  const m = location.hash.match(/^#aula-(\d+)$/);
-  if (m) show(+m[1] - 1, scroll);
-}
-
-$("#prev").onclick = () => (location.hash = "aula-" + current);
-$("#next").onclick = () => (location.hash = "aula-" + (current + 2));
-window.addEventListener("hashchange", () => fromHash(true));
-$("#year").textContent = new Date().getFullYear();
-
-render();
-show(0);
-fromHash(true);
-</script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
