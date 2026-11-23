@@ -15,7 +15,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 
 ## Identidade visual
 - Cores (tokens em `:root` de `estilo.css`): azul-marinho `#1c2a44`/`#131d31`, vinho `#7a1f2b`, dourado `#b38b3f`/`#d9c08a`, pergaminho `#f6f0e3`/`#ece2cc`.
-- Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cinzel (rótulos em maiúsculas).
+- Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cormorant SC peso 600 (rótulos em maiúsculas).
+  Não usar Cinzel: o "Ã" some em alguns navegadores (visto no computador do professor).
+- Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
 
 ## Simetria — regra obrigatória (o professor faz questão)
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
