@@ -18,6 +18,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cormorant SC peso 600 (rótulos em maiúsculas).
   Não usar Cinzel: o "Ã" some em alguns navegadores (visto no computador do professor).
 - Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
+- Símbolo: escudo dourado (desenho próprio) com a cruz "cross-fill" da Phosphor Icons (licença MIT) dentro.
+  O mesmo desenho é o ícone da aba (`favicon.svg`). Estilos testados em `estilos-cruz.png`.
 
 ## Simetria — regra obrigatória (o professor faz questão)
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
