@@ -128,7 +128,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .facts-inline { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin: 0; padding: 0; list-style: none; font-size: .85rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 
 /* faixa cobalto */
-.band { background: var(--cobalt); color: var(--on-cobalt); padding-block: clamp(2.2rem, 4vw, 3rem); }
+.band { background: var(--cobalt); color: var(--on-cobalt); padding-block: var(--section-y); } /* mesmo espaço das outras camadas */
 .band .wrap { display: grid; gap: 1.4rem; }
 .band .label { font-size: .85rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
 .band ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.4rem 1rem; }

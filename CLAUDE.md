@@ -90,6 +90,8 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
 - `--box-pad: clamp(22px, 5vw, 32px)`: espaço interno igual nos quatro lados de cartões e caixas.
 - Títulos e parágrafos não têm margem própria: o espaço entre eles vem do `gap` dos blocos (`.stack`, `.head`…).
 - Botões lado a lado ou empilhados têm a mesma largura.
+- Faixas azuis (`.band`) usam o mesmo `--section-y` das outras camadas (não são mais compactas).
+- Única exceção: a abertura da página inicial no celular (36 px acima da foto, ver acima).
 - Rodapé usa metade de `--section-y`.
 
 - Simetria ÓPTICA: `text-box: trim-* cap alphabetic` corta a folga invisível acima do primeiro texto e abaixo do
