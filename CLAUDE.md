@@ -13,6 +13,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - `mentoria/index.html`: página da Mentoria Educador Cristão Clássico, trazida pronta (zip do professor) e mantida
   como veio: design e CSS próprios, embutidos nela. Só foram aplicadas as regras de escrita deste arquivo.
   Link "Mentoria" no menu da página inicial e da página do curso.
+- Toda página interna (cursos, mentoria) volta à página inicial tocando no nome/título do topo (link para `../`).
+  Páginas de curso têm também "Outros cursos" (`../#cursos`).
 - `assets/marlon.webp`: foto do professor (fundo de azulejos), usada nas seções "Sobre" e na mentoria.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
