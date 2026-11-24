@@ -51,7 +51,7 @@ const PIX = {
     res.hidden = false;
     res.querySelector(".pix-titulo").innerHTML = valor
       ? `Oferta de <strong>${brl(valor)}</strong>`
-      : `Oferta de <strong>valor livre</strong> — você digita o valor no app do banco`;
+      : `Oferta de <strong>valor livre</strong> — você digita o valor no <em>app</em> do banco`;
     const qr = res.querySelector(".pix-qr");
     qr.innerHTML = "";
     if (window.qrcode) {
