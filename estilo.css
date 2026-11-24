@@ -74,7 +74,7 @@
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--parchment); }
   .crest {
-    width: 40px; height: 40px; flex: none;
+    width: 36px; height: 41px; flex: none;
   }
   .brand span { font-family: var(--caps); font-weight: 600; letter-spacing: .14em; font-size: 1.02rem; }
   nav.links a {
