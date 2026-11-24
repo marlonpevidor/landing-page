@@ -293,8 +293,10 @@ a.pillar .go span:last-child { color: var(--cobalt); }
 
 /* rodapé */
 footer { padding-block: calc(var(--section-y) / 2); border-top: 1px solid var(--rule); }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 1rem; color: var(--ink-soft); }
-footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); }
+/* Rodapé igual em todas as páginas: frase em latim e o nome embaixo, centralizados */
+footer .wrap { display: grid; justify-items: center; gap: .9rem; text-align: center; font-size: 1rem; color: var(--ink-soft); }
+footer em { font-family: var(--font-display); font-size: 1.45rem; color: var(--ink); }
+footer span { font-size: .85rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 
 /* entrada */
 @media (prefers-reduced-motion: no-preference) {
@@ -339,7 +341,6 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
   .brand { font-size: 1.05rem; }
   .crest { width: 34px; height: 34px; }
   .about img, .book-cover { margin-inline: auto; }
-  footer .wrap { flex-direction: column; align-items: center; text-align: center; }
 }
 @media (max-width: 400px) {
   .band ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -388,3 +389,8 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
 }
 a.book-cover { text-decoration: none; transition: transform .15s ease; }
 a.book-cover:hover { transform: translateY(-2px); }
+
+.quotes { gap: 2.2rem; }
+@supports (text-box: trim-both cap alphabetic) {
+  footer em, footer span { text-box: trim-both cap alphabetic; }
+}

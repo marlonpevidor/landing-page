@@ -237,8 +237,8 @@
 
 <footer>
   <div class="wrap">
-    <em lang="la">Gratia non tollit naturam, sed perficit.</em>
-    <span>© <span id="year">2026</span> Marlon Pevidor</span>
+    <em lang="la">Nisi Dominus, frustra.</em>
+    <span>Marlon Pevidor</span>
   </div>
 </footer>
 <script>
@@ -391,13 +391,11 @@ function fromHash(scroll) {
 $("#prev").onclick = () => (location.hash = "aula-" + current);
 $("#next").onclick = () => (location.hash = "aula-" + (current + 2));
 window.addEventListener("hashchange", () => fromHash(true));
-$("#year").textContent = new Date().getFullYear();
 
 render();
 show(0);
 fromHash(true);
 </script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 <script src="../qrcode.js"></script>
 <script src="../pix.js"></script>
 </body>

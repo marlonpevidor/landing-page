@@ -6,7 +6,7 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 ## Estrutura
 - Todas as páginas seguem o MESMO modelo estético (o da página da mentoria) e usam só `estilo.css`.
   Partes comuns: barra clara no topo (escudo + "Marlon Pevidor" levando à página inicial, menu à direita;
-  no celular, marca e menu centralizados), seções separadas por linhas finas, rodapé com a frase de Tomás de Aquino.
+  no celular, marca e menu centralizados), seções separadas por linhas finas, rodapé com *Nisi Dominus, frustra.* e "Marlon Pevidor".
 - `index.html`: página inicial do professor. Abertura com texto à esquerda e a foto em círculo à direita
   (`assets/marlon.webp`), cursos em cartões numerados (I, II, III, classe `.pillar`), faixa cobalto da mentoria,
   livro, professor (com quadro de formação), oferta Pix e chamada final.
@@ -77,8 +77,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   meta tags/título da aba, que não aceitam itálico. Em rótulos em maiúsculas, o `<em>` usa o itálico da Cormorant Garamond.
   Títulos e descrições das aulas (`MODULOS`) aceitam `<em>`.
 - Tríade sempre em ordem alfabética: "beleza, bondade e verdade".
-- Rodapé: só a citação *Gratia non tollit naturam, sed perficit.* (Tomás de Aquino, Suma Teológica I, q. 1, a. 8, ad 2),
-  sem o nome do autor, e "© ano Marlon Pevidor".
+- Rodapé IGUAL em todas as páginas: *Nisi Dominus, frustra.* (itálico, sem tradução) e, embaixo, "Marlon Pevidor"
+  (sem "Professor", sem ©), centralizados. Mateus 12:34 (ARA) fica na seção "Por que esta mentoria existe" da mentoria.
 - Botão da página inicial: "Começar pelo curso de introdução". Bio: "uma escola online que serve famílias educadoras".
 - Verificar com: `grep -rniP "\b(d|n|pel)?[oa]s?\s+(meu|minha|seu|sua|nosso|nossa)s?\b" --include=*.html .`
 
