@@ -22,6 +22,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
 - Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos".
+  Na página inicial, a marca usa `href="#top"`: só sobe ao início, sem recarregar a página.
+- Barra do topo no celular: espaço visível IGUAL (22 px, `--tb-gap`) entre borda de cima, marca, cada linha do menu
+  e borda de baixo; cada link tem área de toque de ~34 px (`--tap-y`) e ~29 px entre palavras.
 - Página inicial: TODOS os links do menu descem para seções da própria página (Cursos, Mentoria, Livro, Sobre).
   "Mentoria" desce até a faixa `#mentoria`; só o botão da faixa leva a `mentoria/`.
 - Abertura da página inicial: rótulo "Autor e educador cristão clássico"; abaixo da foto, só "Marlon Pevidor"
@@ -78,9 +81,17 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
 - Botões lado a lado ou empilhados têm a mesma largura.
 - Rodapé usa metade de `--section-y`.
 
+- Simetria ÓPTICA: `text-box: trim-* cap alphabetic` corta a folga invisível acima do primeiro texto e abaixo do
+  último texto de cada bloco (bloco `@supports` no fim de `estilo.css`). Sem isso, rótulos `.caps` no topo das
+  camadas sobravam ~7 px a mais. Elementos que desenham além da caixa (sombra da capa, anel da foto) compensam
+  com margem (`.book-cover { margin-bottom: 12px }`, `.byline img { margin-block: 5px }`).
+
 **Verificação antes de entregar qualquer página nova ou alterada:**
 1. `python3 -m http.server 8765` na raiz.
-2. `node ferramentas/medir-simetria.js http://localhost:8765/ http://localhost:8765/<curso>/`
+2. `PNGJS_DIR=<pasta com pngjs> node ferramentas/medir-simetria-pixels.js` (mede pelos PIXELS o que o olho vê:
+   do topo da camada ao primeiro pixel visível e do último pixel à base; é a medição que vale).
+   `ferramentas/medir-simetria.js` (caixas de texto) fica como apoio. Diferença aceitável: até ~5 px, vinda só de
+   partes das letras abaixo da linha (g, p, ç) ou acentos.
 3. Em 390 px e 1280 px, top ≈ bottom e left ≈ right em cada camada (diferença máxima ~3 px,
    que é o espaço natural das letras). Texto alinhado à esquerda pode ter "right" um pouco maior.
 4. Conferir que não há rolagem horizontal em 390 px e mandar captura do celular ao professor.

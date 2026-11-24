@@ -109,8 +109,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.75rem; }
 .brand { display: inline-flex; align-items: center; gap: .65rem; font-family: var(--font-body); font-weight: 600; letter-spacing: 0.14em; font-size: 0.85rem; text-transform: uppercase; color: var(--ink); text-decoration: none; }
 .crest { width: 30px; height: 30px; flex: none; color: var(--cobalt); }
-.topbar nav { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; }
-.topbar nav a { font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 0 .9rem; }
+.topbar nav a { font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; padding: .5rem .35rem; } /* área de toque maior */
 .topbar nav a:hover { color: var(--cobalt); }
 
 /* abertura */
@@ -329,9 +329,12 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
   .actions { flex-direction: column; align-items: stretch; width: 100%; }
   .actions .btn { min-width: 0; }
   /* topo no celular: marca e menu centralizados em duas linhas */
-  .topbar .wrap { flex-direction: column; gap: .5rem; padding-block: .7rem; }
-  .topbar nav { justify-content: center; gap: .3rem 1.4rem; }
-  .topbar nav a { font-size: .72rem; line-height: 1; }
+  /* Celular: marca e menu centralizados. Cada link tem área de toque de ~40 px de altura;
+     o espaço visível entre marca, linhas do menu e bordas da barra é o mesmo (--tb-gap). */
+  .topbar { --tb-gap: 22px; --tap-y: 11px; }
+  .topbar .wrap { flex-direction: column; gap: calc(var(--tb-gap) - var(--tap-y) + 2px); padding-top: var(--tb-gap); padding-bottom: calc(var(--tb-gap) - var(--tap-y)); }
+  .topbar nav { justify-content: center; gap: 2px 1rem; max-width: 22rem; }
+  .topbar nav a { font-size: .74rem; line-height: 1; padding: var(--tap-y) .4rem; }
   .brand { font-size: .78rem; }
   .about img, .book-cover { margin-inline: auto; }
   footer .wrap { flex-direction: column; align-items: center; text-align: center; }
@@ -358,5 +361,19 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
 /* rótulo + título com a foto pequena em círculo à esquerda (seção "O professor") */
 .byline { display: flex; align-items: center; gap: 1.1rem; }
 .byline > div { display: grid; gap: .35rem; }
-.byline img { width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; outline: 1px solid var(--azure); outline-offset: 4px; }
+.byline img { margin-block: 5px; width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; outline: 1px solid var(--azure); outline-offset: 4px; }
 @media (max-width: 760px) { .byline img { width: 68px; height: 68px; } }
+
+/* Simetria óptica: corta a folga invisível acima do primeiro texto e abaixo do último texto de cada
+   bloco (camadas, caixas, cartões), para o espaço visível em cima e embaixo ficar igual.
+   Navegadores sem suporte (Firefox) simplesmente mantêm a folga normal. */
+@supports (text-box: trim-both cap alphabetic) {
+  :is(p, h1, h2, h3, li, dt, dd, cite, figcaption, .caps, .label, .word, .desc, .letter, .note, strong, span.dur):first-child { text-box: trim-start cap alphabetic; }
+  :is(p, h1, h2, h3, li, dt, dd, cite, figcaption, .caps, .label, .word, .desc, .letter, .note, strong, span.dur):last-child { text-box: trim-end cap alphabetic; }
+  :is(p, h1, h2, h3, li, dt, dd, cite, figcaption, .caps, .label, .word, .desc, .letter, .note, strong, span.dur):first-child:last-child { text-box: trim-both cap alphabetic; }
+}
+@supports (text-box: trim-both cap alphabetic) {
+  .facts-inline li, .progress { text-box: trim-both cap alphabetic; }
+}
+/* a sombra da capa do livro (12 px) conta como parte do desenho */
+.book-cover { margin-bottom: 12px; }
