@@ -34,6 +34,17 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Exceção: quando "todo/toda/todos/todas" exige o artigo ("todo o meu poder", "toda a sua vida").
 - Exceção: citações literais (Bíblia, outros autores) ficam como no original.
 - Vale também para textos tirados do material do professor: corrigir ao copiar.
+- Referências bíblicas: sempre "Livro capítulo:versículo" com dois-pontos (ex.: Jeremias 6:16), nunca ponto,
+  e texto sempre na Almeida Revista e Atualizada (ARA), indicada como "(ARA)".
+  Jeremias 6:16 (ARA): "Ponde-vos à margem no caminho e vede, perguntai pelas veredas antigas, qual é o bom caminho;
+  andai por ele e achareis descanso para a vossa alma".
+- Palavras estrangeiras sempre em itálico (`<em>`): online, app, QR Code, afterschooling, homeschooling, trivium,
+  quadrivium, imago Dei, paideia, frases em latim etc. Exceções: nomes próprios (Logos Online School, YouTube) e
+  meta tags/título da aba, que não aceitam itálico. Em rótulos em maiúsculas, o `<em>` usa o itálico da Cormorant Garamond.
+  Títulos e descrições das aulas (`MODULOS`) aceitam `<em>`.
+- Tríade sempre em ordem alfabética: "beleza, bondade e verdade".
+- Rodapé: *Gratia non tollit naturam, sed perficit.* — Tomás de Aquino (Suma Teológica I, q. 1, a. 8, ad 2).
+- Botão da página inicial: "Começar pelo curso de introdução". Bio: "uma escola online que serve famílias educadoras".
 - Verificar com: `grep -rniP "\b(d|n|pel)?[oa]s?\s+(meu|minha|seu|sua|nosso|nossa)s?\b" --include=*.html .`
 
 ## Simetria — regra obrigatória (o professor faz questão)
