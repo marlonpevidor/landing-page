@@ -9,13 +9,13 @@ const { chromium } = require('playwright');
     await p.evaluate(() => {
       const crest = document.querySelector('header .crest').cloneNode(true);
       crest.setAttribute('class', 'share-crest');
-      crest.querySelector('clipPath').id = 'escudo-share';
-      crest.querySelector('[clip-path]').setAttribute('clip-path', 'url(#escudo-share)');
+      const clip = crest.querySelector('clipPath');
+      if (clip) { clip.id = 'escudo-share'; crest.querySelector('[clip-path]').setAttribute('clip-path', 'url(#escudo-share)'); }
       document.querySelector('.hero .wrap').prepend(crest);
     });
     await p.addStyleTag({ content: `header.top,.hero .actions{display:none!important}
       .hero{height:630px;display:flex;align-items:center;padding:0!important}.hero .wrap{width:100%}
-      .share-crest{display:block;width:84px;height:96px;margin:0 auto 26px}
+      .share-crest{display:block;width:96px;height:96px;margin:0 auto 26px}
       .hero .meta{display:none!important} .hero h1{max-width:22ch!important}
       .hero p.lede{margin-bottom:0!important}` });
     await p.waitForTimeout(500);
