@@ -349,3 +349,12 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
 .center-quote { border-left: 0; padding-left: 0; justify-items: center; max-width: 44rem; }
 .center-quote p { font-size: clamp(1.4rem, 2.4vw, 1.75rem); max-width: none; }
 .about.solo .wrap { grid-template-columns: minmax(0, 1fr); }
+
+/* nome maior abaixo da foto da abertura */
+.portrait figcaption strong { font-size: clamp(1.9rem, 3vw, 2.3rem); line-height: 1.15; }
+
+/* rótulo + título com a foto pequena em círculo à esquerda (seção "O professor") */
+.byline { display: flex; align-items: center; gap: 1.1rem; }
+.byline > div { display: grid; gap: .35rem; }
+.byline img { width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; outline: 1px solid var(--azure); outline-offset: 4px; }
+@media (max-width: 760px) { .byline img { width: 68px; height: 68px; } }

@@ -19,6 +19,10 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
 - Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos".
+- Página inicial: TODOS os links do menu descem para seções da própria página (Cursos, Mentoria, Livro, Sobre).
+  "Mentoria" desce até a faixa `#mentoria`; só o botão da faixa leva a `mentoria/`.
+- Abertura da página inicial: rótulo "Autor e educador cristão clássico"; abaixo da foto, só "Marlon Pevidor"
+  (igual à marca do topo), em fonte maior. Seção "O professor": foto pequena em círculo à esquerda do rótulo e do nome (`.byline`).
 
 ## Identidade visual (modelo da mentoria)
 - Fontes: Cormorant Garamond (títulos, citações, numerais) e Libre Franklin (texto, rótulos em maiúsculas, botões).
@@ -56,7 +60,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   meta tags/título da aba, que não aceitam itálico. Em rótulos em maiúsculas, o `<em>` usa o itálico da Cormorant Garamond.
   Títulos e descrições das aulas (`MODULOS`) aceitam `<em>`.
 - Tríade sempre em ordem alfabética: "beleza, bondade e verdade".
-- Rodapé: *Gratia non tollit naturam, sed perficit.* — Tomás de Aquino (Suma Teológica I, q. 1, a. 8, ad 2).
+- Rodapé: só a citação *Gratia non tollit naturam, sed perficit.* (Tomás de Aquino, Suma Teológica I, q. 1, a. 8, ad 2),
+  sem o nome do autor, e "© ano Marlon Pevidor".
 - Botão da página inicial: "Começar pelo curso de introdução". Bio: "uma escola online que serve famílias educadoras".
 - Verificar com: `grep -rniP "\b(d|n|pel)?[oa]s?\s+(meu|minha|seu|sua|nosso|nossa)s?\b" --include=*.html .`
 
