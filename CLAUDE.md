@@ -32,7 +32,10 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   sala de aula (`.player-grid`, `.stage`, `.syllabus`). Títulos com parte final em `<em>` (itálico cobalto).
 - Símbolo: escudo com ponta no topo e, dentro, a cruz "cross-fill" da Phosphor Icons (licença MIT), em `currentColor`
   (cobalto no topo claro). Escolha do professor: não trocar sem pedir. Proporção: linha 2,3 (viewBox 40), cruz em
-  escala 0.08 centralizada em (20, 19.2). `favicon.svg` com as mesmas formas.
+  escala 0.08 centralizada em (20, 19.2).
+- Ícones (escudo cobalto preenchido, cruz creme): `favicon.svg` (aba), `favicon-32.png`, `favicon.ico`, `icon-192.png`
+  e `apple-touch-icon.png` (180x180, fundo creme, usado por favoritos e tela inicial do iPhone/Firefox iOS).
+  Toda página nova precisa dos quatro `<link>` de ícone no `<head>` (copiar de `index.html`).
 - Imagens de compartilhamento: `compartilhar.png`, `iecc/compartilhar.png`, `mentoria/compartilhar.png`, geradas com
   `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
   gerar de novo quando a abertura mudar e aumentar o `?v=N` na meta `og:image`.
