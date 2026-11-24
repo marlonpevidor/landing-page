@@ -10,15 +10,23 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   e adicionar o cartão do curso na seção `#cursos` de `index.html`.
 - `estilo.css`: estilos compartilhados por todas as páginas. Não duplicar CSS nas páginas.
 - `pix.js` + `qrcode.js` (MIT, local): oferta via Pix. Chave, nome, cidade e valores no início de `pix.js`.
+- `mentoria/index.html`: página da Mentoria Educador Cristão Clássico, trazida pronta (zip do professor) e mantida
+  como veio: design e CSS próprios, embutidos nela. Só foram aplicadas as regras de escrita deste arquivo.
+  Link "Mentoria" no menu da página inicial e da página do curso.
+- `assets/marlon.webp`: foto do professor (fundo de azulejos), usada nas seções "Sobre" e na mentoria.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
 
 ## Identidade visual
-- Cores (tokens em `:root` de `estilo.css`): azul-marinho `#1c2a44`/`#131d31`, vinho `#7a1f2b`, dourado `#b38b3f`/`#d9c08a`, pergaminho `#f6f0e3`/`#ece2cc`.
+- Paleta da mentoria, tirada da foto (azulejo cobalto e creme). Tokens em `:root` de `estilo.css`:
+  `--navy #0E1A44`, `--navy-deep #0A1336`, `--cobalt #0B2A7A` (destaques, topo, faixa final), `--azure #2F62B8`
+  (rótulos, ornamentos), `--azure-soft #A9C6F0` (texto/linhas sobre fundo escuro), `--parchment #F3EEE4`,
+  `--parchment-dark #E7DECB`, `--ink #0E1A44`, `--ink-soft #4A4F6B`, `--rule #D8CFBC`, `--on-dark*`, `--line-dark`.
+  Sobre fundo escuro, usar `--azure-soft`/`--on-dark*`, nunca `--azure`. Nada de dourado nem vinho (paleta antiga).
 - Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cormorant SC peso 600 (rótulos em maiúsculas).
   Não usar Cinzel: o "Ã" some em alguns navegadores (visto no computador do professor).
 - Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
-- Símbolo: escudo dourado com ponta no topo (desenho próprio) e, dentro, a cruz "cross-fill" da Phosphor Icons
+- Símbolo: escudo (contorno azul-claro `#A9C6F0`, cruz creme `#F3EEE4`) com ponta no topo (desenho próprio) e, dentro, a cruz "cross-fill" da Phosphor Icons
   (licença MIT). Escolha do professor depois de testar outras versões (`escudo-versoes.png`): não trocar sem pedir.
   Proporção escolhida: linha do escudo 2,3 (no viewBox 40) e cruz em escala 0.08, centralizada em (20, 19.2);
   a barra da cruz tem cerca de 2x a espessura da linha. Comparação em `escudo-proporcoes.png`.
@@ -51,7 +59,7 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
 - `--gutter: clamp(28px, 6vw, 40px)`: margem lateral do conteúdo (28 px no celular).
 - `--section-y: clamp(64px, 10vw, 96px)`: espaço acima e abaixo de toda camada (64 px celular / 96 px computador).
-- `--frame: 12px`: moldura dourada do topo; o texto dentro dela fica a `--gutter` da moldura.
+- `--frame: 12px`: moldura azul-clara do topo; o texto dentro dela fica a `--gutter` da moldura.
 - `--box-pad: clamp(22px, 5vw, 32px)`: espaço interno igual nos quatro lados de cartões e caixas.
 - Primeiro e último elemento de cada bloco não têm margem externa (regra `:first-child`/`:last-child` em `estilo.css`).
 - Botões lado a lado ou empilhados têm a mesma largura.
@@ -72,7 +80,7 @@ Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para s
   (versão mais recente: Google Doc de 29/08/2025) e roteiro dos módulos do curso.
 
 ## Pendências conhecidas
-- Foto do professor; link de compra e capa do livro; mentoria "A mente bem educada" (confirmar se existe);
+- Link de compra e capa do livro; mentoria "A mente bem educada" (confirmar se existe);
   vídeos soltos `IMG_0144.MOV` e `IMG_0906.MOV` na pasta do curso.
 - Links do YouTube das 38 aulas do IECC (campo `youtube` em `MODULOS`).
 - Lista final dos cursos (Panorama da História da Igreja, Seminário e outros).
