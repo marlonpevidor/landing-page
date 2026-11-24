@@ -98,6 +98,9 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
 
 ## Fluxo de trabalho
 - Commits no branch de trabalho da sessão; o professor publica fazendo merge do pull request no GitHub.
+- SEMPRE, ao terminar qualquer alteração, dar ao professor o link do pull request (aberto ou atualizado),
+  logo no início da resposta. Se o PR anterior já foi publicado, abrir um novo e dar o link dele.
+  Lembrar também do link de prévia do Cloudflare: https://claude-magical-knuth-bllvp8.marlonpevidor.pages.dev
   Cloudflare atualiza sozinho em ~1 minuto.
 - Textos em português do Brasil, a partir do material do professor (Google Drive):
   livro *Como transformar a mente e o coração de sua família através da educação cristã clássica*
