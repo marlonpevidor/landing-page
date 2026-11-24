@@ -23,6 +23,10 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
 - Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos".
   Na página inicial, a marca usa `href="#top"`: só sobe ao início, sem recarregar a página.
+- Marca do topo bem maior que o menu: "MARLON PEVIDOR" 1,15rem (celular 1,05rem) e escudo 38 px (celular 34 px);
+  links do menu 0,8rem (celular 0,74rem).
+- Abaixo da foto da abertura: ~30 px visíveis do anel até o nome e ~15 px do nome até a linha de baixo (proporção 2:1).
+  O anel fica 12 px fora da foto: `figcaption { margin-top: calc(12px + 2rem) }`.
 - Barra do topo no celular: espaço visível IGUAL (22 px, `--tb-gap`) entre borda de cima, marca, cada linha do menu
   e borda de baixo; cada link tem área de toque de ~34 px (`--tap-y`) e ~29 px entre palavras.
 - Página inicial: TODOS os links do menu descem para seções da própria página (Cursos, Mentoria, Livro, Sobre).
