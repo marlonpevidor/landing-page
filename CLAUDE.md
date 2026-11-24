@@ -27,6 +27,15 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
   gerar de novo quando o topo mudar e aumentar o `?v=N` na meta `og:image`, porque o WhatsApp guarda a imagem antiga.
 
+## Estilo de escrita — regra obrigatória (preferência do professor)
+- Nunca usar artigo definido antes de pronome possessivo (meu, minha, seu, sua, nosso, nossa e plurais),
+  nem nas contrações. Escrever: "de sua família", "em seu ritmo", "a seu filho", "por sua oferta", "sua jornada".
+  Evitar: "da sua", "do seu", "na sua", "no seu", "à sua", "ao seu", "pela sua", "a sua jornada".
+- Exceção: quando "todo/toda/todos/todas" exige o artigo ("todo o meu poder", "toda a sua vida").
+- Exceção: citações literais (Bíblia, outros autores) ficam como no original.
+- Vale também para textos tirados do material do professor: corrigir ao copiar.
+- Verificar com: `grep -rniP "\b(d|n|pel)?[oa]s?\s+(meu|minha|seu|sua|nosso|nossa)s?\b" --include=*.html .`
+
 ## Simetria — regra obrigatória (o professor faz questão)
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
 - `--gutter: clamp(28px, 6vw, 40px)`: margem lateral do conteúdo (28 px no celular).
