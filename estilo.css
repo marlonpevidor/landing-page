@@ -386,3 +386,5 @@ footer em { font-family: var(--font-display); font-size: 1.3rem; color: var(--in
   .hero:not(.solo) { --photo-gap: 36px; padding-top: var(--photo-gap); }
   .hero:not(.solo) .portrait figcaption { margin-top: calc(12px + var(--photo-gap) + 3px); }
 }
+a.book-cover { text-decoration: none; transition: transform .15s ease; }
+a.book-cover:hover { transform: translateY(-2px); }

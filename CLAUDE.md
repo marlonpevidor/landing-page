@@ -37,6 +37,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Abertura da página inicial: rótulo "Autor e educador cristão clássico"; abaixo da foto, só "Marlon Pevidor"
   (igual à marca do topo), em fonte maior. Seção "O professor": foto pequena em círculo à esquerda do rótulo e do nome (`.byline`).
 
+- Livro na Amazon: https://a.co/d/00ePqFWon. Botão "Adquira seu exemplar na Amazon" (`.btn-primary`, nova aba)
+  na seção do livro da página inicial e da página do curso; a capa desenhada também leva ao link.
+
 ## Identidade visual (modelo da mentoria)
 - Fontes: Cormorant Garamond (títulos, citações, numerais) e Libre Franklin (texto, rótulos em maiúsculas, botões).
   Não usar Cinzel: o "Ã" some em alguns navegadores.
@@ -116,7 +119,7 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
   (versão mais recente: Google Doc de 29/08/2025) e roteiro dos módulos do curso.
 
 ## Pendências conhecidas
-- Link de compra e capa do livro; mentoria "A mente bem educada" (confirmar se existe);
+- Capa do livro (imagem real); mentoria "A mente bem educada" (confirmar se existe);
   vídeos soltos `IMG_0144.MOV` e `IMG_0906.MOV` na pasta do curso.
 - Links do YouTube das 38 aulas do IECC (campo `youtube` em `MODULOS`).
 - Lista final dos cursos (Panorama da História da Igreja, Seminário e outros).
