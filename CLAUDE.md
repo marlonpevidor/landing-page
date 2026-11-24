@@ -4,38 +4,38 @@ Site estático (HTML + CSS + JS puro, sem build), publicado no Cloudflare Pages 
 Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (antigo, mesmo site; não apagar).
 
 ## Estrutura
-- `index.html`: página inicial do professor (cursos, livro, professor, oferta). Tudo numa página só.
+- Todas as páginas seguem o MESMO modelo estético (o da página da mentoria) e usam só `estilo.css`.
+  Partes comuns: barra clara no topo (escudo + "Marlon Pevidor" levando à página inicial, menu à direita;
+  no celular, marca e menu centralizados), seções separadas por linhas finas, rodapé com a frase de Tomás de Aquino.
+- `index.html`: página inicial do professor. Abertura com texto à esquerda e a foto em círculo à direita
+  (`assets/marlon.webp`), cursos em cartões numerados (I, II, III, classe `.pillar`), faixa cobalto da mentoria,
+  livro, professor (com quadro de formação), oferta Pix e chamada final.
 - `<sigla>/index.html`: uma página por curso. Ex.: `iecc/` = Introdução à Educação Cristã Clássica.
   Novos cursos: copiar `iecc/index.html` para uma pasta nova (`hpc/`, etc.), trocar conteúdo e lista `MODULOS`,
   e adicionar o cartão do curso na seção `#cursos` de `index.html`.
-- `estilo.css`: estilos compartilhados por todas as páginas. Não duplicar CSS nas páginas.
+- `mentoria/index.html`: página interna como as de curso (mesmo topo e estilo). Conteúdo da mentoria do professor;
+  a foto NÃO aparece nela (fica na abertura da página inicial).
 - `pix.js` + `qrcode.js` (MIT, local): oferta via Pix. Chave, nome, cidade e valores no início de `pix.js`.
-- `mentoria/index.html`: página da Mentoria Educador Cristão Clássico, trazida pronta (zip do professor) e mantida
-  como veio: design e CSS próprios, embutidos nela. Só foram aplicadas as regras de escrita deste arquivo.
-  Link "Mentoria" no menu da página inicial e da página do curso.
-- Toda página interna (cursos, mentoria) volta à página inicial tocando no nome/título do topo (link para `../`).
-  Páginas de curso têm também "Outros cursos" (`../#cursos`).
-- `assets/marlon.webp`: foto do professor (fundo de azulejos), usada nas seções "Sobre" e na mentoria.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
+- Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos".
 
-## Identidade visual
-- Paleta da mentoria, tirada da foto (azulejo cobalto e creme). Tokens em `:root` de `estilo.css`:
-  `--navy #0E1A44`, `--navy-deep #0A1336`, `--cobalt #0B2A7A` (destaques, topo, faixa final), `--azure #2F62B8`
-  (rótulos, ornamentos), `--azure-soft #A9C6F0` (texto/linhas sobre fundo escuro), `--parchment #F3EEE4`,
-  `--parchment-dark #E7DECB`, `--ink #0E1A44`, `--ink-soft #4A4F6B`, `--rule #D8CFBC`, `--on-dark*`, `--line-dark`.
-  Sobre fundo escuro, usar `--azure-soft`/`--on-dark*`, nunca `--azure`. Nada de dourado nem vinho (paleta antiga).
-- Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cormorant SC peso 600 (rótulos em maiúsculas).
-  Não usar Cinzel: o "Ã" some em alguns navegadores (visto no computador do professor).
-- Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
-- Símbolo: escudo (contorno azul-claro `#A9C6F0`, cruz creme `#F3EEE4`) com ponta no topo (desenho próprio) e, dentro, a cruz "cross-fill" da Phosphor Icons
-  (licença MIT). Escolha do professor depois de testar outras versões (`escudo-versoes.png`): não trocar sem pedir.
-  Proporção escolhida: linha do escudo 2,3 (no viewBox 40) e cruz em escala 0.08, centralizada em (20, 19.2);
-  a barra da cruz tem cerca de 2x a espessura da linha. Comparação em `escudo-proporcoes.png`.
-  Mesmo desenho em `favicon.svg` (linha 2,6, por causa do tamanho pequeno).
-- Imagens de compartilhamento (WhatsApp etc.): `compartilhar.png` e `<curso>/compartilhar.png`, geradas com
+## Identidade visual (modelo da mentoria)
+- Fontes: Cormorant Garamond (títulos, citações, numerais) e Libre Franklin (texto, rótulos em maiúsculas, botões).
+  Não usar Cinzel: o "Ã" some em alguns navegadores.
+- Paleta tirada da foto (azulejo cobalto e creme), tokens em `:root` de `estilo.css`: `--paper #F3EEE4`,
+  `--paper-2 #E7DECB`, `--ink #0E1A44`, `--ink-soft #4A4F6B`, `--cobalt #0B2A7A`, `--azure #2F62B8`, `--rule #D8CFBC`,
+  `--on-cobalt`. Há tema escuro automático (`prefers-color-scheme`); usar sempre os tokens, nunca cores soltas.
+- Componentes (classes do modelo): `.caps` (rótulo azul), `.head`, `.lede`, `.btn-primary`/`.btn-ghost`, `.hero`
+  (`.hero.solo` sem foto), `.portrait`+`.ring`, `.band` (faixa cobalto; `.band.three`), `.story`, `blockquote`,
+  `.paths`/`.path`, `.pillars`/`.pillar`, `.destiny`, `.about`, `.facts`, `.faq`, `.final`, `.center` (oferta),
+  sala de aula (`.player-grid`, `.stage`, `.syllabus`). Títulos com parte final em `<em>` (itálico cobalto).
+- Símbolo: escudo com ponta no topo e, dentro, a cruz "cross-fill" da Phosphor Icons (licença MIT), em `currentColor`
+  (cobalto no topo claro). Escolha do professor: não trocar sem pedir. Proporção: linha 2,3 (viewBox 40), cruz em
+  escala 0.08 centralizada em (20, 19.2). `favicon.svg` com as mesmas formas.
+- Imagens de compartilhamento: `compartilhar.png`, `iecc/compartilhar.png`, `mentoria/compartilhar.png`, geradas com
   `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
-  gerar de novo quando o topo mudar e aumentar o `?v=N` na meta `og:image`, porque o WhatsApp guarda a imagem antiga.
+  gerar de novo quando a abertura mudar e aumentar o `?v=N` na meta `og:image`.
 
 ## Estilo de escrita — regra obrigatória (preferência do professor)
 - Nunca usar artigo definido antes de pronome possessivo (meu, minha, seu, sua, nosso, nossa e plurais),
@@ -59,11 +59,11 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 
 ## Simetria — regra obrigatória (o professor faz questão)
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
+O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que precisa bater é top ≈ bottom.
 - `--gutter: clamp(28px, 6vw, 40px)`: margem lateral do conteúdo (28 px no celular).
 - `--section-y: clamp(64px, 10vw, 96px)`: espaço acima e abaixo de toda camada (64 px celular / 96 px computador).
-- `--frame: 12px`: moldura azul-clara do topo; o texto dentro dela fica a `--gutter` da moldura.
 - `--box-pad: clamp(22px, 5vw, 32px)`: espaço interno igual nos quatro lados de cartões e caixas.
-- Primeiro e último elemento de cada bloco não têm margem externa (regra `:first-child`/`:last-child` em `estilo.css`).
+- Títulos e parágrafos não têm margem própria: o espaço entre eles vem do `gap` dos blocos (`.stack`, `.head`…).
 - Botões lado a lado ou empilhados têm a mesma largura.
 - Rodapé usa metade de `--section-y`.
 

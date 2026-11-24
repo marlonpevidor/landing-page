@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Marlon Pevidor · Educação Cristã Clássica</title>
 <meta name="description" content="Cursos online gratuitos de educação cristã clássica e história da Igreja, com o professor Marlon Pevidor.">
 <link rel="canonical" href="https://marlonpevidor.pages.dev/">
@@ -12,32 +12,26 @@
 <meta property="og:url" content="https://marlonpevidor.pages.dev/">
 <meta property="og:title" content="Marlon Pevidor · Educação Cristã Clássica">
 <meta property="og:description" content="Cursos online gratuitos para formar a mente e o coração de sua família.">
-<meta property="og:image" content="https://marlonpevidor.pages.dev/compartilhar.png?v=7">
+<meta property="og:image" content="https://marlonpevidor.pages.dev/compartilhar.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script>
-  // Links antigos (curso-iecc.pages.dev/#aula-3) continuam funcionando
+  // Links antigos (…/#aula-3) continuam funcionando
   if (/^#aula-\d+$/.test(location.hash)) location.replace("iecc/" + location.hash);
 </script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Franklin:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-<header class="top">
+<header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#">
-      <svg class="crest" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M20 2 L36 8 V20 C36 29 28 35 20 38 C12 35 4 29 4 20 V8 Z" fill="none" stroke="#A9C6F0" stroke-width="2.3" stroke-linejoin="round"/>
-        <!-- Cruz: Phosphor Icons "cross-fill" (licença MIT) --><g transform="translate(9.76 8.96) scale(0.08)" fill="#F3EEE4"><path d="M216,92v24a16,16,0,0,1-16,16H156v92a16,16,0,0,1-16,16H116a16,16,0,0,1-16-16V132H56a16,16,0,0,1-16-16V92A16,16,0,0,1,56,76h44V32a16,16,0,0,1,16-16h24a16,16,0,0,1,16,16V76h44A16,16,0,0,1,216,92Z"/></g>
-      </svg>
-      <span>MARLON PEVIDOR</span>
-    </a>
-    <nav class="links">
+    <a class="brand" href="./" title="Página inicial"><svg class="crest" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L36 8 V20 C36 29 28 35 20 38 C12 35 4 29 4 20 V8 Z" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><g transform="translate(9.76 8.96) scale(0.08)" fill="currentColor"><path d="M216,92v24a16,16,0,0,1-16,16H156v92a16,16,0,0,1-16,16H116a16,16,0,0,1-16-16V132H56a16,16,0,0,1-16-16V92A16,16,0,0,1,56,76h44V32a16,16,0,0,1,16-16h24a16,16,0,0,1,16,16V76h44A16,16,0,0,1,216,92Z"/></g></svg><span>Marlon Pevidor</span></a>
+    <nav aria-label="Menu">
       <a href="#cursos">Cursos</a>
       <a href="mentoria/">Mentoria</a>
       <a href="#livro">Livro</a>
@@ -46,130 +40,145 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Professor · Autor · Educação cristã clássica</p>
-    <h1>Marlon <em>Pevidor</em></h1>
-    <div class="ornament center">✦</div>
-    <p class="lede">Cursos <em>online</em> gratuitos para ajudar famílias cristãs a recuperar uma educação antiga, bíblica e bela — que forma a mente e o coração à imagem de Cristo.</p>
-    <div class="actions">
-      <a class="btn" href="#cursos">Ver cursos gratuitos</a>
-      <a class="btn ghost" href="#professor">Conhecer o professor</a>
-    </div>
-  </div>
-</section>
+<main id="inicio">
 
-<section id="cursos">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Cursos gratuitos</p>
-      <h2>Escolha por onde começar</h2>
-      <p>Todos os cursos são gratuitos e podem ser assistidos em seu ritmo.</p>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="caps">Professor · Autor · Educação cristã clássica</p>
+        <h1>Educação cristã clássica para transformar <em>a mente e o coração.</em></h1>
+        <p class="lede">Cursos <em>online</em> gratuitos para ajudar famílias cristãs a recuperar uma educação antiga, bíblica e bela, que forma a mente e o coração à imagem de Cristo.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#cursos">Ver cursos gratuitos</a>
+          <a class="btn btn-ghost" href="#professor">Conhecer o professor</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <span class="ring"><img src="assets/marlon.webp" alt="Professor Marlon Pevidor sorrindo, de óculos e braços cruzados, diante de uma parede de azulejos azuis e creme" width="840" height="840"></span>
+        <figcaption>
+          <strong>Professor Marlon Pevidor</strong>
+          <span>Especialista em educação cristã clássica</span>
+        </figcaption>
+      </figure>
     </div>
-    <div class="courses">
+  </section>
 
-      <a class="course-card" href="iecc/">
-        <div class="cover">
-          <p class="eyebrow">Comece por aqui</p>
+  <section id="cursos">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">Cursos gratuitos</p>
+        <h2>Escolha <em>por onde começar.</em></h2>
+        <p class="lede">Todos os cursos são gratuitos e podem ser assistidos em seu ritmo.</p>
+      </div>
+      <div class="pillars">
+        <a class="pillar" href="iecc/">
+          <span class="numeral" aria-hidden="true">I</span>
+          <p class="caps">Comece por aqui</p>
           <h3>Introdução à Educação Cristã Clássica</h3>
-        </div>
-        <div class="body">
           <p>O que é, por que importa, para que serve e como aplicar a educação cristã clássica em casa ou na escola.</p>
-          <div class="meta"><span>38 aulas · 7 módulos</span><span class="go">Acessar →</span></div>
-        </div>
-      </a>
-
-      <div class="course-card alt soon">
-        <div class="cover">
-          <p class="eyebrow">História</p>
+          <div class="go"><span>38 aulas · 7 módulos</span><span>Acessar →</span></div>
+        </a>
+        <div class="pillar">
+          <span class="numeral" aria-hidden="true">II</span>
+          <p class="caps">História</p>
           <h3>Panorama da História da Igreja</h3>
-        </div>
-        <div class="body">
           <p>[Descrição provisória.] Uma visão geral da caminhada da Igreja ao longo dos séculos.</p>
-          <div class="meta"><span>Em breve</span><span class="go">Em breve</span></div>
+          <div class="go"><span>Em breve</span></div>
         </div>
-      </div>
-
-      <div class="course-card alt2 soon">
-        <div class="cover">
-          <p class="eyebrow">[Categoria]</p>
+        <div class="pillar">
+          <span class="numeral" aria-hidden="true">III</span>
+          <p class="caps">[Categoria]</p>
           <h3>Seminário</h3>
-        </div>
-        <div class="body">
           <p>[Nome e descrição provisórios.]</p>
-          <div class="meta"><span>Em breve</span><span class="go">Em breve</span></div>
+          <div class="go"><span>Em breve</span></div>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="trivium" id="livro">
-  <div class="wrap book">
-    <div class="book-cover">
-      <div class="t">Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></div>
-      <div class="a">MARLON PEVIDOR</div>
+  <section class="band" aria-label="Mentoria">
+    <div class="wrap">
+      <span class="label">Mentoria Educador Cristão Clássico</span>
+      <p class="note">Da mera carreira a um chamado que transforma vidas: acompanhamento de 12 meses para professores e gestores que querem integrar fé cristã e educação clássica na prática.</p>
+      <div class="actions"><a class="btn btn-ghost band-btn" href="mentoria/">Conhecer a mentoria</a></div>
     </div>
-    <div>
-      <p class="eyebrow">O livro</p>
-      <h2>Como transformar a mente e o coração de sua família através da educação cristã clássica</h2>
-      <div class="ornament">✦</div>
-      <p>Um guia claro e prático para pais, adultos e jovens que desejam entender a educação cristã clássica e aplicá-la em casa: o que ela é, por que é urgente, quais são seus objetivos, como praticá-la em cada fase da vida e onde encontrá-la.</p>
-      <blockquote style="font-size:1.25rem">
-        “Marlon expressa seus conceitos com convicção e admirável clareza.”
-        <cite>Ron Prater, no prefácio</cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="professor">
-  <div class="wrap instructor-grid">
-    <figure class="portrait"><span class="ring"><img src="assets/marlon.webp" alt="Professor Marlon Pevidor sorrindo, de óculos e braços cruzados, diante de uma parede de azulejos azuis e creme" width="840" height="840" loading="lazy"></span></figure>
-    <div class="bio-long">
-      <p class="eyebrow">O professor</p>
-      <h2>Marlon Pevidor</h2>
-      <div class="ornament">✦</div>
-      <p>Antes de qualquer coisa, Marlon é discípulo de Jesus Cristo: foi convencido de seus pecados, redimido e selado pelo Espírito Santo em 1999. É casado com Kelen desde 2004 e pai de três filhos — Victoria, Arthur e Miguel —, que também confessaram Jesus como Senhor.</p>
-      <p>A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde Marlon serviu como diretor de educação cristã de 2021 a 2024, aplicando os princípios da educação cristã clássica no contexto da igreja local.</p>
-      <p>É professor de humanidades integradas na Logos Online School, em Moscow, Idaho (EUA), uma escola <em>online</em> que serve famílias educadoras. É licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
-      <p>Sua jornada começou em 2015, quando experimentou uma verdadeira conversão de cosmovisão e descobriu, através de <em>Como ler livros</em>, de Mortimer Adler, o <em>trivium</em>, o <em>quadrivium</em>, as sete artes liberais e a grande conversa. Desde então, dedica-se a ajudar famílias a recuperar essa herança — antiga, bíblica e orientada pelas Escrituras.</p>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <h2>Comece hoje sua jornada</h2>
-    <p>“Ponde-vos à margem no caminho e vede, perguntai pelas veredas antigas, qual é o bom caminho; andai por ele e achareis descanso para a vossa alma.” — Jeremias 6:16 (ARA)</p>
-    <a class="btn" href="iecc/">Começar pelo curso de introdução</a>
-  </div>
-</section>
-
-<section class="ofertar" id="ofertar">
-  <div class="wrap">
-    <div class="pix-box" id="ofertar-box">
-      <p class="eyebrow">Oferta</p>
-      <h2>Considere ofertar para este ministério</h2>
-      <p>Sua oferta ajuda a manter os cursos gratuitos no ar e a levá-los a mais famílias.</p>
-      <div class="pix-valores"></div>
-      <div class="pix-resultado" hidden>
-        <p class="pix-titulo"></p>
-        <div class="pix-qr"></div>
-        <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
-        <textarea readonly aria-label="Código Pix copia e cola"></textarea>
-        <button type="button" class="pix-copiar">Copiar código Pix</button>
+  <section class="about" id="livro">
+    <div class="wrap">
+      <div class="book-cover" aria-hidden="true">
+        <div class="t">Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></div>
+        <div class="a">Marlon Pevidor</div>
+      </div>
+      <div class="stack">
+        <p class="caps">O livro</p>
+        <h2>Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></h2>
+        <p>Um guia claro e prático para pais, adultos e jovens que desejam entender a educação cristã clássica e aplicá-la em casa: o que ela é, por que é urgente, quais são seus objetivos, como praticá-la em cada fase da vida e onde encontrá-la.</p>
+        <blockquote>
+          <p>“Marlon expressa seus conceitos com convicção e admirável clareza.”</p>
+          <cite>Ron Prater, no prefácio</cite>
+        </blockquote>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="story" id="professor">
+    <div class="wrap">
+      <div class="stack">
+        <p class="caps">O professor</p>
+        <h2>Marlon Pevidor</h2>
+        <p>Antes de qualquer coisa, Marlon é discípulo de Jesus Cristo: foi convencido de seus pecados, redimido e selado pelo Espírito Santo em 1999. É casado com Kelen desde 2004 e pai de três filhos, Victoria, Arthur e Miguel, que também confessaram Jesus como Senhor.</p>
+        <p>A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde Marlon serviu como diretor de educação cristã de 2021 a 2024, aplicando os princípios da educação cristã clássica no contexto da igreja local.</p>
+        <p>É professor de humanidades integradas na Logos Online School, em Moscow, Idaho (EUA), uma escola <em>online</em> que serve famílias educadoras.</p>
+        <p>Sua jornada começou em 2015, quando experimentou uma verdadeira conversão de cosmovisão e descobriu, através de <em>Como ler livros</em>, de Mortimer Adler, o <em>trivium</em>, o <em>quadrivium</em>, as sete artes liberais e a grande conversa. Desde então, dedica-se a ajudar famílias a recuperar essa herança, antiga, bíblica e orientada pelas Escrituras.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Formação</dt><dd>Licenciatura em História (UniCEUB) e em Geografia (Cruzeiro do Sul)</dd></div>
+        <div><dt>Especialização</dt><dd>Pós-graduação em Educação Cristã Clássica, Faculdade Internacional Cidade Viva</dd></div>
+        <div><dt>Atuação</dt><dd>Professor de humanidades integradas na Logos Online School</dd></div>
+        <div><dt>Igreja</dt><dd>Igreja Batista Central de Taguatinga, Brasília</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="center" id="ofertar">
+    <div class="wrap">
+      <div class="head">
+        <p class="caps">Oferta</p>
+        <h2>Considere ofertar para este ministério</h2>
+        <p class="lede">Sua oferta ajuda a manter os cursos gratuitos no ar e a levá-los a mais famílias.</p>
+      </div>
+      <div class="pix-box" id="ofertar-box">
+        <div class="pix-valores"></div>
+        <div class="pix-resultado" hidden>
+          <p class="pix-titulo"></p>
+          <div class="pix-qr"></div>
+          <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
+          <textarea readonly aria-label="Código Pix copia e cola"></textarea>
+          <button type="button" class="btn btn-primary pix-copiar">Copiar código Pix</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <p class="caps">Comece por aqui</p>
+      <h2>Comece hoje <em>sua jornada.</em></h2>
+      <blockquote class="center-quote">
+        <p>“Ponde-vos à margem no caminho e vede, perguntai pelas veredas antigas, qual é o bom caminho; andai por ele e achareis descanso para a vossa alma.”</p>
+        <cite>Jeremias 6:16 (ARA)</cite>
+      </blockquote>
+      <div class="actions"><a class="btn btn-primary" href="iecc/">Começar pelo curso de introdução</a></div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="soli"><em lang="la">Gratia non tollit naturam, sed perficit.</em></div>
-    <div class="soli-autor">Tomás de Aquino</div>
-    <div>© <span id="year"></span> Marlon Pevidor</div>
+    <em lang="la">Gratia non tollit naturam, sed perficit.</em>
+    <span>Tomás de Aquino · © <span id="year">2026</span> Marlon Pevidor</span>
   </div>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
