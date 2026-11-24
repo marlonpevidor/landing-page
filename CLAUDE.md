@@ -20,7 +20,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
 - Símbolo: escudo dourado com ponta no topo (desenho próprio) e, dentro, a cruz "cross-fill" da Phosphor Icons
   (licença MIT). Escolha do professor depois de testar outras versões (`escudo-versoes.png`): não trocar sem pedir.
-  Mesmo desenho em `favicon.svg`.
+  Proporção escolhida: linha do escudo 2,3 (no viewBox 40) e cruz em escala 0.08, centralizada em (20, 19.2);
+  a barra da cruz tem cerca de 2x a espessura da linha. Comparação em `escudo-proporcoes.png`.
+  Mesmo desenho em `favicon.svg` (linha 2,6, por causa do tamanho pequeno).
 - Imagens de compartilhamento (WhatsApp etc.): `compartilhar.png` e `<curso>/compartilhar.png`, geradas com
   `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
   gerar de novo quando o topo mudar e aumentar o `?v=N` na meta `og:image`, porque o WhatsApp guarda a imagem antiga.
