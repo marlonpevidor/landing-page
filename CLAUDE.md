@@ -18,8 +18,12 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Fontes: Cormorant Garamond (títulos), EB Garamond (texto), Cormorant SC peso 600 (rótulos em maiúsculas).
   Não usar Cinzel: o "Ã" some em alguns navegadores (visto no computador do professor).
 - Menu do topo aparece também no celular (marca e links centralizados em duas linhas).
-- Símbolo: escudo dourado (desenho próprio) com a cruz "cross-fill" da Phosphor Icons (licença MIT) dentro.
-  O mesmo desenho é o ícone da aba (`favicon.svg`). Estilos testados em `estilos-cruz.png`.
+- Símbolo: escudo dourado com ponta no topo (desenho próprio) e, dentro, a cruz "cross-fill" da Phosphor Icons
+  (licença MIT). Escolha do professor depois de testar outras versões (`escudo-versoes.png`): não trocar sem pedir.
+  Mesmo desenho em `favicon.svg`.
+- Imagens de compartilhamento (WhatsApp etc.): `compartilhar.png` e `<curso>/compartilhar.png`, geradas com
+  `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
+  gerar de novo quando o topo mudar e aumentar o `?v=N` na meta `og:image`, porque o WhatsApp guarda a imagem antiga.
 
 ## Simetria — regra obrigatória (o professor faz questão)
 Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para seções e caixas.
@@ -49,5 +53,4 @@ Usar sempre as medidas de `:root`; nunca valores soltos de padding/margin para s
 - Foto do professor; link de compra e capa do livro; mentoria "A mente bem educada" (confirmar se existe);
   vídeos soltos `IMG_0144.MOV` e `IMG_0906.MOV` na pasta do curso.
 - Links do YouTube das 38 aulas do IECC (campo `youtube` em `MODULOS`).
-- Trocar `curso-iecc.pages.dev` por `marlonpevidor.pages.dev` nas meta tags quando confirmado.
 - Lista final dos cursos (Panorama da História da Igreja, Seminário e outros).
