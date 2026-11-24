@@ -11,7 +11,7 @@ const { chromium } = require('playwright');
     await p.goto(url); await p.waitForTimeout(1000);
     const r = await p.evaluate(() => {
       const out = [];
-      for (const sec of document.querySelectorAll('header.top, section, footer')) {
+      for (const sec of document.querySelectorAll('header, section, footer')) {
         const sr = sec.getBoundingClientRect();
         // frame (hero ::after inset)
         let frame = null; const after = getComputedStyle(sec, '::after');
@@ -23,7 +23,7 @@ const { chromium } = require('playwright');
           const rg = document.createRange(); rg.selectNodeContents(n);
           for (const x of rg.getClientRects()) { if (!x.width) continue; t=Math.min(t,x.top); bm=Math.max(bm,x.bottom); l=Math.min(l,x.left); rr=Math.max(rr,x.right);} }
         // include buttons/boxes/cards borders
-        for (const el of sec.querySelectorAll('.btn, .pillar, .course-card, .card, .stage, .syllabus, .portrait, .book-cover, blockquote, .pix-box, details, .video, .goals li')) {
+        for (const el of sec.querySelectorAll('.btn, .pillar, .path, .ledger, .foundation, .stage, .syllabus, .portrait, .book-cover, blockquote, .pix-valores, .faq details, .video, .facts, .about img, .crest, .fit .no, .career li, .ledger > div')) {
           if (el.closest('[hidden]')) continue; const x = el.getBoundingClientRect(); if (!x.width) continue;
           t=Math.min(t,x.top); bm=Math.max(bm,x.bottom); l=Math.min(l,x.left); rr=Math.max(rr,x.right); }
         const f = frame||0;
