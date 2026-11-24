@@ -23,7 +23,7 @@ const { chromium } = require('playwright');
           const rg = document.createRange(); rg.selectNodeContents(n);
           for (const x of rg.getClientRects()) { if (!x.width) continue; t=Math.min(t,x.top); bm=Math.max(bm,x.bottom); l=Math.min(l,x.left); rr=Math.max(rr,x.right);} }
         // include buttons/boxes/cards borders
-        for (const el of sec.querySelectorAll('.btn, .pillar, .path, .ledger, .foundation, .stage, .syllabus, .portrait, .book-cover, blockquote, .pix-valores, .faq details, .video, .facts, .about img, .crest, .fit .no, .career li, .ledger > div')) {
+        for (const el of sec.querySelectorAll('.btn, .pillar, .path, .ledger, .foundation, .stage, .syllabus, .portrait, .book-cover, blockquote, .pix-valores, .faq details, .video, .facts, .about img, .crest, .fit .no, .career li, .ledger > div, .byline img')) {
           if (el.closest('[hidden]')) continue; const x = el.getBoundingClientRect(); if (!x.width) continue;
           t=Math.min(t,x.top); bm=Math.max(bm,x.bottom); l=Math.min(l,x.left); rr=Math.max(rr,x.right); }
         const f = frame||0;
