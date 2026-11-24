@@ -44,8 +44,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   (cobalto no topo claro). Escolha do professor: não trocar sem pedir. Proporção: linha 2,3 (viewBox 40), cruz em
   escala 0.08 centralizada em (20, 19.2).
 - Ícones (escudo cobalto preenchido, cruz creme): `favicon.svg` (aba), `favicon-32.png`, `favicon.ico`, `icon-192.png`
-  e `apple-touch-icon.png` (180x180, fundo creme, usado por favoritos e tela inicial do iPhone/Firefox iOS).
-  Toda página nova precisa dos quatro `<link>` de ícone no `<head>` (copiar de `index.html`).
+  e `apple-touch-icon.png` (180x180, fundo creme, usado por favoritos e tela inicial do iPhone/Firefox iOS),
+  além de `manifest.webmanifest` (ícones `icon-192-fundo.png` e `icon-512.png`, fundo creme).
+  Toda página nova precisa dos `<link>` de ícone, do manifesto e do `theme-color` no `<head>` (copiar de `index.html`).
 - Imagens de compartilhamento: `compartilhar.png`, `iecc/compartilhar.png`, `mentoria/compartilhar.png`, geradas com
   `node ferramentas/gerar-imagens-compartilhamento.js` (servidor local ligado). NÃO se atualizam sozinhas:
   gerar de novo quando a abertura mudar e aumentar o `?v=N` na meta `og:image`.
@@ -98,9 +99,10 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
 
 ## Fluxo de trabalho
 - Commits no branch de trabalho da sessão; o professor publica fazendo merge do pull request no GitHub.
-- SEMPRE, ao terminar qualquer alteração, dar ao professor o link do pull request (aberto ou atualizado),
-  logo no início da resposta. Se o PR anterior já foi publicado, abrir um novo e dar o link dele.
-  Lembrar também do link de prévia do Cloudflare: https://claude-magical-knuth-bllvp8.marlonpevidor.pages.dev
+- Forma de trabalho combinada: ir guardando as alterações no branch (commit + push, sem abrir PR) e só abrir
+  o pull request QUANDO o professor pedir, já com todas as alterações acumuladas. Ao entregar, dar o link do PR
+  logo no início da resposta (se o anterior já foi publicado, abrir um novo). As alterações já aparecem na prévia
+  do Cloudflare: https://claude-magical-knuth-bllvp8.marlonpevidor.pages.dev
   Cloudflare atualiza sozinho em ~1 minuto.
 - Textos em português do Brasil, a partir do material do professor (Google Drive):
   livro *Como transformar a mente e o coração de sua família através da educação cristã clássica*
