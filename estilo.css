@@ -37,7 +37,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+/* A rolagem para logo abaixo da barra do topo; o "- 1px" esconde a linha de cima da camada
+   sob a linha da barra, para não aparecerem duas linhas. --topbar-h é medido por site.js. */
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h, 4.5rem) - 1px); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;

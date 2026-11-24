@@ -15,6 +15,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   e adicionar o cartão do curso na seção `#cursos` de `index.html`.
 - `mentoria/index.html`: página interna como as de curso (mesmo topo e estilo). Conteúdo da mentoria do professor;
   a foto NÃO aparece nela (fica na abertura da página inicial).
+- `site.js` (em todas as páginas, `defer`): mede a altura real da barra do topo e grava em `--topbar-h`;
+  `html { scroll-padding-top: calc(var(--topbar-h) - 1px) }` faz os links do menu pararem exatamente no início
+  da camada, com a linha de cima dela escondida sob a linha da barra. Toda página nova precisa de `site.js`.
 - `pix.js` + `qrcode.js` (MIT, local): oferta via Pix. Chave, nome, cidade e valores no início de `pix.js`.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
