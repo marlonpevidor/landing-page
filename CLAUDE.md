@@ -27,6 +27,9 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   links do menu 0,8rem (celular 0,74rem).
 - Abaixo da foto da abertura: ~30 px visíveis do anel até o nome e ~15 px do nome até a linha de baixo (proporção 2:1).
   O anel fica 12 px fora da foto: `figcaption { margin-top: calc(12px + 2rem) }`.
+- No celular (foto acima do texto), pedido do professor: espaço do início da camada até o anel = espaço do anel
+  até o nome = 36 px (`--photo-gap`). Por isso a abertura da página inicial no celular tem 36 px em cima,
+  e não 64 (exceção à regra de simetria da camada; o "embaixo" continua 64).
 - Barra do topo no celular: espaço visível IGUAL (22 px, `--tb-gap`) entre borda de cima, marca, cada linha do menu
   e borda de baixo; cada link tem área de toque de ~34 px (`--tap-y`) e ~29 px entre palavras.
 - Página inicial: TODOS os links do menu descem para seções da própria página (Cursos, Mentoria, Livro, Sobre).
