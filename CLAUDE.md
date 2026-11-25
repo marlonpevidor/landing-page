@@ -144,6 +144,13 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
   livro *Como transformar a mente e o coração de sua família através da educação cristã clássica*
   (versão mais recente: Google Doc de 29/08/2025) e roteiro dos módulos do curso.
 
+## Cursos pagos (decisão do professor)
+- NÃO construir login, cadastro nem pagamento no site. Cursos pagos ficam numa plataforma de cursos
+  (Hotmart, Kiwify, Eduzz ou similar: área de membros com vídeos protegidos, pagamento, LGPD).
+- No site: cartão do curso na seção "Cursos" com selo de pago + página de venda no modelo do site;
+  o botão (imperativo, ex.: "Garanta sua vaga") leva ao link de pagamento da plataforma.
+- Vídeos de curso pago NUNCA no YouTube não listado (quem tem o link assiste).
+
 ## Pendências conhecidas
 - Capa do livro (imagem real); mentoria "A mente bem educada" (confirmar se existe);
   vídeos soltos `IMG_0144.MOV` e `IMG_0906.MOV` na pasta do curso.
