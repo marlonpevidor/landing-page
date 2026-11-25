@@ -404,3 +404,10 @@ a.book-cover:hover { transform: translateY(-2px); }
 @supports (text-box: trim-both cap alphabetic) {
   footer em, footer span { text-box: trim-both cap alphabetic; }
 }
+
+/* sala de aula: selos de progresso e aviso de onde parou */
+.lesson .tag.partial { color: var(--azure); border-color: var(--azure); }
+.lesson .tag.seen { background: var(--cobalt); color: var(--on-cobalt); border-color: var(--cobalt); }
+.lesson-info .resume { color: var(--azure); font-weight: 600; font-size: .95rem; }
+.resume[hidden] { display: none; }
+#yt-player, .video > iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

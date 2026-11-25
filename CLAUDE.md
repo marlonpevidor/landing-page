@@ -18,6 +18,12 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - `site.js` (em todas as páginas, `defer`): mede a altura real da barra do topo e grava em `--topbar-h`;
   `html { scroll-padding-top: calc(var(--topbar-h) - 1px) }` faz os links do menu pararem exatamente no início
   da camada, com a linha de cima dela escondida sob a linha da barra. Toda página nova precisa de `site.js`.
+- Sala de aula (páginas de curso): usa a API oficial de vídeo do YouTube (`youtube.com/iframe_api`).
+  Guarda no navegador (localStorage, chave `<sigla>-progresso`) a última aula, o minuto em que parou cada aula
+  (a cada 5 s, ao pausar e ao sair da página) e as aulas assistidas (≥ 90%). Ao voltar, abre a última aula no
+  minuto salvo, com o aviso "Você parou em 3:10…"; selos na lista: Assista / Parou em 3:10 / ✓ Assistida / Em breve;
+  botão da abertura vira "Continue de onde parou: aula N (m:ss)". Ao terminar uma aula, abre e toca sozinha a próxima
+  publicada. O progresso fica só naquele aparelho/navegador (não há login). Em novos cursos, trocar a chave.
 - `pix.js` + `qrcode.js` (MIT, local): oferta via Pix. Chave, nome, cidade e valores no início de `pix.js`.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
