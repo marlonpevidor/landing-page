@@ -90,6 +90,16 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
 - `--box-pad: clamp(22px, 5vw, 32px)`: espaço interno igual nos quatro lados de cartões e caixas.
 - Títulos e parágrafos não têm margem própria: o espaço entre eles vem do `gap` dos blocos (`.stack`, `.head`…).
 - Botões lado a lado ou empilhados têm a mesma largura.
+- ESPAÇO ENTRE BLOCOS (pedido do professor): dentro de cada camada, a distância visível entre um bloco e o
+  seguinte é SEMPRE a mesma. Bloco = rótulo, título, parágrafo, citação (com autor), grupo de botões, lista,
+  quadro/cartão, grupo de valores do Pix, foto com legenda. Medidas (`:root`):
+  `--block-gap` 32 px celular / 44 px computador (entre blocos de uma camada);
+  `--box-gap` 18–24 px (entre blocos DENTRO de um quadro/cartão);
+  `--tight-gap` 14 px (dentro de um mesmo bloco: dois botões, valores do Pix, nome + linha de baixo, citação + autor);
+  `--list-gap` 16 px (itens de uma lista). Nunca usar outros valores de gap/margem entre blocos.
+  Isso só funciona porque TODO bloco de texto tem `text-box: trim-both cap alphabetic` (vai da altura das maiúsculas
+  à linha de base). Conferir com `node ferramentas/medir-blocos.js 390` e `... 1280`: todos os pares devem dar
+  32/44, 14, 20–24 ou 16 (a capa do livro soma +12 da sombra).
 - Faixas azuis (`.band`) usam o mesmo `--section-y` das outras camadas (não são mais compactas).
 - Única exceção: a abertura da página inicial no celular (36 px acima da foto, ver acima).
 - Rodapé usa metade de `--section-y`.
