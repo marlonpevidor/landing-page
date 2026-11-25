@@ -372,7 +372,8 @@ footer span { font-size: .85rem; font-weight: 600; letter-spacing: .14em; text-t
 
 /* rótulo + título com a foto pequena em círculo à esquerda (seção "O professor") */
 .byline { display: flex; align-items: center; gap: 1.1rem; }
-.byline > div { display: grid; gap: var(--block-gap); }
+/* exceção pedida pelo professor: rótulo e nome ao lado da foto ficam à distância de uma troca de linha do texto */
+.byline > div { display: grid; gap: 17px; gap: calc(1.65em - 1cap); }
 .byline img { margin-block: 5px; width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; outline: 1px solid var(--azure); outline-offset: 4px; }
 @media (max-width: 760px) { .byline img { width: 68px; height: 68px; } }
 

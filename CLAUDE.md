@@ -105,6 +105,8 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
   32/44, 14, 22–26 ou 16 (a capa do livro soma +12 da sombra).
 - Faixas azuis (`.band`) usam o mesmo `--section-y` das outras camadas (não são mais compactas).
 - Única exceção: a abertura da página inicial no celular (36 px acima da foto, ver acima).
+- Exceção 2 (pedido do professor): em "O professor" ao lado da fotinho (`.byline`), o rótulo e o nome ficam à
+  distância de uma troca de linha do texto (altura da linha − altura das maiúsculas ≈ 16–17 px), não do --block-gap.
 - Rodapé usa metade de `--section-y`.
 
 - Simetria ÓPTICA: `text-box: trim-* cap alphabetic` corta a folga invisível acima do primeiro texto e abaixo do
