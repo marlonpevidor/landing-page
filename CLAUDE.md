@@ -36,8 +36,7 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   "Mentoria" desce até a faixa `#mentoria`; só o botão da faixa leva a `mentoria/`.
 - Abertura da página inicial: rótulo "Autor e educador cristão clássico"; abaixo da foto, só "Marlon Pevidor"
   (igual à marca do topo), em fonte maior. Seção "O professor": foto pequena em círculo à esquerda do rótulo e do nome (`.byline`).
-  A seção do professor das páginas de curso é IGUAL à da página inicial (mesmo texto, `.byline`, quadro de formação),
-  com o link extra "Conheça mais sobre o professor e seus outros cursos →".
+  Páginas de curso NÃO têm seção do professor (quem chega ao curso já passou pela página inicial).
 
 - Livro na Amazon: https://a.co/d/00ePqFWon. Botão "Adquira seu exemplar na Amazon" (`.btn-primary`, nova aba)
   na seção do livro da página inicial e da página do curso; a capa desenhada também leva ao link.
