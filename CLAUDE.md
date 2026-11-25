@@ -21,7 +21,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - `pix.js` + `qrcode.js` (MIT, local): oferta via Pix. Chave, nome, cidade e valores no início de `pix.js`.
 - Cada página de curso tem suas próprias perguntas frequentes; a página inicial não tem.
 - `/#aula-N` redireciona para `/iecc/#aula-N` (links antigos das descrições do YouTube).
-- Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos".
+- Toda página interna volta à página inicial tocando na marca do topo (`../`). Páginas de curso têm "Outros cursos";
+  a mentoria NÃO tem link para cursos no menu (só seções da própria página).
   Na página inicial, a marca usa `href="#top"`: só sobe ao início, sem recarregar a página.
 - Marca do topo bem maior que o menu: "MARLON PEVIDOR" 1,15rem (celular 1,05rem) e escudo 38 px (celular 34 px);
   links do menu 0,8rem (celular 0,74rem).
