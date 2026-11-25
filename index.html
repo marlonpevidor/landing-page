@@ -23,7 +23,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0B2A7A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Franklin:wght@400;500;600&display=swap">
@@ -53,8 +55,8 @@
         <h1>Educação cristã clássica para transformar <em>a mente e o coração.</em></h1>
         <p class="lede">Cursos <em>online</em> gratuitos para ajudar famílias cristãs a recuperar uma educação antiga, bíblica e bela, que forma a mente e o coração à imagem de Cristo.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#cursos">Ver cursos gratuitos</a>
-          <a class="btn btn-ghost" href="#professor">Conhecer o professor</a>
+          <a class="btn btn-primary" href="#cursos">Veja os cursos gratuitos</a>
+          <a class="btn btn-ghost" href="#professor">Conheça o professor</a>
         </div>
       </div>
       <figure class="portrait">
@@ -80,7 +82,7 @@
           <p class="caps">Comece por aqui</p>
           <h3>Introdução à Educação Cristã Clássica</h3>
           <p>O que é, por que importa, para que serve e como aplicar a educação cristã clássica em casa ou na escola.</p>
-          <div class="go"><span>38 aulas · 7 módulos</span><span>Acessar →</span></div>
+          <div class="go"><span>38 aulas · 7 módulos</span><span>Acesse →</span></div>
         </a>
         <div class="pillar">
           <span class="numeral" aria-hidden="true">II</span>
@@ -104,16 +106,16 @@
     <div class="wrap">
       <span class="label">Mentoria Educador Cristão Clássico</span>
       <p class="note">Da mera carreira a um chamado que transforma vidas: acompanhamento de 12 meses para professores e gestores que querem integrar fé cristã e educação clássica na prática.</p>
-      <div class="actions"><a class="btn btn-ghost band-btn" href="mentoria/">Conhecer a mentoria</a></div>
+      <div class="actions"><a class="btn btn-ghost band-btn" href="mentoria/">Conheça a mentoria</a></div>
     </div>
   </section>
 
   <section class="about" id="livro">
     <div class="wrap">
-      <div class="book-cover" aria-hidden="true">
+      <a class="book-cover" href="https://a.co/d/00ePqFWon" target="_blank" rel="noopener" aria-label="Comprar o livro na Amazon">
         <div class="t">Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></div>
         <div class="a">Marlon Pevidor</div>
-      </div>
+      </a>
       <div class="stack">
         <p class="caps">O livro</p>
         <h2>Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></h2>
@@ -122,6 +124,7 @@
           <p>“Marlon expressa seus conceitos com convicção e admirável clareza.”</p>
           <cite>Ron Prater, no prefácio</cite>
         </blockquote>
+        <div class="actions"><a class="btn btn-primary" href="https://a.co/d/00ePqFWon" target="_blank" rel="noopener">Adquira seu exemplar na Amazon</a></div>
       </div>
     </div>
   </section>
@@ -162,9 +165,9 @@
         <div class="pix-resultado" hidden>
           <p class="pix-titulo"></p>
           <div class="pix-qr"></div>
-          <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
+          <p class="pix-ajuda">No celular: toque em <strong>Copie o código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
           <textarea readonly aria-label="Código Pix copia e cola"></textarea>
-          <button type="button" class="btn btn-primary pix-copiar">Copiar código Pix</button>
+          <button type="button" class="btn btn-primary pix-copiar">Copie o código Pix</button>
         </div>
       </div>
     </div>
@@ -178,7 +181,7 @@
         <p>“Ponde-vos à margem no caminho e vede, perguntai pelas veredas antigas, qual é o bom caminho; andai por ele e achareis descanso para a vossa alma.”</p>
         <cite>Jeremias 6:16 (ARA)</cite>
       </blockquote>
-      <div class="actions"><a class="btn btn-primary" href="iecc/">Começar pelo curso de introdução</a></div>
+      <div class="actions"><a class="btn btn-primary" href="iecc/">Comece pelo curso de introdução</a></div>
     </div>
   </section>
 
@@ -186,11 +189,10 @@
 
 <footer>
   <div class="wrap">
-    <em lang="la">Gratia non tollit naturam, sed perficit.</em>
-    <span>© <span id="year">2026</span> Marlon Pevidor</span>
+    <em lang="la">Nisi Dominus, frustra.</em>
+    <span>Salmo 127:1</span>
   </div>
 </footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 <script src="qrcode.js"></script>
 <script src="pix.js"></script>
 </body>

@@ -19,7 +19,9 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B2A7A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Franklin:wght@400;500;600&display=swap">
@@ -50,8 +52,8 @@
         <h1>Introdução à Educação <em>Cristã Clássica</em></h1>
         <p class="lede">Como transformar a mente e o coração de sua família: redescubra um modo de educar que une fé, razão, beleza e verdade, e forma homens e mulheres à imagem de Cristo.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#aulas">Começar a assistir</a>
-          <a class="btn btn-ghost" href="#sobre">Conhecer o curso</a>
+          <a class="btn btn-primary" id="cta-assistir" href="#aulas">Comece a assistir</a>
+          <a class="btn btn-ghost" href="#sobre">Conheça o curso</a>
         </div>
         <ul class="facts-inline"><li id="meta-count">aulas</li><li>7 módulos + conclusão</li><li>Assista em seu ritmo</li></ul>
       </div>
@@ -128,6 +130,7 @@
             <p class="caps" id="lesson-module"></p>
             <h3 id="lesson-title"></h3>
             <p id="lesson-desc"></p>
+            <p class="resume" id="resume" hidden></p>
             <div class="lesson-nav">
               <button id="prev">← Aula anterior</button>
               <button id="next">Próxima aula →</button>
@@ -142,26 +145,12 @@
     </div>
   </section>
 
-  <section class="about" id="professor">
-    <div class="wrap">
-      <img src="../assets/marlon.webp" alt="Professor Marlon Pevidor" width="840" height="840" loading="lazy">
-      <div class="stack">
-        <p class="caps">Seu professor</p>
-        <h2>Marlon Pevidor</h2>
-        <p>Discípulo de Jesus Cristo desde 1999, Marlon é casado com Kelen desde 2004 e pai de três filhos. A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde ele serviu como diretor de educação cristã de 2021 a 2024.</p>
-        <p>É professor de humanidades integradas na Logos Online School (Moscow, Idaho, EUA), licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
-        <p>Descobriu a educação cristã clássica em 2015, através de <em>Como ler livros</em>, de Mortimer Adler, e desde então dedica-se a ajudar famílias a recuperar uma educação antiga, bíblica e orientada pelas Escrituras.</p>
-        <p><a href="../#professor">Conheça mais sobre o professor e seus outros cursos →</a></p>
-      </div>
-    </div>
-  </section>
-
   <section class="about" id="livro">
     <div class="wrap">
-      <div class="book-cover" aria-hidden="true">
+      <a class="book-cover" href="https://a.co/d/00ePqFWon" target="_blank" rel="noopener" aria-label="Comprar o livro na Amazon">
         <div class="t">Como transformar a mente e o coração de sua família através da <em>educação cristã clássica</em></div>
         <div class="a">Marlon Pevidor</div>
-      </div>
+      </a>
       <div class="stack">
         <p class="caps">O livro do curso</p>
         <h2>Aprofunde-se <em>com o livro.</em></h2>
@@ -170,6 +159,7 @@
           <p>“Marlon expressa seus conceitos com convicção e admirável clareza.”</p>
           <cite>Ron Prater, no prefácio</cite>
         </blockquote>
+        <div class="actions"><a class="btn btn-primary" href="https://a.co/d/00ePqFWon" target="_blank" rel="noopener">Adquira seu exemplar na Amazon</a></div>
       </div>
     </div>
   </section>
@@ -213,9 +203,9 @@
         <div class="pix-resultado" hidden>
           <p class="pix-titulo"></p>
           <div class="pix-qr"></div>
-          <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
+          <p class="pix-ajuda">No celular: toque em <strong>Copie o código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
           <textarea readonly aria-label="Código Pix copia e cola"></textarea>
-          <button type="button" class="btn btn-primary pix-copiar">Copiar código Pix</button>
+          <button type="button" class="btn btn-primary pix-copiar">Copie o código Pix</button>
         </div>
       </div>
     </div>
@@ -226,7 +216,7 @@
       <p class="caps">Este é o tempo de restaurar</p>
       <h2>Comece hoje <em>sua jornada.</em></h2>
       <p class="lede">A educação cristã clássica é uma semente de fé lançada no solo da história. Comece hoje a cultivá-la em sua família.</p>
-      <div class="actions"><a class="btn btn-primary" href="#aula-1">Assistir à primeira aula</a></div>
+      <div class="actions"><a class="btn btn-primary" href="#aula-1">Assista à primeira aula</a></div>
     </div>
   </section>
 
@@ -234,8 +224,8 @@
 
 <footer>
   <div class="wrap">
-    <em lang="la">Gratia non tollit naturam, sed perficit.</em>
-    <span>© <span id="year">2026</span> Marlon Pevidor</span>
+    <em lang="la">Nisi Dominus, frustra.</em>
+    <span>Salmo 127:1</span>
   </div>
 </footer>
 <script>
@@ -341,6 +331,21 @@ const syllabus = $("#syllabus");
 const playIcon = '<svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="28" cy="28" r="26"/><path d="M23 18 L38 28 L23 38 Z"/></svg>';
 let current = 0;
 
+/* ---- Progresso de quem assiste: guardado NESTE aparelho/navegador (localStorage) ----
+   ultima: última aula aberta · tempos: segundo em que parou cada aula · vistas: aulas assistidas até o fim */
+const CHAVE = "iecc-progresso";
+const prog = (() => {
+  const base = { ultima: null, tempos: {}, vistas: {} };
+  try { return Object.assign(base, JSON.parse(localStorage.getItem(CHAVE)) || {}); } catch (e) { return base; }
+})();
+function gravar() { try { localStorage.setItem(CHAVE, JSON.stringify(prog)); } catch (e) {} }
+function fmt(seg) {
+  seg = Math.floor(seg); const h = Math.floor(seg / 3600), m = Math.floor((seg % 3600) / 60), s = String(seg % 60).padStart(2, "0");
+  return h ? `${h}:${String(m).padStart(2, "0")}:${s}` : `${m}:${s}`;
+}
+const titulo = (l) => l.titulo.replace(/<[^>]+>/g, "");
+const proximaPublicada = (i) => { for (let k = i + 1; k < lessons.length; k++) if (lessons[k].id) return k; return -1; };
+
 function render() {
   let n = 0, html = "";
   MODULOS.forEach((mod) => {
@@ -350,7 +355,7 @@ function render() {
       html += `<button class="lesson" data-i="${n}">
         <span class="n">${String(n + 1).padStart(2, "0")}</span>
         <span>${l.titulo}</span>
-        <span class="tag ${l.id ? "ok" : ""}">${l.id ? "Assistir" : "Em breve"}</span>
+        <span class="tag"></span>
       </button>`;
       n++;
     });
@@ -360,41 +365,123 @@ function render() {
     const b = e.target.closest(".lesson");
     if (b) { location.hash = "aula-" + (+b.dataset.i + 1); }
   });
-  const published = lessons.filter((l) => l.id).length;
-  $("#progress").textContent = `${published} de ${lessons.length} aulas publicadas`;
   $("#meta-count").textContent = `${lessons.length} aulas`;
+  atualizarLista();
+}
+
+/* Selos da lista: Em breve · Assista · Parou em 3:10 · ✓ Assistida */
+function atualizarLista() {
+  document.querySelectorAll(".lesson").forEach((b) => {
+    const i = +b.dataset.i, l = lessons[i], tag = b.querySelector(".tag");
+    const t = prog.tempos[i] || 0;
+    tag.className = "tag";
+    if (!l.id) tag.textContent = "Em breve";
+    else if (prog.vistas[i]) { tag.textContent = "✓ Assistida"; tag.classList.add("ok", "seen"); }
+    else if (t > 5) { tag.textContent = "Parou em " + fmt(t); tag.classList.add("ok", "partial"); }
+    else { tag.textContent = "Assista"; tag.classList.add("ok"); }
+  });
+  const pub = lessons.filter((l) => l.id).length, vistas = lessons.filter((l, i) => l.id && prog.vistas[i]).length;
+  $("#progress").textContent = `${pub} de ${lessons.length} aulas publicadas` + (vistas ? ` · ${vistas} assistida${vistas > 1 ? "s" : ""}` : "");
+  // botão da abertura: retoma de onde a pessoa parou
+  const cta = $("#cta-assistir");
+  if (cta && prog.ultima !== null && lessons[prog.ultima] && lessons[prog.ultima].id) {
+    const t = prog.tempos[prog.ultima] || 0;
+    cta.textContent = `Continue de onde parou: aula ${prog.ultima + 1}` + (t > 5 ? ` (${fmt(t)})` : "");
+    cta.setAttribute("href", "#aula-" + (prog.ultima + 1));
+  }
+}
+
+/* ---- Player do YouTube (API oficial): sabe o minuto, quando pausa e quando termina ---- */
+let player = null, apiPedida = false, apiPronta = false, apiFalhou = false, pendente = null, relogio = null, autoProxima = false;
+function carregarAPI() {
+  if (apiPedida) return; apiPedida = true;
+  const s = document.createElement("script");
+  s.src = "https://www.youtube.com/iframe_api";
+  s.onerror = () => { apiFalhou = true; if (pendente) { const p = pendente; pendente = null; montar(p.i, p.auto); } };
+  document.head.appendChild(s);
+}
+window.onYouTubeIframeAPIReady = () => { apiPronta = true; if (pendente) { const p = pendente; pendente = null; montar(p.i, p.auto); } };
+
+function salvarTempo() {
+  if (!player || !player.getCurrentTime || !lessons[current].id) return;
+  const t = player.getCurrentTime() || 0, d = player.getDuration() || 0;
+  if (d && t / d >= 0.9) prog.vistas[current] = true;           // 90% assistido conta como assistida
+  prog.tempos[current] = d && d - t < 15 ? 0 : t;                 // perto do fim: recomeça do início
+  prog.ultima = current;
+  gravar(); atualizarLista();
+}
+function mudouEstado(e) {
+  clearInterval(relogio);
+  if (e.data === YT.PlayerState.PLAYING) { prog.ultima = current; gravar(); atualizarLista(); relogio = setInterval(salvarTempo, 5000); }
+  if (e.data === YT.PlayerState.PAUSED) salvarTempo();
+  if (e.data === YT.PlayerState.ENDED) {
+    prog.vistas[current] = true; prog.tempos[current] = 0; gravar(); atualizarLista();
+    const prox = proximaPublicada(current);
+    if (prox >= 0) { autoProxima = true; location.hash = "aula-" + (prox + 1); }   // passa sozinho para a próxima
+  }
+}
+function montar(i, auto) {
+  const l = lessons[i], inicio = Math.floor(prog.tempos[i] || 0);
+  if (apiFalhou || !(window.YT && YT.Player)) {
+    if (!apiFalhou) { pendente = { i, auto }; carregarAPI(); return; }
+    // sem a API (rede bloqueada): vídeo simples, já começando do minuto guardado
+    $("#video").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${l.id}?rel=0&playsinline=1&start=${inicio}${auto ? "&autoplay=1" : ""}" title="${titulo(l)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    return;
+  }
+  if (player && player.loadVideoById) {
+    auto ? player.loadVideoById({ videoId: l.id, startSeconds: inicio }) : player.cueVideoById({ videoId: l.id, startSeconds: inicio });
+    return;
+  }
+  $("#video").innerHTML = '<div id="yt-player"></div>';
+  player = new YT.Player("yt-player", {
+    host: "https://www.youtube-nocookie.com", videoId: l.id,
+    playerVars: { rel: 0, playsinline: 1, start: inicio, autoplay: auto ? 1 : 0 },
+    events: { onStateChange: mudouEstado, onReady: (e) => { try { e.target.getIframe().title = titulo(lessons[current]); } catch (x) {} } },
+  });
 }
 
 function show(i, scroll) {
+  if (player && lessons[current] && lessons[current].id) salvarTempo();
   current = Math.max(0, Math.min(lessons.length - 1, i));
-  const l = lessons[current];
-  $("#video").innerHTML = l.id
-    ? `<iframe src="https://www.youtube-nocookie.com/embed/${l.id}?rel=0" title="${l.titulo.replace(/<[^>]+>/g, "")}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-    : `<div class="placeholder">${playIcon}<strong>EM BREVE</strong><span>Esta aula ainda não foi publicada.</span></div>`;
+  const l = lessons[current], auto = autoProxima; autoProxima = false;
+  if (l.id) {
+    if (player && !$("#video iframe")) player = null;   // o vídeo anterior foi trocado por "Em breve"
+    montar(current, auto);
+  } else {
+    if (player && player.destroy) { try { player.destroy(); } catch (e) {} }
+    player = null;
+    $("#video").innerHTML = `<div class="placeholder">${playIcon}<strong>EM BREVE</strong><span>Esta aula ainda não foi publicada.</span></div>`;
+  }
   $("#lesson-module").textContent = `Aula ${current + 1} · ${l.modulo}`;
   $("#lesson-title").innerHTML = l.titulo;
   $("#lesson-desc").innerHTML = l.descricao;
+  const t = prog.tempos[current] || 0, aviso = $("#resume");
+  aviso.hidden = !(l.id && t > 5);
+  aviso.textContent = `Você parou em ${fmt(t)}. O vídeo continua desse ponto.`;
   document.querySelectorAll(".lesson").forEach((b) => b.classList.toggle("active", +b.dataset.i === current));
   $("#prev").disabled = current === 0;
   $("#next").disabled = current === lessons.length - 1;
+  atualizarLista();
   if (scroll) $("#aulas").scrollIntoView({ behavior: "smooth" });
 }
 
 function fromHash(scroll) {
   const m = location.hash.match(/^#aula-(\d+)$/);
-  if (m) show(+m[1] - 1, scroll);
+  if (m) { show(+m[1] - 1, scroll); return true; }
+  return false;
 }
 
 $("#prev").onclick = () => (location.hash = "aula-" + current);
 $("#next").onclick = () => (location.hash = "aula-" + (current + 2));
 window.addEventListener("hashchange", () => fromHash(true));
-$("#year").textContent = new Date().getFullYear();
+// guarda o minuto ao sair da página, trocar de aba ou bloquear o celular
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") salvarTempo(); });
+window.addEventListener("pagehide", salvarTempo);
 
 render();
-show(0);
-fromHash(true);
+// sem link de aula no endereço: abre a última aula que a pessoa estava vendo (sem rolar a página)
+if (!fromHash(true)) show(prog.ultima !== null && lessons[prog.ultima] && lessons[prog.ultima].id ? prog.ultima : 0, false);
 </script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 <script src="../qrcode.js"></script>
 <script src="../pix.js"></script>
 </body>

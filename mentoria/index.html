@@ -19,7 +19,9 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B2A7A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Franklin:wght@400;500;600&display=swap">
@@ -36,7 +38,6 @@
       <a href="#percurso">Percurso</a>
       <a href="#perguntas">Perguntas</a>
       <a href="#vagas">Vagas</a>
-      <a href="../#cursos">Cursos</a>
     </nav>
   </div>
 </header>
@@ -51,8 +52,8 @@
         <h1>Da mera carreira a um chamado que <em>transforma vidas.</em></h1>
         <p class="lede">Acompanhamento pessoal para professores e gestores educacionais que querem viver a fé cristã dentro da prática pedagógica, com direção, ferramentas e retorno real sobre o que você aplica em sala de aula e no dia a dia da escola. A mentoria é a porta de entrada para uma formação maior no Instituto Cassiciacum.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#vagas">Quero conversar sobre uma vaga</a>
-          <a class="btn btn-ghost" href="#como-funciona">Como funciona</a>
+          <a class="btn btn-primary" href="#vagas">Converse comigo sobre uma vaga</a>
+          <a class="btn btn-ghost" href="#como-funciona">Veja como funciona</a>
         </div>
       </div>
     </div>
@@ -81,10 +82,16 @@
         <p>Durante 17 anos, fui um professor cristão que não sabia como integrar fé e pedagogia. Quando encontrei os princípios da educação cristã clássica, tudo mudou: minha maneira de ensinar e meu propósito.</p>
         <p>Esta mentoria é o caminho que eu gostaria de ter tido. Ela não é mais um conteúdo na prateleira. É o acompanhamento que me faltou.</p>
       </div>
-      <blockquote>
-        <p>“O que o professor ensina em sala de aula é apenas expressão daquilo que ele acredita por dentro. Mude o interior e o restante todo muda.”</p>
-        <cite>Professor Marlon Pevidor</cite>
-      </blockquote>
+      <div class="stack quotes">
+        <blockquote>
+          <p>“O que o professor ensina em sala de aula é apenas expressão daquilo que ele acredita por dentro. Mude o interior e o restante todo muda.”</p>
+          <cite>Professor Marlon Pevidor</cite>
+        </blockquote>
+        <blockquote>
+          <p>“Porque a boca fala do que está cheio o coração.”</p>
+          <cite>Mateus 12:34 (ARA)</cite>
+        </blockquote>
+      </div>
     </div>
   </section>
 
@@ -307,26 +314,6 @@
     </div>
   </section>
 
-  <section class="about solo" id="sobre">
-    <div class="wrap">
-      <div class="stack">
-        <p class="caps">Quem conduz a mentoria</p>
-        <h2>Marlon Pevidor</h2>
-        <!-- TODO(Marlon): conferir o tempo de docência. Esta página diz "mais de 25 anos"; os documentos do Cassiciacum falam em 27. -->
-        <p>Sou professor há mais de 25 anos e fundador do Instituto Cassiciacum. Comecei ensinando inglês e, desde 2011, leciono História, Filosofia e Humanidades em escolas brasileiras e internacionais em Brasília, como o Colégio Ideal, o Centro Educacional Sigma e a American School of Brasília, onde ensinei no programa do Diploma IB.</p>
-        <p>Fui professor de História da Igreja, História do Pensamento Cristão e Educação Cristã Clássica na Faculdade Teológica Batista de Brasília. Hoje ensino Humanidades Integradas no ensino médio da Logos Online School, uma escola cristã clássica, por meio do <i lang="la">trivium</i>, da leitura de fontes primárias e da discussão em sala.</p>
-        <!-- TODO(Marlon): confirmar se a menção à For Life School continua, já que o Grau I agora pertence ao Cassiciacum. -->
-        <p>Sou cofundador da Formação Avançada na Tradição das Artes Liberais, na For Life School. Escrevi <em>Redimindo a educação: transformando o professor para transformar vidas</em>.</p>
-        <dl class="facts">
-          <div><dt>Formação</dt><dd>Licenciatura em História (UniCEUB) e em Geografia (Cruzeiro do Sul)</dd></div>
-          <div><dt>Especialização</dt><dd>Pós-graduação em Educação Cristã Clássica, Faculdade Internacional Cidade Viva</dd></div>
-          <div><dt>Certificação</dt><dd>Professor certificado pelo International Baccalaureate em História e Geografia</dd></div>
-          <div><dt>Idiomas</dt><dd>Português e inglês fluente</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
   <section id="perguntas">
     <div class="wrap">
       <div class="head">
@@ -368,8 +355,8 @@
       <h2>Mudar a mentalidade é mudar a atuação em sala de aula.</h2>
       <p class="lede">As vagas são abertas para um grupo pequeno, para que o acompanhamento seja de fato pessoal. Vamos conversar sobre seu momento.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="https://wa.me/5561984366777?text=Ol%C3%A1%2C%20professor%20Marlon!%20Tenho%20interesse%20na%20Mentoria%20Educador%20Crist%C3%A3o%20Cl%C3%A1ssico." target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/marlonpevidor/" target="_blank" rel="noopener">Instagram @marlonpevidor</a>
+        <a class="btn btn-primary" href="https://wa.me/5561984366777?text=Ol%C3%A1%2C%20professor%20Marlon!%20Tenho%20interesse%20na%20Mentoria%20Educador%20Crist%C3%A3o%20Cl%C3%A1ssico." target="_blank" rel="noopener">Fale comigo no WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/marlonpevidor/" target="_blank" rel="noopener">Siga @marlonpevidor no Instagram</a>
       </div>
       <p class="contact-line">WhatsApp <span>+55 (61) 98436-6777</span><br>E-mail <span>marlonpevidor@gmail.com</span></p>
     </div>
@@ -379,8 +366,8 @@
 
 <footer>
   <div class="wrap">
-    <em>“Porque a boca fala do que está cheio o coração.” Mateus 12:34 (ARA)</em>
-    <span><i lang="la">Nisi Dominus, frustra</i> (sem o Senhor, em vão) · Professor Marlon Pevidor</span>
+    <em lang="la">Nisi Dominus, frustra.</em>
+    <span>Salmo 127:1</span>
   </div>
 </footer>
 
