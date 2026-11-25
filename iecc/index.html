@@ -52,8 +52,8 @@
         <h1>Introdução à Educação <em>Cristã Clássica</em></h1>
         <p class="lede">Como transformar a mente e o coração de sua família: redescubra um modo de educar que une fé, razão, beleza e verdade, e forma homens e mulheres à imagem de Cristo.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#aulas">Começar a assistir</a>
-          <a class="btn btn-ghost" href="#sobre">Conhecer o curso</a>
+          <a class="btn btn-primary" href="#aulas">Comece a assistir</a>
+          <a class="btn btn-ghost" href="#sobre">Conheça o curso</a>
         </div>
         <ul class="facts-inline"><li id="meta-count">aulas</li><li>7 módulos + conclusão</li><li>Assista em seu ritmo</li></ul>
       </div>
@@ -144,17 +144,28 @@
     </div>
   </section>
 
-  <section class="about" id="professor">
+  <section class="story" id="professor">
     <div class="wrap">
-      <img src="../assets/marlon.webp" alt="Professor Marlon Pevidor" width="840" height="840" loading="lazy">
       <div class="stack">
-        <p class="caps">Seu professor</p>
-        <h2>Marlon Pevidor</h2>
-        <p>Discípulo de Jesus Cristo desde 1999, Marlon é casado com Kelen desde 2004 e pai de três filhos. A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde ele serviu como diretor de educação cristã de 2021 a 2024.</p>
-        <p>É professor de humanidades integradas na Logos Online School (Moscow, Idaho, EUA), licenciado em história e geografia e pós-graduado em Educação Cristã Clássica pela Faculdade Internacional Cidade Viva.</p>
-        <p>Descobriu a educação cristã clássica em 2015, através de <em>Como ler livros</em>, de Mortimer Adler, e desde então dedica-se a ajudar famílias a recuperar uma educação antiga, bíblica e orientada pelas Escrituras.</p>
+        <div class="byline">
+          <img src="../assets/marlon.webp" alt="" width="840" height="840" loading="lazy">
+          <div>
+            <p class="caps">O professor</p>
+            <h2>Marlon Pevidor</h2>
+          </div>
+        </div>
+        <p>Antes de qualquer coisa, Marlon é discípulo de Jesus Cristo: foi convencido de seus pecados, redimido e selado pelo Espírito Santo em 1999. É casado com Kelen desde 2004 e pai de três filhos, Victoria, Arthur e Miguel, que também confessaram Jesus como Senhor.</p>
+        <p>A família é membro da Igreja Batista Central de Taguatinga, em Brasília, onde Marlon serviu como diretor de educação cristã de 2021 a 2024, aplicando os princípios da educação cristã clássica no contexto da igreja local.</p>
+        <p>É professor de humanidades integradas na Logos Online School, em Moscow, Idaho (EUA), uma escola <em>online</em> que serve famílias educadoras.</p>
+        <p>Sua jornada começou em 2015, quando experimentou uma verdadeira conversão de cosmovisão e descobriu, através de <em>Como ler livros</em>, de Mortimer Adler, o <em>trivium</em>, o <em>quadrivium</em>, as sete artes liberais e a grande conversa. Desde então, dedica-se a ajudar famílias a recuperar essa herança, antiga, bíblica e orientada pelas Escrituras.</p>
         <p><a href="../#professor">Conheça mais sobre o professor e seus outros cursos →</a></p>
       </div>
+      <dl class="facts">
+        <div><dt>Formação</dt><dd>Licenciatura em História (UniCEUB) e em Geografia (Cruzeiro do Sul)</dd></div>
+        <div><dt>Especialização</dt><dd>Pós-graduação em Educação Cristã Clássica, Faculdade Internacional Cidade Viva</dd></div>
+        <div><dt>Atuação</dt><dd>Professor de humanidades integradas na Logos Online School</dd></div>
+        <div><dt>Igreja</dt><dd>Igreja Batista Central de Taguatinga, Brasília</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -216,9 +227,9 @@
         <div class="pix-resultado" hidden>
           <p class="pix-titulo"></p>
           <div class="pix-qr"></div>
-          <p class="pix-ajuda">No celular: toque em <strong>Copiar código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
+          <p class="pix-ajuda">No celular: toque em <strong>Copie o código Pix</strong>, abra o <em>app</em> de seu banco, vá em <strong>Pix → Copia e Cola</strong> e cole. No computador: escaneie o <em>QR Code</em> com o <em>app</em> do banco.</p>
           <textarea readonly aria-label="Código Pix copia e cola"></textarea>
-          <button type="button" class="btn btn-primary pix-copiar">Copiar código Pix</button>
+          <button type="button" class="btn btn-primary pix-copiar">Copie o código Pix</button>
         </div>
       </div>
     </div>
@@ -229,7 +240,7 @@
       <p class="caps">Este é o tempo de restaurar</p>
       <h2>Comece hoje <em>sua jornada.</em></h2>
       <p class="lede">A educação cristã clássica é uma semente de fé lançada no solo da história. Comece hoje a cultivá-la em sua família.</p>
-      <div class="actions"><a class="btn btn-primary" href="#aula-1">Assistir à primeira aula</a></div>
+      <div class="actions"><a class="btn btn-primary" href="#aula-1">Assista à primeira aula</a></div>
     </div>
   </section>
 
@@ -353,7 +364,7 @@ function render() {
       html += `<button class="lesson" data-i="${n}">
         <span class="n">${String(n + 1).padStart(2, "0")}</span>
         <span>${l.titulo}</span>
-        <span class="tag ${l.id ? "ok" : ""}">${l.id ? "Assistir" : "Em breve"}</span>
+        <span class="tag ${l.id ? "ok" : ""}">${l.id ? "Assista" : "Em breve"}</span>
       </button>`;
       n++;
     });

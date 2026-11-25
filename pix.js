@@ -62,7 +62,7 @@ const PIX = {
     }
     res.querySelector("textarea").value = codigo;
     const copiar = res.querySelector(".pix-copiar");
-    copiar.textContent = "Copiar código Pix";
+    copiar.textContent = "Copie o código Pix";
     copiar.onclick = async () => {
       try { await navigator.clipboard.writeText(codigo); }
       catch (e) { const t = res.querySelector("textarea"); t.select(); document.execCommand("copy"); }

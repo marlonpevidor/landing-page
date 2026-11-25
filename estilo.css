@@ -28,7 +28,7 @@
      --tight-gap  dentro de um mesmo bloco (dois botões, valores do Pix, nome + linha de baixo, citação + autor)
      --list-gap   entre itens de uma mesma lista */
   --block-gap: clamp(32px, 3.4vw, 44px);
-  --box-gap: clamp(18px, 2.2vw, 24px);
+  --box-gap: clamp(22px, 2.4vw, 26px);
   --tight-gap: 14px;
   --list-gap: 16px;
 }

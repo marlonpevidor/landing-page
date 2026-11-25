@@ -36,6 +36,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
   "Mentoria" desce até a faixa `#mentoria`; só o botão da faixa leva a `mentoria/`.
 - Abertura da página inicial: rótulo "Autor e educador cristão clássico"; abaixo da foto, só "Marlon Pevidor"
   (igual à marca do topo), em fonte maior. Seção "O professor": foto pequena em círculo à esquerda do rótulo e do nome (`.byline`).
+  A seção do professor das páginas de curso é IGUAL à da página inicial (mesmo texto, `.byline`, quadro de formação),
+  com o link extra "Conheça mais sobre o professor e seus outros cursos →".
 
 - Livro na Amazon: https://a.co/d/00ePqFWon. Botão "Adquira seu exemplar na Amazon" (`.btn-primary`, nova aba)
   na seção do livro da página inicial e da página do curso; a capa desenhada também leva ao link.
@@ -80,7 +82,8 @@ Endereços: `marlonpevidor.pages.dev` (principal) e `curso-iecc.pages.dev` (anti
 - Rodapé IGUAL em todas as páginas: *Nisi Dominus, frustra.* (itálico, sem tradução) e, embaixo, a fonte
   "Salmo 127:1" (a frase é da Vulgata, Sl 127:1; NÃO é de Tomás de Aquino). O professor não quer o próprio nome
   sob a frase, para não parecer autoria. Mateus 12:34 (ARA) fica na seção "Por que esta mentoria existe" da mentoria.
-- Botão da página inicial: "Começar pelo curso de introdução". Bio: "uma escola online que serve famílias educadoras".
+- Botões e chamadas de ação SEMPRE no imperativo (você): "Veja os cursos gratuitos", "Conheça o professor",
+  "Acesse →", "Assista à primeira aula", "Comece pelo curso de introdução", "Copie o código Pix", "Fale comigo no WhatsApp". Bio: "uma escola online que serve famílias educadoras".
 - Verificar com: `grep -rniP "\b(d|n|pel)?[oa]s?\s+(meu|minha|seu|sua|nosso|nossa)s?\b" --include=*.html .`
 
 ## Simetria — regra obrigatória (o professor faz questão)
@@ -95,12 +98,12 @@ O modelo é alinhado à esquerda: "right" maior que "left" é normal; o que prec
   seguinte é SEMPRE a mesma. Bloco = rótulo, título, parágrafo, citação (com autor), grupo de botões, lista,
   quadro/cartão, grupo de valores do Pix, foto com legenda. Medidas (`:root`):
   `--block-gap` 32 px celular / 44 px computador (entre blocos de uma camada);
-  `--box-gap` 18–24 px (entre blocos DENTRO de um quadro/cartão);
+  `--box-gap` 22–26 px (entre blocos DENTRO de um quadro/cartão);
   `--tight-gap` 14 px (dentro de um mesmo bloco: dois botões, valores do Pix, nome + linha de baixo, citação + autor);
   `--list-gap` 16 px (itens de uma lista). Nunca usar outros valores de gap/margem entre blocos.
   Isso só funciona porque TODO bloco de texto tem `text-box: trim-both cap alphabetic` (vai da altura das maiúsculas
   à linha de base). Conferir com `node ferramentas/medir-blocos.js 390` e `... 1280`: todos os pares devem dar
-  32/44, 14, 20–24 ou 16 (a capa do livro soma +12 da sombra).
+  32/44, 14, 22–26 ou 16 (a capa do livro soma +12 da sombra).
 - Faixas azuis (`.band`) usam o mesmo `--section-y` das outras camadas (não são mais compactas).
 - Única exceção: a abertura da página inicial no celular (36 px acima da foto, ver acima).
 - Rodapé usa metade de `--section-y`.
